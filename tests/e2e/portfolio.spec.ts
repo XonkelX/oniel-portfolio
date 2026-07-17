@@ -135,4 +135,34 @@ test.describe("portfolio routes", () => {
 
     expect(errors).toEqual([]);
   });
+
+  test("required responsive widths preserve readable page bounds", async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name !== "desktop-chromium",
+      "Run the viewport matrix once",
+    );
+
+    for (const width of [320, 375, 768, 1024, 1280, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const route of routes) {
+        await page.goto(route);
+        await expect(page.locator("h1")).toBeVisible();
+        const overflow = await page.evaluate(
+          () =>
+            document.documentElement.scrollWidth -
+            document.documentElement.clientWidth,
+        );
+        expect(overflow, `${route} at ${width}px`).toBeLessThanOrEqual(1);
+      }
+    }
+
+    await page.setViewportSize({ width: 640, height: 900 });
+    await page.goto("/");
+    await page.evaluate(() => {
+      document.body.style.zoom = "2";
+    });
+    await expect(page.locator("h1")).toBeVisible();
+  });
 });
