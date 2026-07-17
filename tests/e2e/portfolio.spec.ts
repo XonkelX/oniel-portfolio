@@ -118,4 +118,21 @@ test.describe("portfolio routes", () => {
       .evaluate((node) => getComputedStyle(node).animationDuration);
     expect(Number.parseFloat(duration)).toBeLessThanOrEqual(0.01);
   });
+
+  test("primary routes emit no browser errors or hydration warnings", async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on("console", (message) => {
+      if (message.type() === "error") errors.push(message.text());
+    });
+    page.on("pageerror", (error) => errors.push(error.message));
+
+    for (const route of routes) {
+      await page.goto(route);
+      await page.waitForLoadState("networkidle");
+    }
+
+    expect(errors).toEqual([]);
+  });
 });

@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const externalBaseUrl = process.env.PLAYWRIGHT_BASE_URL;
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: false,
@@ -8,7 +10,7 @@ export default defineConfig({
   workers: 2,
   reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: "http://127.0.0.1:3100",
+    baseURL: externalBaseUrl ?? "http://127.0.0.1:3100",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
   },
@@ -24,12 +26,14 @@ export default defineConfig({
       },
     },
   ],
-  webServer: {
-    command: process.env.PLAYWRIGHT_PRODUCTION
-      ? "npm run start -- --hostname 127.0.0.1 --port 3100"
-      : "npm run dev -- --hostname 127.0.0.1 --port 3100",
-    url: "http://127.0.0.1:3100",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
-  },
+  webServer: externalBaseUrl
+    ? undefined
+    : {
+        command: process.env.PLAYWRIGHT_PRODUCTION
+          ? "npm run start -- --hostname 127.0.0.1 --port 3100"
+          : "npm run dev -- --hostname 127.0.0.1 --port 3100",
+        url: "http://127.0.0.1:3100",
+        reuseExistingServer: !process.env.CI,
+        timeout: 120_000,
+      },
 });
