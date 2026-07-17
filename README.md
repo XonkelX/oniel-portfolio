@@ -41,7 +41,7 @@ Accessibility work includes semantic landmarks, one clear page heading, a skip l
 
 ## Local development
 
-Requirements: Node.js 22.x and npm 11.x or newer.
+Requirements: Node.js 22.x and npm 10.9 or newer. The committed lockfile was generated with npm 11.
 
 ```bash
 npm ci
