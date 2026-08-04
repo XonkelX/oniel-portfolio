@@ -16,5 +16,10 @@ export type Project = {
   coverImage: string;
   mobileImage: string;
   featured: boolean;
+  evidence: readonly {
+    label: string;
+    value: string;
+  }[];
+  highlights: readonly string[];
   links: readonly ProjectLink[];
 };

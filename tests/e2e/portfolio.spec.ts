@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-const routes = ["/", "/about", "/work/careerflow"] as const;
+const routes = ["/", "/about", "/work/next", "/work/careerflow"] as const;
 
 test.describe("portfolio routes", () => {
   for (const route of routes) {
@@ -20,19 +20,30 @@ test.describe("portfolio routes", () => {
     });
   }
 
-  test("homepage exposes CareerFlow and verified destinations", async ({
+  test("homepage exposes both products and verified destinations", async ({
     page,
   }) => {
     await page.goto("/");
+    await expect(page.getByRole("heading", { name: "Next" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "CareerFlow" }),
     ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: /Read case study/ }),
-    ).toHaveAttribute("href", "/work/careerflow");
-    await expect(
-      page.getByRole("link", { name: /Live application/ }),
-    ).toHaveAttribute("href", "https://careerflow-snowy.vercel.app");
+    const caseStudies = page.getByRole("link", { name: /Read case study/ });
+    await expect(caseStudies).toHaveCount(2);
+    await expect(caseStudies.nth(0)).toHaveAttribute("href", "/work/next");
+    await expect(caseStudies.nth(1)).toHaveAttribute(
+      "href",
+      "/work/careerflow",
+    );
+    const liveProducts = page.getByRole("link", { name: /Live product/ });
+    await expect(liveProducts.nth(0)).toHaveAttribute(
+      "href",
+      "https://next-queue-omega.vercel.app",
+    );
+    await expect(liveProducts.nth(1)).toHaveAttribute(
+      "href",
+      "https://careerflow-snowy.vercel.app",
+    );
   });
 
   test("skip link moves focus to the main page content", async ({ page }) => {

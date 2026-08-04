@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s — Oniel Alejo Feliz",
   },
   description:
-    "Portfolio of Oniel Alejo Feliz, a full-stack developer in Tampa building accessible, production-ready web applications with thoughtful product design.",
+    "Portfolio of Oniel Alejo Feliz, a full-stack developer who turns complex workflows into clear, dependable products.",
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   alternates: { canonical: "/" },
@@ -33,15 +33,22 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Oniel Alejo Feliz — Full-Stack Developer",
     description:
-      "Accessible, production-ready web applications with thoughtful product design.",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      "Clear products, dependable systems, and production-ready full-stack applications.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1737,
+        height: 909,
+        alt: "Oniel Alejo Feliz — Full-Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Oniel Alejo Feliz — Full-Stack Developer",
     description:
-      "Accessible, production-ready web applications with thoughtful product design.",
-    images: ["/opengraph-image"],
+      "Clear products, dependable systems, and production-ready full-stack applications.",
+    images: ["/og.png"],
   },
   category: "technology",
 };

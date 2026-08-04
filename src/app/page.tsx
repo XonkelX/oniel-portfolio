@@ -1,84 +1,193 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "@/components/external-link";
-import { ProjectCard } from "@/components/project-card";
-import { ProjectVisual } from "@/components/project-visual";
 import { SectionHeading } from "@/components/section-heading";
+import { nextQueue, projects } from "@/content/projects";
 import { siteConfig } from "@/content/site";
+import type { Project } from "@/types/project";
 
-const principles = [
-  {
-    number: "01",
-    title: "Product clarity",
-    copy: "Start with the user’s actual problem and remove anything that does not help solve it.",
-  },
-  {
-    number: "02",
-    title: "Reliable engineering",
-    copy: "Build with explicit data ownership, typed boundaries, testing, and production validation.",
-  },
-  {
-    number: "03",
-    title: "Thoughtful interfaces",
-    copy: "Use accessibility, responsive behavior, and motion as core product qualities—not finishing touches.",
-  },
+const proof = [
+  { value: "2", label: "production applications" },
+  { value: "310", label: "documented release checks" },
+  { value: "Full stack", label: "interface to database" },
+  { value: "Open", label: "to Tampa + remote roles" },
 ] as const;
 
 const capabilities = [
   {
-    title: "Frontend",
-    items:
-      "TypeScript, React, Next.js, HTML, CSS, responsive UI, accessibility, motion systems",
+    number: "01",
+    title: "Product interfaces",
+    copy: "React, Next.js, TypeScript, responsive UI, accessibility, motion, and clear interaction design.",
   },
   {
-    title: "Backend",
-    items:
-      "Node.js, Express, REST APIs, authentication, PostgreSQL, Prisma, MongoDB",
+    number: "02",
+    title: "Application systems",
+    copy: "Authentication, Server Actions, APIs, PostgreSQL, Prisma, Supabase, relational modeling, and RLS.",
   },
   {
-    title: "Engineering",
-    items:
-      "Git and GitHub, automated testing, Docker, Linux, AWS fundamentals, deployment workflows",
+    number: "03",
+    title: "Quality engineering",
+    copy: "Vitest, Testing Library, Playwright, pgTAP, integration tests, production smoke checks, and documentation.",
+  },
+  {
+    number: "04",
+    title: "Production delivery",
+    copy: "Vercel, GitHub Actions, Docker, database migrations, environment design, release validation, and operational limits.",
   },
 ] as const;
+
+const process = [
+  {
+    number: "01",
+    title: "Understand the decision",
+    copy: "Start with what a user needs to accomplish and define the smallest workflow that makes that decision clear.",
+  },
+  {
+    number: "02",
+    title: "Design the system",
+    copy: "Model ownership, permissions, data, failure states, and responsive behavior before polish hides structural problems.",
+  },
+  {
+    number: "03",
+    title: "Prove the release",
+    copy: "Test the important boundaries, validate production behavior, and document tradeoffs without pretending limitations do not exist.",
+  },
+] as const;
+
+function projectLink(project: Project, kind: "live" | "source") {
+  const link = project.links.find((item) => item.kind === kind);
+  if (!link) throw new Error(`Missing ${project.name} ${kind} link`);
+  return link.href;
+}
+
+function ProductShowcase({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
+  const caseStudyHref =
+    project.slug === nextQueue.slug ? "/work/next" : "/work/careerflow";
+
+  return (
+    <article className="product-showcase reveal">
+      <div className="product-showcase__media">
+        <Image
+          src={project.coverImage}
+          alt={`${project.name} product interface`}
+          width={1440}
+          height={900}
+          sizes="(max-width: 900px) 100vw, 58vw"
+        />
+        <span className="product-showcase__number">0{index + 1}</span>
+      </div>
+      <div className="product-showcase__copy">
+        <p className="eyebrow">{project.category}</p>
+        <h3>{project.name}</h3>
+        <p className="product-showcase__summary">{project.summary}</p>
+        <ul className="product-highlights">
+          {project.highlights.map((highlight) => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
+        <div className="project-tags" aria-label={`${project.name} technology`}>
+          {project.technologies.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </div>
+        <div className="actions">
+          <Link className="button button--primary" href={caseStudyHref}>
+            Read case study <span aria-hidden="true">→</span>
+          </Link>
+          <ExternalLink
+            className="text-link"
+            href={projectLink(project, "live")}
+          >
+            Live product
+          </ExternalLink>
+          <ExternalLink
+            className="text-link"
+            href={projectLink(project, "source")}
+          >
+            Source
+          </ExternalLink>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="hero container">
-        <div className="hero__grid">
-          <div className="hero__copy">
-            <p className="eyebrow hero-enter hero-enter--1">
-              Full-Stack Developer · Tampa, Florida
-            </p>
-            <h1 className="hero-enter hero-enter--2">
-              I build focused web products that feel <em>clear</em>, fast, and
-              dependable.
-            </h1>
-            <p className="hero__lede hero-enter hero-enter--3">
-              I’m Oniel Alejo Feliz, a full-stack developer focused on
-              accessible interfaces, reliable application architecture, and
-              thoughtful product design.
-            </p>
-            <div className="actions hero-enter hero-enter--4">
-              <Link className="button button--primary" href="/work/careerflow">
-                Explore CareerFlow <span aria-hidden="true">→</span>
-              </Link>
-              <ExternalLink
-                className="button button--secondary"
-                href={siteConfig.githubUrl}
-              >
-                View GitHub
-              </ExternalLink>
-            </div>
+      <section className="home-hero container">
+        <div className="home-hero__copy">
+          <p className="eyebrow hero-enter hero-enter--1">
+            Full-Stack Developer · Tampa, Florida
+          </p>
+          <h1 className="hero-enter hero-enter--2">
+            I turn complex workflows into <em>clear, dependable</em> products.
+          </h1>
+          <p className="home-hero__lede hero-enter hero-enter--3">
+            I’m Oniel Alejo Feliz. I design and ship production web
+            applications—from accessible React interfaces to authentication,
+            relational data, testing, and deployment.
+          </p>
+          <div className="actions hero-enter hero-enter--4">
+            <a className="button button--primary" href="#work">
+              View selected work <span aria-hidden="true">↓</span>
+            </a>
+            <a
+              className="button button--secondary"
+              href={`mailto:${siteConfig.email}`}
+            >
+              Start a conversation
+            </a>
           </div>
-          <div className="hero__index" aria-label="Portfolio introduction">
-            <span>Selected work / 01</span>
-            <span>Available for opportunities</span>
+          <div className="home-hero__focus hero-enter hero-enter--5">
+            <span>Current focus</span>
+            <p>
+              Real-time products, secure authorization, accessible systems, and
+              release quality.
+            </p>
           </div>
         </div>
-        <div className="hero__visual hero-enter hero-enter--5">
-          <ProjectVisual />
-        </div>
+
+        <aside className="portrait-card hero-enter hero-enter--3">
+          <div className="portrait-card__image">
+            <Image
+              src="/oniel-alejo-feliz.jpg"
+              alt="Oniel Alejo Feliz"
+              fill
+              priority
+              sizes="(max-width: 900px) 92vw, 38vw"
+            />
+          </div>
+          <div className="portrait-card__caption">
+            <p>Oniel Alejo Feliz</p>
+            <h2>Full-Stack Developer</h2>
+            <span>
+              Building thoughtful products across interface, application, and
+              data layers.
+            </span>
+          </div>
+          <span className="availability-pill">
+            <span aria-hidden="true" /> Available for opportunities
+          </span>
+        </aside>
+      </section>
+
+      <section
+        className="proof-strip container"
+        aria-label="Portfolio evidence"
+      >
+        {proof.map((item) => (
+          <div key={item.label}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
       </section>
 
       <section
@@ -87,79 +196,101 @@ export default function Home() {
         aria-labelledby="work-title"
       >
         <SectionHeading
-          eyebrow="Selected work / 01"
-          title="One product, examined in full."
+          eyebrow="Selected products / 02"
+          title="Finished work, with the engineering visible."
           id="work-title"
           intro={
             <p>
-              A focused case study of product thinking, full-stack
-              implementation, and release quality.
+              Two deployed products with real workflows, documented
+              architecture, automated validation, and honest operational
+              boundaries.
             </p>
           }
         />
-        <ProjectCard />
+        <div className="product-list">
+          {projects.map((project, index) => (
+            <ProductShowcase
+              key={project.slug}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
       </section>
 
       <section
-        className="section section--ruled container"
-        aria-labelledby="approach-heading"
+        className="section skills-section"
+        id="skills"
+        aria-labelledby="skills-title"
       >
+        <div className="container">
+          <SectionHeading
+            eyebrow="Technical range"
+            title="Useful across the stack."
+            id="skills-title"
+            intro={
+              <p>
+                My strongest work happens where product decisions, interface
+                quality, application rules, and data integrity meet.
+              </p>
+            }
+          />
+          <div className="capability-grid">
+            {capabilities.map((capability) => (
+              <article
+                key={capability.number}
+                className="capability-card reveal"
+              >
+                <span>{capability.number}</span>
+                <h3>{capability.title}</h3>
+                <p>{capability.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section container" aria-labelledby="process-title">
         <SectionHeading
-          eyebrow="Approach"
-          title="Built from the problem outward."
-          id="approach-heading"
+          eyebrow="Working method"
+          title="Product thinking, backed by engineering rigor."
+          id="process-title"
         />
-        <div className="principles">
-          {principles.map((principle) => (
-            <article key={principle.number} className="principle reveal">
-              <span>{principle.number}</span>
-              <h3>{principle.title}</h3>
-              <p>{principle.copy}</p>
+        <div className="process-list">
+          {process.map((step) => (
+            <article key={step.number} className="process-step reveal">
+              <span>{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section
-        className="section capabilities container"
-        aria-labelledby="capabilities-heading"
+        className="about-statement container"
+        aria-labelledby="about-title"
       >
-        <SectionHeading
-          eyebrow="Capabilities"
-          title="Across the application stack."
-          id="capabilities-heading"
-        />
-        <div className="capability-list">
-          {capabilities.map((capability) => (
-            <div key={capability.title} className="capability-row reveal">
-              <h3>{capability.title}</h3>
-              <p>{capability.items}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section
-        className="section about-preview container"
-        aria-labelledby="about-preview-heading"
-      >
-        <p className="eyebrow">About</p>
         <div>
-          <h2 id="about-preview-heading">
-            Frontend detail. Backend discipline.
+          <p className="eyebrow">About</p>
+          <h2 id="about-title">
+            I care about the details users feel—and the systems they never have
+            to think about.
           </h2>
+        </div>
+        <div className="about-statement__copy">
           <p>
-            I’m a full-stack developer based in Tampa, Florida. I enjoy turning
-            ambiguous product ideas into focused applications with
-            understandable interfaces and maintainable systems.
+            I work from both directions: shaping a clear product experience in
+            the browser while protecting it with explicit ownership, typed
+            boundaries, predictable data behavior, and release evidence.
           </p>
           <p>
-            My work combines responsive design and accessibility with
-            authentication, relational data modeling, testing, and production
-            deployment.
+            I’m looking for a junior full-stack or software-development role
+            where I can contribute immediately, learn from experienced
+            engineers, and help a team ship useful software responsibly.
           </p>
           <Link className="text-link" href="/about">
-            More about my approach <span aria-hidden="true">→</span>
+            More about how I work <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
@@ -170,11 +301,11 @@ export default function Home() {
         aria-labelledby="contact-heading"
       >
         <div className="contact__inner container">
-          <p className="eyebrow">Have a project or opportunity?</p>
-          <h2 id="contact-heading">Let’s build something useful.</h2>
+          <p className="eyebrow">Tampa, Florida · Open to remote</p>
+          <h2 id="contact-heading">Let’s build something people can trust.</h2>
           <p>
-            I’m open to software-development opportunities and conversations
-            about thoughtful web products.
+            I’m available for software-development opportunities and thoughtful
+            product collaborations.
           </p>
           <div className="actions">
             <a
@@ -187,7 +318,7 @@ export default function Home() {
               className="text-link text-link--inverted"
               href={siteConfig.githubUrl}
             >
-              GitHub profile
+              Review the code
             </ExternalLink>
           </div>
         </div>

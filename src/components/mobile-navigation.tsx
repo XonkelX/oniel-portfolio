@@ -113,7 +113,7 @@ export function MobileNavigation() {
                   rel="noreferrer"
                   onClick={() => setOpen(false)}
                 >
-                  <span>05</span>GitHub ↗
+                  <span>0{navigation.length + 1}</span>GitHub ↗
                 </a>
               </nav>
             </motion.div>
