@@ -24,6 +24,9 @@ export function SiteHeader() {
           <ExternalLink href={siteConfig.githubUrl}>GitHub</ExternalLink>
         </nav>
         <div className="site-header__actions">
+          <a className="header-cta" href={`mailto:${siteConfig.email}`}>
+            Email me
+          </a>
           <ThemeToggle />
           <MobileNavigation />
         </div>
