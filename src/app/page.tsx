@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "@/components/external-link";
 import { SectionHeading } from "@/components/section-heading";
-import { nextQueue, projects } from "@/content/projects";
+import { projects } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 import type { Project } from "@/types/project";
 
 const proof = [
-  { value: "2", label: "production applications" },
-  { value: "310", label: "documented release checks" },
+  { value: "3", label: "production applications" },
+  { value: "614", label: "documented release checks" },
   { value: "Full stack", label: "interface to database" },
   { value: "Open", label: "to Tampa + remote roles" },
 ] as const;
@@ -67,8 +67,7 @@ function ProductShowcase({
   project: Project;
   index: number;
 }) {
-  const caseStudyHref =
-    project.slug === nextQueue.slug ? "/work/next" : "/work/careerflow";
+  const caseStudyHref = `/work/${project.slug}`;
 
   return (
     <article className="product-showcase reveal">
@@ -196,12 +195,12 @@ export default function Home() {
         aria-labelledby="work-title"
       >
         <SectionHeading
-          eyebrow="Selected products / 02"
+          eyebrow="Selected products / 03"
           title="Finished work, with the engineering visible."
           id="work-title"
           intro={
             <p>
-              Two deployed products with real workflows, documented
+              Three deployed products with real workflows, documented
               architecture, automated validation, and honest operational
               boundaries.
             </p>

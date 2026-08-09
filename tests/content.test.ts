@@ -4,18 +4,22 @@ import {
   getProjectLink,
   nextQueue,
   projects,
+  relay,
 } from "@/content/projects";
 import { navigation, siteConfig } from "@/content/site";
 
 describe("portfolio content configuration", () => {
-  it("contains two featured projects with complete media", () => {
-    expect(projects).toHaveLength(2);
+  it("contains three featured projects with complete media", () => {
+    expect(projects).toHaveLength(3);
+    expect(relay.featured).toBe(true);
     expect(careerFlow.featured).toBe(true);
     expect(nextQueue.featured).toBe(true);
     expect(careerFlow.coverImage).toMatch(/^\/projects\/careerflow\/.+\.png$/);
     expect(careerFlow.mobileImage).toMatch(/^\/projects\/careerflow\/.+\.png$/);
     expect(nextQueue.coverImage).toMatch(/^\/projects\/next-queue\/.+\.png$/);
     expect(nextQueue.mobileImage).toMatch(/^\/projects\/next-queue\/.+\.png$/);
+    expect(relay.coverImage).toMatch(/^\/projects\/relay\/.+\.png$/);
+    expect(relay.mobileImage).toMatch(/^\/projects\/relay\/.+\.png$/);
   });
 
   it("provides every required public CareerFlow destination", () => {

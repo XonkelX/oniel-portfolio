@@ -1,16 +1,16 @@
 # Oniel Alejo Feliz — Developer Portfolio
 
-A minimalist, typography-led portfolio for full-stack developer [Oniel Alejo Feliz](https://github.com/XonkelX). The first release centers on CareerFlow as an in-depth product and engineering case study.
+A minimalist, typography-led portfolio for full-stack developer [Oniel Alejo Feliz](https://github.com/XonkelX). It presents three production systems through evidence-backed product and engineering case studies.
 
-[Live portfolio](https://oniel-portfolio.vercel.app) · [CareerFlow](https://careerflow-snowy.vercel.app) · [CareerFlow source](https://github.com/XonkelX/ai-career-tracker) · [v1.0 release](https://github.com/XonkelX/ai-career-tracker/releases/tag/v1.0.0) · [complete demo](https://github.com/XonkelX/ai-career-tracker/releases/download/v1.0.0/careerflow-v1-demo.mp4)
+[Live portfolio](https://oniel-portfolio.vercel.app) · [Relay Failure Lab](https://relay-console.sinmanos.workers.dev/failure-lab) · [Relay v1.0](https://github.com/XonkelX/relay-webhook-delivery/releases/tag/v1.0.0) · [Next](https://next-queue-omega.vercel.app) · [CareerFlow](https://careerflow-snowy.vercel.app)
 
 ## Overview
 
-The portfolio presents Oniel as a product-minded full-stack developer who combines dependable engineering with accessible interface design. It is intentionally small: three static routes, one featured project, no content management system, and no backend.
+The portfolio presents Oniel as a product-minded full-stack developer who combines dependable engineering with accessible interface design. It remains intentionally focused: static presentation routes, three featured production projects, no content management system, and no backend.
 
-## Featured project
+## Featured projects
 
-CareerFlow is a production-deployed career-management application for organizing opportunities, application stages, deadlines, dashboard insight, and targeted resume versions. Its case study explains the product workflow, real architecture, important engineering decisions, release validation, accessibility work, and zero-cost deployment constraints.
+Relay leads the portfolio with distributed webhook delivery, durable retries, signed requests, operational evidence, and a controlled public Failure Lab. Next demonstrates realtime multi-client coordination and database-enforced authorization. CareerFlow demonstrates account-scoped product workflows, relational modeling, and release-quality application engineering.
 
 ![Portfolio homepage featuring CareerFlow](docs/assets/screenshots/portfolio-home-desktop.png)
 
@@ -79,7 +79,7 @@ src/
 ├── components/              # Focused layout and interaction components
 ├── content/                 # Typed site and project configuration
 └── types/                   # Project content contracts
-public/projects/careerflow/  # Public screenshots, poster, and 10-second preview
+public/projects/             # Intentional public media for Relay, Next, and CareerFlow
 tests/
 ├── e2e/                     # Browser and accessibility smoke coverage
 └── *.test.*                 # Content, component, and motion checks
@@ -90,7 +90,7 @@ docs/assets/screenshots/     # Finished portfolio presentation captures
 
 The site is designed for Vercel Hobby with no environment variables, database, storage, forms, paid fonts, or paid platform features. The canonical URL is held in the typed site configuration and used by page metadata, the sitemap, and robots output.
 
-The portfolio costs $0 to operate within Vercel Hobby quotas. CareerFlow is a separate application and repository; this portfolio only includes its intentionally public presentation assets.
+The portfolio costs $0 to operate within Vercel Hobby quotas. Featured products remain separate applications and repositories; this portfolio includes only their intentionally public presentation assets.
 
 ## Privacy
 

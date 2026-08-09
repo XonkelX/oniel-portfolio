@@ -1,5 +1,59 @@
 import type { Project } from "@/types/project";
 
+export const relay: Project = {
+  slug: "relay",
+  name: "Relay",
+  category: "Distributed systems · Webhook delivery",
+  summary:
+    "A production webhook delivery platform with durable scheduling, signed requests, deterministic retries, operational evidence, and a public failure laboratory.",
+  year: 2026,
+  status: "Production v1.0",
+  role: "System design, product design, and full-stack engineering",
+  technologies: [
+    "TypeScript",
+    "React",
+    "Cloudflare Workers",
+    "D1",
+    "Queues",
+    "Hono",
+  ],
+  coverImage: "/projects/relay/relay-landing.png",
+  mobileImage: "/projects/relay/relay-failure-lab.png",
+  featured: true,
+  evidence: [
+    { label: "Release", value: "Production v1.0" },
+    { label: "Quality", value: "304 release checks" },
+    { label: "Focus", value: "Reliability + evidence" },
+  ],
+  highlights: [
+    "Transactional outbox, durable retry scheduling, lease recovery, and at-least-once delivery",
+    "Standard Webhooks-compatible signatures with encrypted endpoint secrets and stable message identity",
+    "Inspectable attempt evidence, replay lineage, health telemetry, and seven controlled failure scenarios",
+  ],
+  links: [
+    {
+      label: "Open Failure Lab",
+      href: "https://relay-console.sinmanos.workers.dev/failure-lab",
+      kind: "live",
+    },
+    {
+      label: "View source",
+      href: "https://github.com/XonkelX/relay-webhook-delivery",
+      kind: "source",
+    },
+    {
+      label: "View v1.0 release",
+      href: "https://github.com/XonkelX/relay-webhook-delivery/releases/tag/v1.0.0",
+      kind: "release",
+    },
+    {
+      label: "Watch demo",
+      href: "https://github.com/XonkelX/relay-webhook-delivery/blob/main/docs/assets/relay-demo.webm",
+      kind: "demo",
+    },
+  ],
+} as const;
+
 export const careerFlow: Project = {
   slug: "careerflow",
   name: "CareerFlow",
@@ -89,7 +143,7 @@ export const nextQueue: Project = {
   ],
 } as const;
 
-export const projects = [nextQueue, careerFlow] as const;
+export const projects = [relay, nextQueue, careerFlow] as const;
 
 export function getProjectLink(kind: Project["links"][number]["kind"]) {
   const link = careerFlow.links.find((item) => item.kind === kind);

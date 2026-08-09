@@ -17,6 +17,20 @@ const captures = [
     theme: "light" as const,
   },
   {
+    name: "portfolio-relay-desktop.png",
+    route: "/work/relay",
+    width: 1440,
+    height: 1000,
+    theme: "light" as const,
+  },
+  {
+    name: "portfolio-relay-mobile.png",
+    route: "/work/relay",
+    width: 375,
+    height: 812,
+    theme: "light" as const,
+  },
+  {
     name: "portfolio-careerflow-desktop.png",
     route: "/work/careerflow",
     width: 1440,

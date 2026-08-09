@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteConfig.siteUrl}/work/relay`,
+      lastModified: "2026-08-09",
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
       url: `${siteConfig.siteUrl}/work/careerflow`,
       lastModified: "2026-08-04",
       changeFrequency: "monthly",
