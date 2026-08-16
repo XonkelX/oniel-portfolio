@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "Relay Case Study",
   description:
     "How Relay makes outbound webhook delivery durable, signed, retryable, and operationally inspectable on Cloudflare.",
-  alternates: { canonical: "/work/relay" },
+  alternates: {
+    canonical: "/work/relay",
+    languages: { en: "/work/relay", es: "/es/work/relay" },
+  },
   openGraph: {
     title: "Relay Case Study — Oniel Alejo Feliz",
     description:

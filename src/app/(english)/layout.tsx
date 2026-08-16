@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/content/site";
-import "./globals.css";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     "Portfolio of Oniel Alejo Feliz, a full-stack developer who turns complex workflows into clear, dependable products.",
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", es: "/es" },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -74,6 +77,33 @@ const themeScript = `
   } catch (_) {}
 `;
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.siteUrl,
+  image: `${siteConfig.siteUrl}/oniel-alejo-feliz.jpg`,
+  jobTitle: siteConfig.title,
+  email: `mailto:${siteConfig.email}`,
+  sameAs: [siteConfig.githubUrl],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Tampa",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  knowsLanguage: ["English", "Spanish"],
+  knowsAbout: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Web accessibility",
+    "Software testing",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -84,17 +114,20 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
-        <SiteHeader />
+        <SiteHeader locale="en" />
         {children}
-        <SiteFooter />
+        <SiteFooter locale="en" />
       </body>
     </html>
   );

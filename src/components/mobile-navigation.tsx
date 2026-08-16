@@ -4,14 +4,15 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation, siteConfig } from "@/content/site";
+import { navigationFor, siteConfig, type Locale } from "@/content/site";
 
-export function MobileNavigation() {
+export function MobileNavigation({ locale = "en" }: { locale?: Locale }) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const localizedNavigation = navigationFor(locale);
 
   useEffect(() => {
     if (!open) return;
@@ -55,7 +56,7 @@ export function MobileNavigation() {
         aria-controls="mobile-menu"
         onClick={() => setOpen(true)}
       >
-        Menu
+        {locale === "es" ? "Menú" : "Menu"}
       </button>
       <AnimatePresence>
         {open ? (
@@ -75,7 +76,9 @@ export function MobileNavigation() {
               className="mobile-nav__panel"
               role="dialog"
               aria-modal="true"
-              aria-label="Site navigation"
+              aria-label={
+                locale === "es" ? "Navegación del sitio" : "Site navigation"
+              }
               initial={reduceMotion ? false : { x: 28, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={reduceMotion ? { opacity: 0 } : { x: 28, opacity: 0 }}
@@ -85,13 +88,17 @@ export function MobileNavigation() {
               }}
             >
               <div className="mobile-nav__topline">
-                <span>Navigate</span>
+                <span>{locale === "es" ? "Navegar" : "Navigate"}</span>
                 <button type="button" onClick={() => setOpen(false)}>
-                  Close
+                  {locale === "es" ? "Cerrar" : "Close"}
                 </button>
               </div>
-              <nav aria-label="Mobile navigation">
-                {navigation.map((item, index) => (
+              <nav
+                aria-label={
+                  locale === "es" ? "Navegación móvil" : "Mobile navigation"
+                }
+              >
+                {localizedNavigation.map((item, index) => (
                   <Link
                     key={item.label}
                     href={item.href}
@@ -108,12 +115,21 @@ export function MobileNavigation() {
                   </Link>
                 ))}
                 <a
+                  href={siteConfig.resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  <span>0{localizedNavigation.length + 1}</span>
+                  {locale === "es" ? "Currículum" : "Résumé"} ↗
+                </a>
+                <a
                   href={siteConfig.githubUrl}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setOpen(false)}
                 >
-                  <span>0{navigation.length + 1}</span>GitHub ↗
+                  <span>0{localizedNavigation.length + 2}</span>GitHub ↗
                 </a>
               </nav>
             </motion.div>

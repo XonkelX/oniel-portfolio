@@ -4,13 +4,25 @@ import { expect, test } from "@playwright/test";
 const routes = [
   "/",
   "/about",
+  "/work/sinmanos",
   "/work/relay",
   "/work/next",
   "/work/careerflow",
 ] as const;
 
+const spanishRoutes = [
+  "/es",
+  "/es/about",
+  "/es/work/sinmanos",
+  "/es/work/relay",
+  "/es/work/next",
+  "/es/work/careerflow",
+] as const;
+
+const allRoutes = [...routes, ...spanishRoutes] as const;
+
 test.describe("portfolio routes", () => {
-  for (const route of routes) {
+  for (const route of allRoutes) {
     test(`${route} has one clear h1 and no severe accessibility violations`, async ({
       page,
     }) => {
@@ -26,36 +38,75 @@ test.describe("portfolio routes", () => {
     });
   }
 
-  test("homepage exposes all products and verified destinations", async ({
+  test("language switch preserves equivalent routes and document language", async ({
+    page,
+  }) => {
+    await page.goto("/work/relay");
+    await page.getByRole("link", { name: "Ver en español" }).click();
+    await expect(page).toHaveURL(/\/es\/work\/relay$/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "es");
+    await expect(
+      page.getByRole("heading", { name: "El problema de confiabilidad" }),
+    ).toBeVisible();
+
+    await page.getByRole("link", { name: "View in English" }).click();
+    await expect(page).toHaveURL(/\/work\/relay$/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  });
+
+  test("Spanish homepage exposes localized navigation and all case studies", async ({
+    page,
+  }) => {
+    await page.goto("/es");
+    await expect(
+      page.getByRole("heading", { name: /software que se mantiene/i }),
+    ).toBeVisible();
+    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
+      await expect(
+        page.locator(`a[href="/es/work/${slug}"]`).first(),
+      ).toBeVisible();
+    }
+    await expect(
+      page
+        .getByRole("contentinfo")
+        .getByRole("link", { name: "Sobre mí", exact: true }),
+    ).toHaveAttribute("href", "/es/about");
+  });
+
+  test("homepage exposes four projects and verified destinations", async ({
     page,
   }) => {
     await page.goto("/");
+    await expect(page.getByRole("heading", { name: "SinManos" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Relay" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Next" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "CareerFlow" }),
     ).toBeVisible();
-    const caseStudies = page.getByRole("link", { name: /Read case study/ });
-    await expect(caseStudies).toHaveCount(3);
-    await expect(caseStudies.nth(0)).toHaveAttribute("href", "/work/relay");
-    await expect(caseStudies.nth(1)).toHaveAttribute("href", "/work/next");
-    await expect(caseStudies.nth(2)).toHaveAttribute(
-      "href",
-      "/work/careerflow",
-    );
+    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
+      await expect(
+        page.locator(`a[href="/work/${slug}"]`).first(),
+      ).toBeVisible();
+    }
     const liveProducts = page.getByRole("link", { name: /Live product/ });
+    await expect(liveProducts).toHaveCount(2);
     await expect(liveProducts.nth(0)).toHaveAttribute(
       "href",
-      "https://relay-console.sinmanos.workers.dev/failure-lab",
+      "https://sinmanos.site",
     );
     await expect(liveProducts.nth(1)).toHaveAttribute(
       "href",
-      "https://next-queue-omega.vercel.app",
+      "https://relay-console.sinmanos.workers.dev/failure-lab",
     );
-    await expect(liveProducts.nth(2)).toHaveAttribute(
-      "href",
-      "https://careerflow-snowy.vercel.app",
-    );
+    await expect(
+      page.getByRole("heading", { name: /codebases I didn’t design/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", {
+        name: "Review PR #29 (opens in a new tab)",
+        exact: true,
+      }),
+    ).toHaveAttribute("href", "https://github.com/codesydney/bluehex/pull/29");
   });
 
   test("skip link moves focus to the main page content", async ({ page }) => {
@@ -103,7 +154,7 @@ test.describe("portfolio routes", () => {
     isMobile,
   }) => {
     test.skip(!isMobile, "Mobile overflow check");
-    for (const route of routes) {
+    for (const route of allRoutes) {
       await page.goto(route);
       const overflow = await page.evaluate(
         () =>
@@ -162,6 +213,7 @@ test.describe("portfolio routes", () => {
   test("required responsive widths preserve readable page bounds", async ({
     page,
   }, testInfo) => {
+    test.setTimeout(120_000);
     test.skip(
       testInfo.project.name !== "desktop-chromium",
       "Run the viewport matrix once",
@@ -169,7 +221,7 @@ test.describe("portfolio routes", () => {
 
     for (const width of [320, 375, 768, 1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: 900 });
-      for (const route of routes) {
+      for (const route of allRoutes) {
         await page.goto(route);
         await expect(page.locator("h1")).toBeVisible();
         const overflow = await page.evaluate(

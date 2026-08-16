@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "CareerFlow Case Study",
   description:
     "How CareerFlow brings application tracking, deadlines, dashboard insight, and resume versions into one production-deployed full-stack product.",
-  alternates: { canonical: "/work/careerflow" },
+  alternates: {
+    canonical: "/work/careerflow",
+    languages: { en: "/work/careerflow", es: "/es/work/careerflow" },
+  },
   openGraph: {
     title: "CareerFlow Case Study — Oniel Alejo Feliz",
     description:

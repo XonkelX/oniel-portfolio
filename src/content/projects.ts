@@ -1,13 +1,52 @@
 import type { Project } from "@/types/project";
 
+export const sinManos: Project = {
+  slug: "sinmanos",
+  name: "SinManos",
+  category: "Full-stack product · League of Legends analytics",
+  summary:
+    "A LAN-focused League of Legends analytics product for exploring player profiles, match history, champion tier lists, builds, runes, counters, and skill paths.",
+  year: 2026,
+  status: "Public beta",
+  role: "Product design, frontend engineering, Riot API integration, and deployment",
+  technologies: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Cloudflare Workers",
+    "Riot API",
+    "Data Dragon",
+  ],
+  coverImage: "/projects/sinmanos/home.png",
+  mobileImage: "/projects/sinmanos/champion.png",
+  featured: true,
+  evidence: [
+    { label: "Release", value: "Public beta" },
+    { label: "Data", value: "Riot API + Data Dragon" },
+    { label: "Focus", value: "LAN players + champion analytics" },
+  ],
+  highlights: [
+    "LAN Riot ID lookup and a detailed match-history interface",
+    "Tier lists, champion builds, rune paths, counters, and skill-order guidance",
+    "An original brush-led visual system deployed through Cloudflare",
+  ],
+  links: [
+    {
+      label: "Open SinManos",
+      href: "https://sinmanos.site",
+      kind: "live",
+    },
+  ],
+} as const;
+
 export const relay: Project = {
   slug: "relay",
   name: "Relay",
   category: "Distributed systems · Webhook delivery",
   summary:
-    "A production webhook delivery platform with durable scheduling, signed requests, deterministic retries, operational evidence, and a public failure laboratory.",
+    "A deployed webhook delivery system with durable scheduling, signed requests, deterministic retries, operational evidence, and a public failure laboratory.",
   year: 2026,
-  status: "Production v1.0",
+  status: "Portfolio release v1.0",
   role: "System design, product design, and full-stack engineering",
   technologies: [
     "TypeScript",
@@ -21,7 +60,7 @@ export const relay: Project = {
   mobileImage: "/projects/relay/relay-failure-lab.png",
   featured: true,
   evidence: [
-    { label: "Release", value: "Production v1.0" },
+    { label: "Release", value: "Portfolio v1.0" },
     { label: "Quality", value: "304 release checks" },
     { label: "Focus", value: "Reliability + evidence" },
   ],
@@ -59,16 +98,16 @@ export const careerFlow: Project = {
   name: "CareerFlow",
   category: "Full-stack product · Career management",
   summary:
-    "A production-deployed career-management platform for organizing applications, deadlines, progress, and resume versions.",
+    "A deployed career-management platform for organizing applications, deadlines, progress, and resume versions.",
   year: 2026,
-  status: "Production v1.0",
+  status: "Portfolio release v1.0",
   role: "Product design and full-stack engineering",
   technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Auth.js"],
   coverImage: "/projects/careerflow/careerflow-dashboard-desktop.png",
   mobileImage: "/projects/careerflow/careerflow-dashboard-mobile.png",
   featured: true,
   evidence: [
-    { label: "Release", value: "Production v1.0" },
+    { label: "Release", value: "Portfolio v1.0" },
     { label: "Quality", value: "179 passing tests" },
     { label: "Focus", value: "Privacy-conscious workflows" },
   ],
@@ -108,14 +147,14 @@ export const nextQueue: Project = {
   summary:
     "A synchronized queue system for customers, staff, and public displays, with authorization and state transitions enforced in PostgreSQL.",
   year: 2026,
-  status: "Production v1.0",
+  status: "Portfolio release v1.0",
   role: "Product design and full-stack engineering",
   technologies: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Realtime"],
   coverImage: "/projects/next-queue/landing-page.png",
   mobileImage: "/projects/next-queue/mobile-view.png",
   featured: true,
   evidence: [
-    { label: "Release", value: "Production v1.0" },
+    { label: "Release", value: "Portfolio v1.0" },
     { label: "Quality", value: "131 release checks" },
     { label: "Focus", value: "Realtime + authorization" },
   ],
@@ -143,7 +182,7 @@ export const nextQueue: Project = {
   ],
 } as const;
 
-export const projects = [relay, nextQueue, careerFlow] as const;
+export const projects = [sinManos, relay, nextQueue, careerFlow] as const;
 
 export function getProjectLink(kind: Project["links"][number]["kind"]) {
   const link = careerFlow.links.find((item) => item.kind === kind);

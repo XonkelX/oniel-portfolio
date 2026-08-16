@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "Next Real-Time Queue System",
   description:
     "Product, architecture, authorization, realtime synchronization, and release validation behind Next by Oniel Alejo Feliz.",
-  alternates: { canonical: "/work/next" },
+  alternates: {
+    canonical: "/work/next",
+    languages: { en: "/work/next", es: "/es/work/next" },
+  },
 };
 
 const decisions = [
