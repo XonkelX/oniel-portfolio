@@ -181,8 +181,8 @@ export default function SpanishHome() {
             </a>
           </div>
           <p className="home-hero__availability hero-enter hero-enter--5">
-            <span aria-hidden="true" /> Disponible para roles junior de software
-            · Autorizado para trabajar en EE. UU.
+            <span aria-hidden="true" /> Disponible para roles full-stack y de
+            software · Autorizado para trabajar en EE. UU.
           </p>
         </div>
 

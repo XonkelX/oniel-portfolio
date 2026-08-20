@@ -171,9 +171,8 @@ export default function AboutPage() {
           Interested in building a clear, useful web product?
         </h2>
         <p>
-          I’m seeking a junior full-stack or software-engineering role in Tampa
-          or remote. I can work in the United States without employer
-          sponsorship.
+          I’m open to full-stack and software-engineering roles in Tampa or
+          remote. I can work in the United States without employer sponsorship.
         </p>
         <div className="actions">
           <a

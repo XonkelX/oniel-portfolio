@@ -175,8 +175,8 @@ export default function Home() {
             </a>
           </div>
           <p className="home-hero__availability hero-enter hero-enter--5">
-            <span aria-hidden="true" /> Available for junior software roles ·
-            U.S. work authorized
+            <span aria-hidden="true" /> Available for full-stack and software
+            roles · U.S. work authorized
           </p>
         </div>
 

@@ -183,9 +183,9 @@ export default function SpanishAboutPage() {
           ¿Necesitas construir un producto web claro y útil?
         </h2>
         <p>
-          Busco un rol junior de desarrollo full-stack o ingeniería de software
-          en Tampa o remoto. Puedo trabajar en Estados Unidos sin patrocinio del
-          empleador.
+          Estoy disponible para roles de desarrollo full-stack o ingeniería de
+          software en Tampa o remotos. Puedo trabajar en Estados Unidos sin
+          patrocinio del empleador.
         </p>
         <div className="actions">
           <a
