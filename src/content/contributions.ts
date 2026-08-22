@@ -34,7 +34,8 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     title: "Bounded MCP tool rediscovery",
     summary:
       "Prevented hostile list-change notifications from causing an infinite refresh loop while preserving the last callable tool snapshot.",
-    proof: "Merged after adversarial review, regression probes, and upstream CI",
+    proof:
+      "Merged after adversarial review, regression probes, and upstream CI",
     href: "https://github.com/apache/maka/pull/2989",
     pullRequest: 2989,
     status: "Merged",
