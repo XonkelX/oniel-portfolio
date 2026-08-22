@@ -9,7 +9,7 @@ import type { Project } from "@/types/project";
 
 const proof = [
   { value: "04", label: "deployed products" },
-  { value: "02", label: "merged upstream PRs" },
+  { value: "03", label: "merged upstream PRs" },
   { value: "Full stack", label: "UI through data" },
   { value: "Tampa · Remote", label: "no sponsorship needed" },
 ] as const;
@@ -159,7 +159,7 @@ export default function Home() {
             I build software that stays <em>clear under pressure.</em>
           </h1>
           <p className="home-hero__lede hero-enter hero-enter--3">
-            Production web products across interface, application, and data.
+            Deployed web products across interface, application, and data.
           </p>
           <div className="actions hero-enter hero-enter--4">
             <a className="button button--primary" href="#work">
@@ -275,7 +275,7 @@ export default function Home() {
           </div>
           <div className="open-source-section__footer">
             <p>
-              Two merged contributions and two more under review across
+              Three merged contributions and one more under review across
               accessibility, testing, and reliability.
             </p>
             <ExternalLink className="text-link" href={siteConfig.githubUrl}>
@@ -353,6 +353,12 @@ export default function Home() {
               href={siteConfig.githubUrl}
             >
               Review my code
+            </ExternalLink>
+            <ExternalLink
+              className="text-link text-link--inverted"
+              href={siteConfig.linkedinUrl}
+            >
+              Connect on LinkedIn
             </ExternalLink>
           </div>
         </div>

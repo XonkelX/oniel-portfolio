@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const focus = [
-  "Aplicaciones Next.js listas para producción",
+  "Aplicaciones Next.js desplegadas",
   "Sistemas de interfaces accesibles",
   "Arquitectura de producto respaldada por PostgreSQL",
   "Movimiento e interacción en frontend",

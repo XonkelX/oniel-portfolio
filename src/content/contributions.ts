@@ -30,14 +30,14 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     status: "Merged",
   },
   {
-    repository: "Maka Agent",
+    repository: "Apache Maka",
     title: "Bounded MCP tool rediscovery",
     summary:
       "Prevented hostile list-change notifications from causing an infinite refresh loop while preserving the last callable tool snapshot.",
-    proof: "58 focused tests with lint, format, and package checks",
-    href: "https://github.com/maka-agent/maka-agent/pull/2989",
+    proof: "Merged after adversarial review, regression probes, and upstream CI",
+    href: "https://github.com/apache/maka/pull/2989",
     pullRequest: 2989,
-    status: "In review",
+    status: "Merged",
   },
   {
     repository: "FinVerify / Finverify",

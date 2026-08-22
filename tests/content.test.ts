@@ -46,6 +46,7 @@ describe("portfolio content configuration", () => {
       "About",
     ]);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
+    expect(siteConfig.linkedinUrl).toContain("linkedin.com/in/");
     expect(spanishNavigation.map((item) => item.label)).toEqual([
       "Inicio",
       "Proyectos",
@@ -63,7 +64,7 @@ describe("portfolio content configuration", () => {
     expect(spanishContributions).toHaveLength(openSourceContributions.length);
     expect(
       spanishContributions.filter((item) => item.status === "Integrado"),
-    ).toHaveLength(2);
+    ).toHaveLength(3);
   });
 
   it("links every open-source contribution to its upstream pull request", () => {

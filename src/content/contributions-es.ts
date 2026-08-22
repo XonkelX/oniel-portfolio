@@ -10,9 +10,10 @@ const translations: Record<string, { title: string; proof: string }> = {
     proof:
       "18 verificaciones de navegador y un workflow dedicado de GitHub Actions",
   },
-  "Maka Agent": {
+  "Apache Maka": {
     title: "Redescubrimiento limitado de herramientas MCP",
-    proof: "58 pruebas enfocadas con lint, formato y validaciones del paquete",
+    proof:
+      "Integrado después de revisión adversarial, pruebas de regresión y CI upstream",
   },
   Reticle: {
     title: "Persistencia de rutas aprendidas",

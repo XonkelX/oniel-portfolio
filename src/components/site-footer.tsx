@@ -20,6 +20,9 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
           <ExternalLink href={siteConfig.githubUrl} locale={locale}>
             GitHub
           </ExternalLink>
+          <ExternalLink href={siteConfig.linkedinUrl} locale={locale}>
+            LinkedIn
+          </ExternalLink>
         </div>
       </div>
     </footer>
