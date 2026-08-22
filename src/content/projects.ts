@@ -72,7 +72,7 @@ export const relay: Project = {
   links: [
     {
       label: "Open Failure Lab",
-      href: "https://relay-console.sinmanos.workers.dev/failure-lab",
+      href: "https://relay-console.sinmanos.workers.dev/",
       kind: "live",
     },
     {

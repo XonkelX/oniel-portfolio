@@ -96,7 +96,7 @@ test.describe("portfolio routes", () => {
     );
     await expect(liveProducts.nth(1)).toHaveAttribute(
       "href",
-      "https://relay-console.sinmanos.workers.dev/failure-lab",
+      "https://relay-console.sinmanos.workers.dev/",
     );
     await expect(
       page.getByRole("heading", { name: /codebases I didn’t design/i }),

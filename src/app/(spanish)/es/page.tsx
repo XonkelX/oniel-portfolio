@@ -11,7 +11,7 @@ import type { Project } from "@/types/project";
 export const metadata: Metadata = {
   title: "Oniel Alejo Feliz — Desarrollador Full-Stack",
   description:
-    "Productos web en producción, contribuciones de código abierto y experiencia full-stack de Oniel Alejo Feliz.",
+    "Productos web desplegados, contribuciones de código abierto y experiencia full-stack de Oniel Alejo Feliz.",
   alternates: {
     canonical: "/es",
     languages: { en: "/", es: "/es" },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const proof = [
   { value: "04", label: "productos desplegados" },
-  { value: "02", label: "contribuciones integradas" },
+  { value: "03", label: "contribuciones integradas" },
   { value: "Full stack", label: "de la interfaz a los datos" },
   { value: "Tampa · Remoto", label: "sin patrocinio requerido" },
 ] as const;
@@ -165,7 +165,7 @@ export default function SpanishHome() {
             Construyo software que se mantiene <em>claro bajo presión.</em>
           </h1>
           <p className="home-hero__lede hero-enter hero-enter--3">
-            Productos web en producción, desde la interfaz hasta los datos.
+            Productos web desplegados, desde la interfaz hasta los datos.
           </p>
           <div className="actions hero-enter hero-enter--4">
             <a className="button button--primary" href="#proyectos">
@@ -288,7 +288,7 @@ export default function SpanishHome() {
             ))}
           </div>
           <div className="open-source-section__footer">
-            <p>Dos contribuciones integradas y dos en revisión.</p>
+            <p>Tres contribuciones integradas y una en revisión.</p>
             <ExternalLink
               className="text-link"
               href={siteConfig.githubUrl}
@@ -371,6 +371,13 @@ export default function SpanishHome() {
               locale="es"
             >
               Revisar mi código
+            </ExternalLink>
+            <ExternalLink
+              className="text-link text-link--inverted"
+              href={siteConfig.linkedinUrl}
+              locale="es"
+            >
+              Conectar en LinkedIn
             </ExternalLink>
           </div>
         </div>

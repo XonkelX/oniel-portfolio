@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Oniel Alejo Feliz — Full-Stack Developer",
     description:
-      "Clear products, dependable systems, and production-ready full-stack applications.",
+      "Clear products, dependable systems, and deployed full-stack applications.",
     images: [
       {
         url: "/og.png",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oniel Alejo Feliz — Full-Stack Developer",
     description:
-      "Clear products, dependable systems, and production-ready full-stack applications.",
+      "Clear products, dependable systems, and deployed full-stack applications.",
     images: ["/og.png"],
   },
   category: "technology",
@@ -85,7 +85,7 @@ const personJsonLd = {
   image: `${siteConfig.siteUrl}/oniel-alejo-feliz.jpg`,
   jobTitle: siteConfig.title,
   email: `mailto:${siteConfig.email}`,
-  sameAs: [siteConfig.githubUrl],
+  sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Tampa",

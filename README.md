@@ -2,7 +2,7 @@
 
 A minimalist, typography-led portfolio for full-stack developer [Oniel Alejo Feliz](https://github.com/XonkelX). It presents three production systems through evidence-backed product and engineering case studies.
 
-[Live portfolio](https://oniel-portfolio.vercel.app) · [Relay Failure Lab](https://relay-console.sinmanos.workers.dev/failure-lab) · [Relay v1.0](https://github.com/XonkelX/relay-webhook-delivery/releases/tag/v1.0.0) · [Next](https://next-queue-omega.vercel.app) · [CareerFlow](https://careerflow-snowy.vercel.app)
+[Live portfolio](https://oniel-portfolio.vercel.app) · [Relay demo](https://relay-console.sinmanos.workers.dev/) · [Relay v1.0](https://github.com/XonkelX/relay-webhook-delivery/releases/tag/v1.0.0) · [Next](https://next-queue-omega.vercel.app) · [CareerFlow](https://careerflow-snowy.vercel.app)
 
 ## Overview
 
