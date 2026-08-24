@@ -182,7 +182,50 @@ export const nextQueue: Project = {
   ],
 } as const;
 
-export const projects = [sinManos, relay, nextQueue, careerFlow] as const;
+export const cofre: Project = {
+  slug: "cofre",
+  name: "Cofre",
+  category: "Windows desktop product · Local link management",
+  summary:
+    "A keyboard-first Windows app that captures copied web links, organizes them by website, and keeps titles, URLs, favorites, and personal notes searchable locally.",
+  year: 2026,
+  status: "Windows release v0.1.0",
+  role: "Product design, desktop engineering, and release validation",
+  technologies: ["React", "TypeScript", "Rust", "Tauri", "SQLite", "Vitest"],
+  coverImage: "/projects/cofre/library.png",
+  mobileImage: "/projects/cofre/notes.png",
+  featured: true,
+  evidence: [
+    { label: "Release", value: "Windows v0.1.0" },
+    { label: "Storage", value: "Private local SQLite" },
+    { label: "Focus", value: "Capture + retrieval" },
+  ],
+  highlights: [
+    "Ctrl+C capture with automatic website grouping, metadata, and favicons",
+    "Searchable notes, favorites, sorting, duplicate handling, and backup portability",
+    "Native tray, autostart, notifications, custom window controls, and NSIS release testing",
+  ],
+  links: [
+    {
+      label: "View source",
+      href: "https://github.com/XonkelX/cofre",
+      kind: "source",
+    },
+    {
+      label: "Download v0.1.0",
+      href: "https://github.com/XonkelX/cofre/releases/tag/v0.1.0",
+      kind: "release",
+    },
+  ],
+} as const;
+
+export const projects = [
+  sinManos,
+  relay,
+  nextQueue,
+  careerFlow,
+  cofre,
+] as const;
 
 export function getProjectLink(kind: Project["links"][number]["kind"]) {
   const link = careerFlow.links.find((item) => item.kind === kind);

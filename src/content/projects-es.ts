@@ -76,6 +76,23 @@ const translations: Record<
       "Flujos responsivos y accesibles con QA de entrega documentado",
     ],
   },
+  cofre: {
+    category: "Producto de escritorio para Windows · Gestión local de enlaces",
+    summary:
+      "Una aplicación para Windows centrada en el teclado que captura enlaces copiados, los organiza por sitio web y mantiene títulos, URLs, favoritos y notas personales disponibles para buscar localmente.",
+    status: "Versión para Windows v0.1.0",
+    role: "Diseño de producto, ingeniería de escritorio y validación de entrega",
+    evidence: [
+      { label: "Versión", value: "Windows v0.1.0" },
+      { label: "Datos", value: "SQLite local y privado" },
+      { label: "Enfoque", value: "Captura + recuperación" },
+    ],
+    highlights: [
+      "Captura con Ctrl+C, agrupación automática por sitio, metadatos y favicons",
+      "Notas consultables, favoritos, ordenamiento, duplicados y copias de seguridad",
+      "Bandeja nativa, inicio automático, notificaciones, controles de ventana e instalador NSIS",
+    ],
+  },
 };
 
 export const spanishProjects: readonly Project[] = projects.map((project) => ({

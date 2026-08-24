@@ -57,6 +57,7 @@ export async function generateMetadata({
 
 function actionLabel(slug: string, name: string) {
   if (slug === "relay") return "Probar Failure Lab";
+  if (slug === "cofre") return "Descargar versión para Windows";
   return `Abrir ${name}`;
 }
 
@@ -70,6 +71,7 @@ export default async function SpanishCaseStudyPage({ params }: PageProps) {
   const source = project.links.find((item) => item.kind === "source");
   const release = project.links.find((item) => item.kind === "release");
   const demo = project.links.find((item) => item.kind === "demo");
+  const primary = live ?? (study.slug === "cofre" ? release : undefined);
 
   return (
     <main id="main-content" className="case-study">
@@ -81,10 +83,10 @@ export default async function SpanishCaseStudyPage({ params }: PageProps) {
         </div>
         <p className="case-hero__summary">{study.summary}</p>
         <div className="actions">
-          {live ? (
+          {primary ? (
             <ExternalLink
               className="button button--primary"
-              href={live.href}
+              href={primary.href}
               locale="es"
             >
               {actionLabel(study.slug, project.name)}
@@ -99,9 +101,9 @@ export default async function SpanishCaseStudyPage({ params }: PageProps) {
               Ver código fuente
             </ExternalLink>
           ) : null}
-          {release ? (
+          {release && release !== primary ? (
             <ExternalLink className="text-link" href={release.href} locale="es">
-              Versión v1.0
+              {study.slug === "cofre" ? "Versión v0.1.0" : "Versión v1.0"}
             </ExternalLink>
           ) : null}
           {demo ? (

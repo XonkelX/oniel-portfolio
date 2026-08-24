@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   careerFlow,
+  cofre,
   getProjectLink,
   nextQueue,
   projects,
@@ -14,12 +15,13 @@ import { spanishProjects } from "@/content/projects-es";
 import { spanishContributions } from "@/content/contributions-es";
 
 describe("portfolio content configuration", () => {
-  it("contains four featured projects with complete media", () => {
-    expect(projects).toHaveLength(4);
+  it("contains five featured projects with complete media", () => {
+    expect(projects).toHaveLength(5);
     expect(sinManos.featured).toBe(true);
     expect(relay.featured).toBe(true);
     expect(careerFlow.featured).toBe(true);
     expect(nextQueue.featured).toBe(true);
+    expect(cofre.featured).toBe(true);
     expect(careerFlow.coverImage).toMatch(/^\/projects\/careerflow\/.+\.png$/);
     expect(careerFlow.mobileImage).toMatch(/^\/projects\/careerflow\/.+\.png$/);
     expect(nextQueue.coverImage).toMatch(/^\/projects\/next-queue\/.+\.png$/);
@@ -28,6 +30,11 @@ describe("portfolio content configuration", () => {
     expect(relay.mobileImage).toMatch(/^\/projects\/relay\/.+\.png$/);
     expect(sinManos.coverImage).toMatch(/^\/projects\/sinmanos\/.+\.png$/);
     expect(sinManos.mobileImage).toMatch(/^\/projects\/sinmanos\/.+\.png$/);
+    expect(cofre.coverImage).toMatch(/^\/projects\/cofre\/.+\.png$/);
+    expect(cofre.mobileImage).toMatch(/^\/projects\/cofre\/.+\.png$/);
+    expect(cofre.links.find((link) => link.kind === "release")?.href).toContain(
+      "v0.1.0",
+    );
   });
 
   it("provides every required public CareerFlow destination", () => {

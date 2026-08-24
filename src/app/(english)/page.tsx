@@ -8,7 +8,7 @@ import { siteConfig } from "@/content/site";
 import type { Project } from "@/types/project";
 
 const proof = [
-  { value: "04", label: "deployed products" },
+  { value: "05", label: "shipped products" },
   { value: "03", label: "merged upstream PRs" },
   { value: "Full stack", label: "UI through data" },
   { value: "Tampa · Remote", label: "no sponsorship needed" },
@@ -216,7 +216,7 @@ export default function Home() {
         aria-labelledby="work-title"
       >
         <SectionHeading
-          eyebrow="Selected work / 04"
+          eyebrow="Selected work / 05"
           title="Products first. Engineering proof one click deeper."
           id="work-title"
         />
@@ -233,7 +233,7 @@ export default function Home() {
         <div className="more-work">
           <div className="more-work__heading">
             <p className="eyebrow">More shipped work</p>
-            <p>Two more production-minded systems, presented at a glance.</p>
+            <p>Three more production-minded systems, presented at a glance.</p>
           </div>
           <div className="compact-project-grid">
             {supportingProjects.map((project) => (

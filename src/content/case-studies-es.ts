@@ -1,4 +1,5 @@
-export type SpanishCaseStudySlug = "sinmanos" | "relay" | "next" | "careerflow";
+export type SpanishCaseStudySlug =
+  "sinmanos" | "relay" | "next" | "careerflow" | "cofre";
 
 export type SpanishCaseStudy = {
   slug: SpanishCaseStudySlug;
@@ -478,6 +479,122 @@ export const spanishCaseStudies: readonly SpanishCaseStudy[] = [
         eyebrow: "07",
         title: "Resultado",
         lede: "CareerFlow demuestra el ciclo completo: alcance de producto, autenticación, datos relacionales, interfaces responsivas y accesibles, pruebas automatizadas, despliegue y documentación honesta.",
+      },
+    ],
+    next: { slug: "cofre", label: "Explorar Cofre" },
+  },
+  {
+    slug: "cofre",
+    seoTitle: "Caso de estudio de Cofre",
+    seoDescription:
+      "Diseño de producto, almacenamiento local, integración con Windows y validación de entrega detrás de Cofre.",
+    version: "2026 / v0.1.0",
+    summary:
+      "Una aplicación compacta para Windows que convierte una acción familiar, copiar una URL, en una biblioteca privada organizada para recuperar enlaces sin interrumpir el trabajo.",
+    meta: [
+      ["Rol", "Diseño de producto + ingeniería de escritorio"],
+      ["Plataforma", "Windows 10 y 11"],
+      ["Stack", "React · TypeScript · Rust · Tauri"],
+      ["Datos", "SQLite local"],
+      ["Repositorio", "Público"],
+    ],
+    cover: {
+      src: "/projects/cofre/library.png",
+      alt: "Biblioteca de Cofre para Windows con enlaces organizados automáticamente por sitio web",
+      caption: "Cofre v0.1.0 · Biblioteca local compacta",
+      width: 470,
+      height: 602,
+    },
+    sections: [
+      {
+        eyebrow: "01",
+        title: "El problema de captura",
+        lede: "Guardar un enlace suele exigir elegir una carpeta y un nombre antes de volver a la tarea que lo hizo importante.",
+        paragraphs: [
+          "Cofre elimina esa decisión de la captura. Una URL copiada se valida, se guarda, se clasifica por sitio web y se enriquece con metadatos para recuperarla después desde una sola búsqueda.",
+        ],
+      },
+      {
+        eyebrow: "02",
+        title: "Una acción desde la captura hasta la recuperación",
+        steps: [
+          "Copiar una URL con Ctrl+C.",
+          "Cofre valida, normaliza y guarda el enlace.",
+          "La categoría del sitio y su favicon aparecen automáticamente.",
+          "Buscar después por título, URL, sitio, tipo o nota personal.",
+        ],
+      },
+      {
+        eyebrow: "03 / Interacción de producto",
+        title: "Contexto sin ruido visual",
+        paragraphs: [
+          "Una burbuja compacta se expande dentro del enlace seleccionado solo cuando hace falta. Las notas persisten localmente, viajan en las copias de seguridad y participan en la búsqueda.",
+        ],
+        media: [
+          {
+            src: "/projects/cofre/notes.png",
+            alt: "Editor de notas de Cofre expandido dentro de un enlace guardado de GitHub",
+            caption:
+              "Las notas agregan contexto sin crear otro espacio de trabajo",
+            width: 470,
+            height: 602,
+          },
+        ],
+      },
+      {
+        eyebrow: "04",
+        title: "Decisiones de ingeniería",
+        decisions: [
+          {
+            title: "Capturar sin archivar manualmente",
+            copy: "Copiar la URL es la acción de guardado; Cofre clasifica el dominio después.",
+          },
+          {
+            title: "Recuperación antes que acumulación",
+            copy: "Títulos, URLs, sitios, tipos, favoritos y notas comparten una búsqueda.",
+          },
+          {
+            title: "Local primero",
+            copy: "SQLite mantiene la biblioteca en el dispositivo y JSON ofrece portabilidad explícita.",
+          },
+          {
+            title: "Comportamiento nativo con poco peso",
+            copy: "Tauri aporta portapapeles, bandeja, inicio automático, notificaciones e instalador NSIS.",
+          },
+        ],
+      },
+      {
+        eyebrow: "05 / Windows",
+        title: "Silencioso hasta que se necesita",
+        paragraphs: [
+          "Cofre puede permanecer en la bandeja, capturar automáticamente, excluir dominios y comenzar con Windows. El comportamiento de duplicados y el movimiento siguen bajo control del usuario.",
+        ],
+        media: [
+          {
+            src: "/projects/cofre/settings.png",
+            alt: "Ajustes de Cofre para inicio con Windows, captura, notificaciones, duplicados y sitios excluidos",
+            caption: "La integración nativa permanece explícita y reversible",
+            width: 468,
+            height: 600,
+          },
+        ],
+      },
+      {
+        eyebrow: "06",
+        title: "Validación de entrega",
+        paragraphs: [
+          "La versión se probó como una aplicación instalada: captura, duplicados, búsqueda, controles de ventana, bandeja, instancia única, preservación durante actualización y reparación del inicio automático.",
+        ],
+        quality: [
+          ["16", "pruebas de comportamiento del frontend"],
+          ["4", "pruebas de parsing y seguridad en Rust"],
+          ["1", "pipeline limpio de CI en Windows"],
+        ],
+      },
+      {
+        eyebrow: "07",
+        title: "Resultado",
+        lede: "Cofre demuestra criterio de producto más allá del navegador: un flujo enfocado, propiedad local de los datos, integración nativa, migraciones, empaquetado y validación real de entrega.",
       },
     ],
     next: { slug: null, label: "Volver a proyectos seleccionados" },

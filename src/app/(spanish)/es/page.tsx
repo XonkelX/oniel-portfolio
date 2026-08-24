@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const proof = [
-  { value: "04", label: "productos desplegados" },
+  { value: "05", label: "productos publicados" },
   { value: "03", label: "contribuciones integradas" },
   { value: "Full stack", label: "de la interfaz a los datos" },
   { value: "Tampa · Remoto", label: "sin patrocinio requerido" },
@@ -224,7 +224,7 @@ export default function SpanishHome() {
         aria-labelledby="work-title-es"
       >
         <SectionHeading
-          eyebrow="Proyectos seleccionados / 04"
+          eyebrow="Proyectos seleccionados / 05"
           title="Primero el producto. La evidencia técnica, a un clic."
           id="work-title-es"
         />
@@ -241,8 +241,8 @@ export default function SpanishHome() {
           <div className="more-work__heading">
             <p className="eyebrow">Más trabajo publicado</p>
             <p>
-              Otros dos sistemas con mentalidad de producción, presentados de un
-              vistazo.
+              Otros tres sistemas con mentalidad de producción, presentados de
+              un vistazo.
             </p>
           </div>
           <div className="compact-project-grid">
