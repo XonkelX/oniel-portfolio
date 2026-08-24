@@ -10,6 +10,36 @@ export type OpenSourceContribution = {
 
 export const openSourceContributions: readonly OpenSourceContribution[] = [
   {
+    repository: "Apache Fineract",
+    title: "Accounting route titles",
+    summary:
+      "Added translation-backed titles across all 28 Accounting child routes so breadcrumbs and browser titles identify the active screen.",
+    proof: "Merged after maintainer approval and the full Apache CI suite",
+    href: "https://github.com/apache/fineract-backoffice-ui/pull/431",
+    pullRequest: 431,
+    status: "Merged",
+  },
+  {
+    repository: "Clarvia",
+    title: "Keyboard and screen-reader accessibility",
+    summary:
+      "Added focus containment and restoration for drawers and dialogs, programmatic question labels, selected-state semantics, and keyboard-operable result cards.",
+    proof: "Merged after keyboard, axe, NVDA, build, and maintainer review",
+    href: "https://github.com/clarvia-org/clarvia-graph/pull/269",
+    pullRequest: 269,
+    status: "Merged",
+  },
+  {
+    repository: "Agenta",
+    title: "Strict session-header validation",
+    summary:
+      "Rejects wrapped, unknown, and fieldless session-header edits before they reach the service while preserving valid partial updates.",
+    proof: "477 unit tests passed; CLA and automated review checks complete",
+    href: "https://github.com/Agenta-AI/agenta/pull/6224",
+    pullRequest: 6224,
+    status: "In review",
+  },
+  {
     repository: "Reticle",
     title: "Persistent learned routes",
     summary:

@@ -71,11 +71,11 @@ describe("portfolio content configuration", () => {
     expect(spanishContributions).toHaveLength(openSourceContributions.length);
     expect(
       spanishContributions.filter((item) => item.status === "Integrado"),
-    ).toHaveLength(3);
+    ).toHaveLength(5);
   });
 
   it("links every open-source contribution to its upstream pull request", () => {
-    expect(openSourceContributions).toHaveLength(4);
+    expect(openSourceContributions).toHaveLength(7);
     for (const contribution of openSourceContributions) {
       expect(contribution.href).toMatch(
         new RegExp(`/pull/${contribution.pullRequest}$`),

@@ -288,7 +288,10 @@ export default function SpanishHome() {
             ))}
           </div>
           <div className="open-source-section__footer">
-            <p>Tres contribuciones integradas y una en revisión.</p>
+            <p>
+              Cinco contribuciones integradas y dos en revisión en
+              accesibilidad, pruebas, validación de APIs y confiabilidad.
+            </p>
             <ExternalLink
               className="text-link"
               href={siteConfig.githubUrl}

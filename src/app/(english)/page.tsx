@@ -146,7 +146,7 @@ function CompactProject({ project }: { project: Project }) {
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
   const supportingProjects = projects.slice(2);
-  const featuredContributions = openSourceContributions.slice(0, 2);
+  const featuredContributions = openSourceContributions.slice(0, 4);
 
   return (
     <main id="main-content">
@@ -275,8 +275,8 @@ export default function Home() {
           </div>
           <div className="open-source-section__footer">
             <p>
-              Three merged contributions and one more under review across
-              accessibility, testing, and reliability.
+              Five merged contributions and two more under review across
+              accessibility, testing, API validation, and reliability.
             </p>
             <ExternalLink className="text-link" href={siteConfig.githubUrl}>
               See all work on GitHub
