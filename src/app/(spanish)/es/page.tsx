@@ -174,7 +174,8 @@ export default function SpanishHome() {
               Ver trabajo de ingeniería <span aria-hidden="true">↓</span>
             </a>
             <Link className="button button--secondary" href="/es/servicios">
-              ¿Necesitas corregir una app? <span aria-hidden="true">→</span>
+              ¿Necesitas corregir una app TypeScript?{" "}
+              <span aria-hidden="true">→</span>
             </Link>
             <a
               className="button button--secondary"

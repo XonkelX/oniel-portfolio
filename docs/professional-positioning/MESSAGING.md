@@ -41,7 +41,7 @@ AI-built application message: If an application built or accelerated with Lovabl
 
 - Employment primary: **View engineering work**
 - Contract primary: **Start with one scoped issue**
-- Contract discovery: **Need an app fixed?**
+- Contract discovery: **Need a TypeScript app fixed?**
 - Supporting process: **Send the issue or repository → I diagnose and scope it → I deliver a focused PR with validation and a clear explanation.**
 
 ## Language guardrails

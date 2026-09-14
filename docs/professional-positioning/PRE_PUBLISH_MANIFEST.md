@@ -127,7 +127,8 @@ After:
 - Heading: `I fix, stabilize, and ship TypeScript software.`
 - Supporting line: `Next.js, React, Node.js, and PostgreSQL—from existing-codebase bugs and failed deployments to authorization, APIs, data behavior, and regression coverage.`
 - Primary CTA: `View engineering work`
-- Contract CTA: `Need an app fixed?`
+- Contract CTA: `Need a TypeScript app fixed?`
+- Equivalent Spanish CTA: `¿Necesitas corregir una app TypeScript?`
 - Availability: `Available for software roles and scoped TypeScript maintenance · U.S. work authorized`
 
 ### Service positioning
@@ -307,7 +308,7 @@ Client receives: `A focused fix, appropriate regression coverage, relevant valid
 
 Pricing: `Starting at $350 fixed; final scope confirmed after reviewing the reported issue and relevant code.`
 
-Turnaround: `2-4 business days after repository access and scope confirmation.`
+Typical turnaround: `2–4 business days after repository access and scope confirmation.`
 
 Tags/categories: `Web Development`, `Next.js`, `TypeScript`, `React`, `Node.js`, `Bug Fixes`
 
@@ -343,7 +344,7 @@ Client receives: `A focused policy, schema, query, session, authorization, or ap
 
 Pricing: `Starting at $450 fixed; final scope confirmed after reviewing the failing access path and relevant configuration.`
 
-Turnaround: `3-5 business days after access to the relevant application and database configuration.`
+Typical turnaround: `3–5 business days after repository access and scope confirmation.`
 
 Tags/categories: `Supabase`, `PostgreSQL`, `Next.js`, `Authentication`, `Database`, `Debugging`
 
@@ -386,7 +387,7 @@ Client receives: `Focused fixes for the agreed workflow, appropriate regression 
 
 Pricing: `Starting at $750 fixed; final scope confirmed after reviewing the critical workflow and relevant code paths.`
 
-Turnaround: `5-7 business days after repository and environment access and scope confirmation.`
+Typical turnaround: `5–7 business days after repository access and scope confirmation.`
 
 Tags/categories: `Code Review`, `TypeScript`, `Next.js`, `Supabase`, `Web Development`, `QA Testing`
 
@@ -417,7 +418,7 @@ Client receives: `Maintainable Playwright tests with reliable selectors and mean
 
 Pricing: `Starting at $450 fixed; final scope confirmed after reviewing the flows and current test setup.`
 
-Turnaround: `3-5 business days after repository access and scope confirmation.`
+Typical turnaround: `3–5 business days after repository access and scope confirmation.`
 
 Tags/categories: `Playwright`, `Test Automation`, `QA Testing`, `Web Development`, `CI/CD`, `Accessibility`
 

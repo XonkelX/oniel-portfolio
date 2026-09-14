@@ -168,7 +168,7 @@ export default function Home() {
               View engineering work <span aria-hidden="true">↓</span>
             </a>
             <Link className="button button--secondary" href="/services">
-              Need an app fixed? <span aria-hidden="true">→</span>
+              Need a TypeScript app fixed? <span aria-hidden="true">→</span>
             </Link>
             <a
               className="button button--secondary"
