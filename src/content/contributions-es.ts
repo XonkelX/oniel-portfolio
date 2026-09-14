@@ -3,17 +3,17 @@ import { openSourceContributions } from "@/content/contributions";
 const translations: Record<string, { title: string; proof: string }> = {
   "https://github.com/reticlehq/reticle/pull/278": {
     title: "Persistencia de rutas aprendidas",
-    proof: "Integrado tras revisión sustantiva y CI multiplataforma completa",
+    proof:
+      "Integrado tras revisión sustantiva del mantenedor y validación upstream",
   },
   "https://github.com/apache/maka/pull/2989": {
     title: "Redescubrimiento limitado de herramientas MCP",
     proof:
-      "Integrado después de revisión adversarial, pruebas de regresión y CI",
+      "Integrado tras revisión sustantiva del mantenedor y cobertura de regresión",
   },
   "https://github.com/apache/fineract-backoffice-ui/pull/475": {
     title: "Pruebas de clientes migradas a Vitest",
-    proof:
-      "Integrado tras aprobación del mantenedor y validación completa de Apache",
+    proof: "Integrado tras aprobación del mantenedor y CI upstream exitoso",
   },
   "https://github.com/codesydney/bluehex/pull/29": {
     title: "Cobertura de navegador sobre el build de producción",
@@ -26,8 +26,7 @@ const translations: Record<string, { title: string; proof: string }> = {
   },
   "https://github.com/apache/fineract-backoffice-ui/pull/431": {
     title: "Títulos para las rutas de Contabilidad",
-    proof:
-      "Integrado tras aprobación del mantenedor y la suite completa de CI de Apache",
+    proof: "Integrado tras CI upstream exitoso",
   },
   "https://github.com/Agenta-AI/agenta/pull/6224": {
     title: "Validación estricta del encabezado de sesión",

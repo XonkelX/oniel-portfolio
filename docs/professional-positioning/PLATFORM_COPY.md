@@ -10,7 +10,7 @@ Software Engineer | TypeScript · Node.js · React/Next.js · PostgreSQL | Open-
 
 I am a software engineer in Tampa, Florida, focused on TypeScript systems across React and Next.js interfaces, Node.js services, PostgreSQL data boundaries, and automated testing.
 
-My strongest public work comes from entering codebases I did not design, reproducing real behavior, responding to maintainer review, and delivering focused changes through upstream validation. Merged contributions include route persistence in Reticle, bounded MCP tool rediscovery in Apache Maka, Playwright coverage in Code.Sydney's BlueHex project, accessibility improvements in Clarvia, and two changes in Apache Fineract's back-office UI.
+My strongest public work comes from entering codebases I did not design, reproducing real behavior, responding to maintainer review, and delivering focused changes through upstream validation. I have six merged upstream pull requests: route persistence in Reticle, bounded MCP tool rediscovery in Apache Maka, Playwright coverage in Code.Sydney's BlueHex project, accessibility improvements in Clarvia, and two changes in Apache Fineract's back-office UI.
 
 I also built Relay, a webhook delivery system with durable scheduling, signed requests, deterministic retries, lease recovery, and inspectable failure evidence; and Next, a real-time queue system with PostgreSQL-enforced authorization, idempotent commands, transactional state changes, and multi-user synchronization.
 
@@ -32,8 +32,8 @@ GitHub: https://github.com/XonkelX
 
 - Contribute focused fixes to established codebases across TypeScript runtime behavior, application persistence, testing, accessibility, and navigation.
 - Revised Apache Maka's MCP rediscovery fix through multiple rounds of maintainer edge-case review, adding regressions for slow notifications and snapshot preservation before merge.
-- Added bounded, batched route persistence to Reticle; the maintainer praised the test coverage and merged the work after complete cross-platform and E2E validation.
-- Added production-build Playwright coverage to Code.Sydney's BlueHex project and migrated fifteen Apache Fineract client specifications to Vitest.
+- Added bounded, batched route persistence to Reticle, then revised the design after substantive maintainer review before it merged through upstream validation.
+- Added production-build Playwright coverage to Code.Sydney's BlueHex project and migrated the remaining 13 Apache Fineract client-area Jasmine/Karma specifications, covering 73 tests, to Vitest.
 - Improved keyboard and screen-reader behavior in Clarvia and added translation-backed route titles to Apache Fineract.
 
 Do not list the upstream organizations as employers.
@@ -79,21 +79,92 @@ URL: https://github.com/XonkelX/next-queue
 
 TypeScript SaaS Maintenance | Next.js · React · Node.js · Supabase · PostgreSQL
 
-## Contra bio
+## Contra overview
 
-I fix and stabilize existing TypeScript web applications. I work on scoped problems in Next.js, React, Node.js, Supabase, and PostgreSQL codebases: authentication and sessions, permissions and RLS, APIs and data behavior, React state, deployments, CI, and regression coverage.
+I fix and stabilize existing TypeScript web applications. I work on scoped problems in Next.js, React, Node.js, Supabase, and PostgreSQL codebases: authentication and sessions, permissions and RLS, API and data behavior, deployment failures, unstable tests, and accessibility defects.
 
-My public work includes maintainer-reviewed contributions to Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. The pull requests show how I diagnose behavior in unfamiliar repositories, revise implementations after review, and validate focused fixes.
+My public work includes six merged upstream pull requests across Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Those pull requests show focused changes in unfamiliar repositories, substantive maintainer review, regression coverage, and upstream validation.
 
-If an AI-built or AI-assisted application works most of the time but fails under real users, I can inspect the actual repository, find the root cause, strengthen permissions or data boundaries, add regression coverage, and explain the result without rewriting working parts.
+I also built Relay, a webhook delivery system with durable retries and inspectable failure evidence, and Next, a real-time queue with PostgreSQL-enforced authorization and multi-user synchronization.
+
+If an AI-built or AI-assisted application works in demos but fails in real workflows, I can inspect the repository, reproduce the failure, strengthen permissions or data boundaries, add regression coverage when useful, and deliver a clean pull request with a clear explanation.
 
 Start with one scoped issue.
 
 ## Contra services
 
-1. Fix one TypeScript or Next.js application issue.
-2. Diagnose Supabase Auth, RLS, or PostgreSQL access problems.
-3. Stabilize an AI-built React, Next.js, or Supabase application.
-4. Add Playwright regression coverage to an existing web application.
+### Fix one TypeScript or Next.js application issue
 
-Do not publish fixed bargain pricing. Scope and price each issue after diagnosis.
+Description: I diagnose and fix one bounded defect in an existing Next.js, React, or Node.js application. Good fits include broken forms or filters, stale data, duplicate requests, server/client boundary errors, API failures, and regressions.
+
+Deliverables:
+
+- Reproduction and root-cause note
+- Focused fix on a branch
+- Regression test when appropriate
+- Pull request with validation and handoff summary
+
+Pricing: Starting at $500 fixed; final scope confirmed after repository review.
+
+Turnaround: 3-5 business days after repository access and scope confirmation.
+
+Tags/categories: Web Development, Next.js, TypeScript, React, Node.js, Bug Fixes.
+
+CTA: Send one reproducible issue.
+
+### Diagnose Supabase Auth, RLS, or PostgreSQL access problems
+
+Description: I trace one specific authentication, session, permission, tenant-isolation, or data-visibility problem through the application and database path. This is application debugging and hardening, not penetration testing or a compliance audit.
+
+Deliverables:
+
+- Reproduction and affected data-path map
+- Focused policy, query, session, or authorization fix
+- Targeted regression coverage
+- Pull request with assumptions and validation notes
+
+Pricing: Starting at $750 fixed; final scope confirmed after repository review.
+
+Turnaround: 4-7 business days after access to the relevant application and database configuration.
+
+Tags/categories: Supabase, PostgreSQL, Next.js, Authentication, Database, Debugging.
+
+CTA: Describe the failing access flow.
+
+### Stabilize an AI-built React, Next.js, or Supabase application
+
+Description: I review the actual repository and one failing workflow in an application created or accelerated with an AI coding tool. I reproduce the production behavior, identify the root cause, and stabilize the agreed scope without replacing working parts.
+
+Deliverables:
+
+- Repository and runtime review for the reported workflow
+- Prioritized findings with the agreed repair scope
+- Focused fixes for the highest-priority failure
+- Regression coverage and a maintainable handoff summary
+
+Pricing: Starting at $1,200 fixed; final scope confirmed after the initial repository review.
+
+Turnaround: 7-10 business days after repository and environment access.
+
+Tags/categories: Code Review, TypeScript, Next.js, Supabase, Web Development, QA Testing.
+
+CTA: Share the repository and failing workflow.
+
+### Add Playwright regression coverage to an existing web application
+
+Description: I add maintainable Playwright coverage around one critical browser workflow so a known failure is caught before release. Good fits include navigation, forms, responsive menus, focus behavior, authentication flows, and production-build smoke checks.
+
+Deliverables:
+
+- Focused browser-test plan
+- Playwright tests for the agreed workflow and viewports
+- CI integration or configuration update when needed
+- Run instructions and a concise coverage summary
+
+Pricing: Starting at $650 fixed; final scope confirmed after reviewing the workflow and current test setup.
+
+Turnaround: 4-6 business days after repository access and scope confirmation.
+
+Tags/categories: Playwright, Test Automation, QA Testing, Web Development, CI/CD, Accessibility.
+
+CTA: Name the workflow that must stop regressing.

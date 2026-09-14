@@ -14,7 +14,7 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     title: "Persistent learned routes",
     summary:
       "Added bounded, batched route persistence for crawls and ordinary navigation while preserving learned flows, run history, and concurrent updates.",
-    proof: "Merged after substantive review and full cross-platform CI",
+    proof: "Merged after substantive maintainer review and upstream validation",
     href: "https://github.com/reticlehq/reticle/pull/278",
     pullRequest: 278,
     status: "Merged",
@@ -24,7 +24,7 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     title: "Bounded MCP tool rediscovery",
     summary:
       "Prevented hostile list-change notifications from causing an infinite refresh loop while preserving the last callable tool snapshot.",
-    proof: "Merged after adversarial review, regression probes, and CI",
+    proof: "Merged after substantive maintainer review and regression coverage",
     href: "https://github.com/apache/maka/pull/2989",
     pullRequest: 2989,
     status: "Merged",
@@ -33,8 +33,8 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     repository: "Apache Fineract",
     title: "Client tests migrated to Vitest",
     summary:
-      "Migrated fifteen client-area specifications from Karma conventions to Vitest while preserving the existing behavioral coverage.",
-    proof: "Merged after maintainer approval and full Apache validation",
+      "Migrated the remaining 13 client-area Jasmine/Karma specifications, covering 73 tests, to Vitest.",
+    proof: "Merged after maintainer approval and successful upstream CI",
     href: "https://github.com/apache/fineract-backoffice-ui/pull/475",
     pullRequest: 475,
     status: "Merged",
@@ -64,7 +64,7 @@ export const openSourceContributions: readonly OpenSourceContribution[] = [
     title: "Accounting route titles",
     summary:
       "Added translation-backed titles across all 28 Accounting child routes so breadcrumbs and browser titles identify the active screen.",
-    proof: "Merged after maintainer approval and the full Apache CI suite",
+    proof: "Merged after successful upstream CI",
     href: "https://github.com/apache/fineract-backoffice-ui/pull/431",
     pullRequest: 431,
     status: "Merged",

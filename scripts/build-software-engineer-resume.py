@@ -39,7 +39,7 @@ def remove_paragraph_border(paragraph_or_style):
         properties.remove(border)
 
 
-def add_hyperlink(paragraph, text: str, url: str, *, size: float = 8.5):
+def add_hyperlink(paragraph, text: str, url: str, *, size: float = 9.0):
     part = paragraph.part
     rel_id = part.relate_to(
         url,
@@ -68,10 +68,10 @@ def add_hyperlink(paragraph, text: str, url: str, *, size: float = 8.5):
     paragraph._p.append(hyperlink)
 
 
-def paragraph(doc, text: str = "", *, size: float = 9.2, bold: bool = False):
+def paragraph(doc, text: str = "", *, size: float = 9.6, bold: bool = False):
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(0)
-    p.paragraph_format.line_spacing = 1.0
+    p.paragraph_format.line_spacing = 1.06
     if text:
         set_font(p.add_run(text), size, bold=bold)
     return p
@@ -79,28 +79,28 @@ def paragraph(doc, text: str = "", *, size: float = 9.2, bold: bool = False):
 
 def section(doc, title: str):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(4.5)
-    p.paragraph_format.space_after = Pt(1.5)
+    p.paragraph_format.space_before = Pt(6.5)
+    p.paragraph_format.space_after = Pt(2.2)
     p.paragraph_format.keep_with_next = True
-    set_font(p.add_run(title.upper()), 9.4, bold=True)
+    set_font(p.add_run(title.upper()), 10.0, bold=True)
 
 
 def role_line(doc, left: str, right: str):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(1)
-    p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.space_before = Pt(1.5)
+    p.paragraph_format.space_after = Pt(0.4)
     p.paragraph_format.keep_with_next = True
-    set_font(p.add_run(left), 9.2, bold=True)
-    set_font(p.add_run(f" | {right}"), 8.8, color=MUTED)
+    set_font(p.add_run(left), 9.7, bold=True)
+    set_font(p.add_run(f" | {right}"), 9.2, color=MUTED)
 
 
 def bullet(doc, text: str):
     p = doc.add_paragraph()
     p.paragraph_format.left_indent = Inches(0.17)
     p.paragraph_format.first_line_indent = Inches(-0.13)
-    p.paragraph_format.space_after = Pt(0.7)
-    p.paragraph_format.line_spacing = 1.0
-    set_font(p.add_run(f"- {text}"), 8.75)
+    p.paragraph_format.space_after = Pt(1.4)
+    p.paragraph_format.line_spacing = 1.06
+    set_font(p.add_run(f"- {text}"), 9.3)
     return p
 
 
@@ -118,7 +118,7 @@ def build():
     normal.font.name = FONT
     normal._element.rPr.rFonts.set(qn("w:ascii"), FONT)
     normal._element.rPr.rFonts.set(qn("w:hAnsi"), FONT)
-    normal.font.size = Pt(9.2)
+    normal.font.size = Pt(9.6)
     normal.font.color.rgb = BLACK
     title_style = doc.styles["Title"]
     title_style.font.color.rgb = BLACK
@@ -138,47 +138,47 @@ def build():
     set_font(headline.add_run("SOFTWARE ENGINEER"), 10.5, bold=True)
     set_font(
         headline.add_run("  |  TypeScript | Node.js | React / Next.js | PostgreSQL"),
-        9.2,
+        9.6,
         color=MUTED,
     )
 
     contact = paragraph(doc)
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    set_font(contact.add_run("Tampa, FL | 656-200-7791 | Onielbf10@gmail.com"), 8.7)
+    set_font(contact.add_run("Tampa, FL | 656-200-7791 | Onielbf10@gmail.com"), 9.1)
 
     links = paragraph(doc)
     links.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_hyperlink(links, "oniel-portfolio.vercel.app", "https://oniel-portfolio.vercel.app/", size=8.5)
-    set_font(links.add_run(" | "), 8.5, color=MUTED)
-    add_hyperlink(links, "github.com/XonkelX", "https://github.com/XonkelX", size=8.5)
-    set_font(links.add_run(" | "), 8.5, color=MUTED)
+    add_hyperlink(links, "oniel-portfolio.vercel.app", "https://oniel-portfolio.vercel.app/", size=9.0)
+    set_font(links.add_run(" | "), 9.0, color=MUTED)
+    add_hyperlink(links, "github.com/XonkelX", "https://github.com/XonkelX", size=9.0)
+    set_font(links.add_run(" | "), 9.0, color=MUTED)
     add_hyperlink(
         links,
         "linkedin.com/in/oniel-alejo-feliz-45b293312",
         "https://www.linkedin.com/in/oniel-alejo-feliz-45b293312",
-        size=8.5,
+        size=9.0,
     )
 
     authorization = paragraph(doc)
     authorization.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_font(
         authorization.add_run("U.S. permanent resident | No employer sponsorship required | English and Spanish"),
-        8.4,
+        8.9,
         color=MUTED,
     )
 
     section(doc, "Summary")
     paragraph(
         doc,
-        "Software engineer focused on TypeScript systems, existing-codebase work, PostgreSQL data boundaries, APIs, reliability, and automated testing. Contributed maintainer-reviewed changes to Reticle, Apache Maka, Apache Fineract, Code.Sydney / BlueHex, and Clarvia, including substantive review revisions and regression coverage.",
-        size=8.9,
+        "Software engineer with six merged upstream pull requests in established codebases, focused on TypeScript systems, PostgreSQL data boundaries, reliability, and automated testing. Work across Reticle, Apache Maka, Apache Fineract, Code.Sydney / BlueHex, and Clarvia includes substantive maintainer review and regression coverage.",
+        size=9.4,
     )
 
     section(doc, "Open-Source Engineering")
     role_line(doc, "Open-Source Software Contributor - Independent", "2026-Present")
     bullet(
         doc,
-        "Reticle #278: added bounded, batched learned-route persistence across crawls and navigation; preserved concurrent project state and exact optional semantics; passed full cross-platform, unit, E2E, desktop, and install gates after maintainer-requested revisions.",
+        "Reticle #278: added bounded, batched learned-route persistence across crawls and navigation; preserved project state and exact optional semantics; revised the design after substantive maintainer review and merged after upstream validation.",
     )
     bullet(
         doc,
@@ -186,7 +186,7 @@ def build():
     )
     bullet(
         doc,
-        "Apache Fineract #475 and #431: migrated 15 client-area specs to Vitest and added translation-backed titles across 28 Accounting routes; both merged after maintainer approval and full Apache validation.",
+        "Apache Fineract #475 and #431: migrated the remaining 13 client-area Jasmine/Karma specs (73 tests) to Vitest and added translation-backed titles to 28 Accounting routes; both merged after upstream validation.",
     )
     bullet(
         doc,
@@ -221,14 +221,14 @@ def build():
     paragraph(
         doc,
         "TypeScript, JavaScript, SQL, React, Next.js, Node.js, REST APIs, PostgreSQL, Supabase, RLS, Prisma, Auth.js, Cloudflare Workers, D1, Queues, Hono, Vitest, Testing Library, Playwright, pgTAP, GitHub Actions, Docker, Vercel, accessibility",
-        size=8.7,
+        size=9.2,
     )
 
     section(doc, "Education")
     paragraph(
         doc,
         "Software Development Studies - Instituto Tecnologico de Las Americas (ITLA), Dominican Republic | Coursework completed",
-        size=8.7,
+        size=9.2,
     )
 
     core = doc.core_properties
