@@ -5,7 +5,11 @@ import { usePathname } from "next/navigation";
 import type { Locale } from "@/content/site";
 
 function pathForLocale(pathname: string, locale: Locale) {
-  if (locale === "es") return pathname === "/" ? "/es" : `/es${pathname}`;
+  if (locale === "es") {
+    if (pathname === "/services") return "/es/servicios";
+    return pathname === "/" ? "/es" : `/es${pathname}`;
+  }
+  if (pathname === "/es/servicios") return "/services";
   const englishPath = pathname.replace(/^\/es(?=\/|$)/, "");
   return englishPath || "/";
 }
