@@ -224,13 +224,6 @@ def build():
         size=9.2,
     )
 
-    section(doc, "Education")
-    paragraph(
-        doc,
-        "Software Development Studies - Instituto Tecnologico de Las Americas (ITLA), Dominican Republic | Coursework completed",
-        size=9.2,
-    )
-
     core = doc.core_properties
     core.title = "Oniel Alejo Feliz Software Engineer Resume"
     core.subject = "Software engineering resume focused on TypeScript, Node.js, React, Next.js, and PostgreSQL"

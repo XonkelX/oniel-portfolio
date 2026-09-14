@@ -194,6 +194,16 @@ Apache Fineract after:
 
 Typography after: one-column ATS structure retained; body text, line spacing, role lines, and section spacing increased without adding content.
 
+### Education section
+
+Before:
+
+> EDUCATION
+>
+> Software Development Studies - Instituto Tecnologico de Las Americas (ITLA), Dominican Republic | Coursework completed
+
+After: removed from the approved resume. Employment positioning, open-source work, projects, technical skills, and all other resume content remain unchanged.
+
 ## LinkedIn prepared copy
 
 The connected browser currently reaches LinkedIn's authentication wall, so the live before values cannot be independently read. The before value below is the last locally prepared headline. No LinkedIn mutation is proposed until the account is authenticated and the live fields are compared again.
@@ -252,105 +262,166 @@ Contra before:
 
 No Contra content will be published in this approval step.
 
+Commercial positioning: reduce first-client risk through bounded scope, explicit deliverables, and clear re-scoping conditions without competing on bargain pricing. The proposed copy does not claim seniority, cybersecurity-audit expertise, AI expertise, application-wide rewrites, or vulnerability-free outcomes.
+
 ### Proposed profile headline
 
-> TypeScript SaaS Maintenance | Next.js · React · Node.js · Supabase · PostgreSQL
+> TypeScript SaaS Maintenance & Reliability | Next.js · React · Node.js · Supabase · PostgreSQL
 
 ### Proposed overview
 
-> I fix and stabilize existing TypeScript web applications. I work on scoped problems in Next.js, React, Node.js, Supabase, and PostgreSQL codebases: authentication and sessions, permissions and RLS, API and data behavior, deployment failures, unstable tests, and accessibility defects.
+> I diagnose and fix scoped reliability problems in existing TypeScript web applications. I work in Next.js, React, Node.js, Supabase, and PostgreSQL codebases on clearly defined issues involving application behavior, authentication and sessions, permissions and RLS, APIs and data access, deployments, and regression failures.
 >
-> My public work includes six merged upstream pull requests across Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Those pull requests show focused changes in unfamiliar repositories, substantive maintainer review, regression coverage, and upstream validation.
+> My public work includes six merged upstream pull requests across Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Those contributions show focused changes in existing codebases, substantive maintainer review, regression coverage, and upstream validation.
 >
 > I also built Relay, a webhook delivery system with durable retries and inspectable failure evidence, and Next, a real-time queue with PostgreSQL-enforced authorization and multi-user synchronization.
 >
-> If an AI-built or AI-assisted application works in demos but fails in real workflows, I can inspect the repository, reproduce the failure, strengthen permissions or data boundaries, add regression coverage when useful, and deliver a clean pull request with a clear explanation.
+> Each engagement starts with one bounded issue or workflow. I inspect the relevant code, reproduce the failure, explain the root cause, implement a focused change, add regression coverage where appropriate, run relevant validation, and deliver a clean pull request or patch with a concise handoff summary.
 >
-> Start with one scoped issue.
+> If investigation reveals multiple independent problems or a materially larger architectural issue, I stop and propose a new scope before proceeding. Start with one scoped issue.
 
 ### Service 1
 
-Title: `Fix one TypeScript or Next.js application issue`
+Title: `Diagnose and fix one scoped TypeScript / Next.js issue`
 
-Description: `I diagnose and fix one bounded defect in an existing Next.js, React, or Node.js application. Good fits include broken forms or filters, stale data, duplicate requests, server/client boundary errors, API failures, and regressions.`
+Description: `I diagnose and fix one reasonably bounded issue in an existing TypeScript, Next.js, React, or Node.js application. The engagement focuses on the relevant code path and expected behavior rather than a general application cleanup.`
 
-Deliverables:
+Included:
 
-- Reproduction and root-cause note
-- Focused fix on a branch
-- Regression test when appropriate
-- Pull request with validation and handoff summary
+- Inspect the relevant existing code
+- Reproduce the issue
+- Identify and explain the root cause
+- Implement a focused fix
+- Add regression coverage where appropriate
+- Run relevant validation
+- Deliver a clean pull request or patch
+- Provide a concise root-cause, change, and validation summary
 
-Pricing: `Starting at $500 fixed; final scope confirmed after repository review.`
+One scoped engagement: `One reproducible issue with a defined expected behavior in one connected application or data path.`
 
-Turnaround: `3-5 business days after repository access and scope confirmation.`
+Excluded: `Unrelated defects, broad architectural redesign, application-wide cleanup, major migrations, and a general audit of the codebase.`
+
+Re-scoping: `The starting price applies to one reasonably bounded issue. If investigation reveals multiple independent problems or a materially larger architectural problem, I stop and propose a new scope before proceeding.`
+
+Client receives: `A focused fix, appropriate regression coverage, relevant validation evidence, a clean pull request or patch, and a concise explanation of the root cause and resulting behavior.`
+
+Pricing: `Starting at $350 fixed; final scope confirmed after reviewing the reported issue and relevant code.`
+
+Turnaround: `2-4 business days after repository access and scope confirmation.`
 
 Tags/categories: `Web Development`, `Next.js`, `TypeScript`, `React`, `Node.js`, `Bug Fixes`
 
-CTA: `Send one reproducible issue.`
+CTA: `Send one reproducible issue and the expected behavior.`
 
 ### Service 2
 
-Title: `Diagnose Supabase Auth, RLS, or PostgreSQL access problems`
+Title: `Fix a Supabase Auth / RLS / PostgreSQL access issue`
 
-Description: `I trace one specific authentication, session, permission, tenant-isolation, or data-visibility problem through the application and database path. This is application debugging and hardening, not penetration testing or a compliance audit.`
+Description: `I diagnose and correct one bounded authentication, authorization, RLS, tenant-isolation, permission, session, or PostgreSQL data-access problem in an existing application.`
 
-Deliverables:
+Included:
 
-- Reproduction and affected data-path map
-- Focused policy, query, session, or authorization fix
-- Targeted regression coverage
-- Pull request with assumptions and validation notes
+- Reproduce the incorrect behavior
+- Inspect the relevant policies, schema, queries, sessions, and application interaction
+- Implement the focused correction
+- Validate the relevant roles and data boundaries
+- Add regression coverage where practical
+- Document the root cause and resulting behavior
 
-Pricing: `Starting at $750 fixed; final scope confirmed after repository review.`
+One scoped engagement: `One defined access-control or data-access failure affecting a specific role, tenant boundary, session path, or database interaction.`
 
-Turnaround: `4-7 business days after access to the relevant application and database configuration.`
+Excluded:
+
+- Formal penetration testing
+- Compliance certification
+- Broad security audits
+- Guarantees that the entire application is vulnerability-free
+
+Re-scoping: `Complex multi-tenant incidents, multiple independent access failures, or broad access-control redesigns require a custom quote before additional work proceeds.`
+
+Client receives: `A focused policy, schema, query, session, authorization, or application correction; role and data-boundary validation; practical regression coverage; and a clean pull request or patch with root-cause notes.`
+
+Pricing: `Starting at $450 fixed; final scope confirmed after reviewing the failing access path and relevant configuration.`
+
+Turnaround: `3-5 business days after access to the relevant application and database configuration.`
 
 Tags/categories: `Supabase`, `PostgreSQL`, `Next.js`, `Authentication`, `Database`, `Debugging`
 
-CTA: `Describe the failing access flow.`
+CTA: `Describe the failing access flow, affected role, and expected behavior.`
 
 ### Service 3
 
-Title: `Stabilize an AI-built React, Next.js, or Supabase application`
+Title: `Stabilize one critical workflow in an AI-built application`
 
-Description: `I review the actual repository and one failing workflow in an application created or accelerated with an AI coding tool. I reproduce the production behavior, identify the root cause, and stabilize the agreed scope without replacing working parts.`
+Description: `I inspect and stabilize one clearly defined, business-critical workflow in an existing application created or accelerated with an AI coding tool. The base engagement covers the agreed workflow, not the entire application.`
 
-Deliverables:
+Examples:
 
-- Repository and runtime review for the reported workflow
-- Prioritized findings with the agreed repair scope
-- Focused fixes for the highest-priority failure
-- Regression coverage and a maintainable handoff summary
+- Authentication or onboarding
+- Account creation
+- Dashboard data loading
+- Checkout or billing integration
+- One CRUD workflow
+- Admin and user permissions
+- Another clearly defined business-critical flow
 
-Pricing: `Starting at $1,200 fixed; final scope confirmed after the initial repository review.`
+Included:
 
-Turnaround: `7-10 business days after repository and environment access.`
+- Repository and code-path inspection
+- Reproduction of the relevant failures
+- Root-cause analysis
+- Focused fixes within the agreed workflow
+- Regression tests where appropriate
+- Validation evidence
+- Clean pull request or pull requests
+- Remaining-risk and follow-up notes
+
+One scoped engagement: `One named workflow with defined entry conditions, expected outcome, and relevant user or system role.`
+
+Excluded: `Application-wide cleanup, stabilization of unrelated workflows, a rewrite of the application, broad architecture replacement, and guarantees about behavior outside the agreed flow.`
+
+Re-scoping: `Larger rescue engagements, failures spanning multiple independent workflows, or architecture-wide problems receive a custom scope after the initial workflow.`
+
+Client receives: `Focused fixes for the agreed workflow, appropriate regression tests, validation evidence, clean pull requests, and clear remaining-risk and follow-up notes.`
+
+Pricing: `Starting at $750 fixed; final scope confirmed after reviewing the critical workflow and relevant code paths.`
+
+Turnaround: `5-7 business days after repository and environment access and scope confirmation.`
 
 Tags/categories: `Code Review`, `TypeScript`, `Next.js`, `Supabase`, `Web Development`, `QA Testing`
 
-CTA: `Share the repository and failing workflow.`
+CTA: `Name the critical workflow, its failure, and the expected outcome.`
 
 ### Service 4
 
-Title: `Add Playwright regression coverage to an existing web application`
+Title: `Add Playwright regression coverage for a critical web flow`
 
-Description: `I add maintainable Playwright coverage around one critical browser workflow so a known failure is caught before release. Good fits include navigation, forms, responsive menus, focus behavior, authentication flows, and production-build smoke checks.`
+Description: `I add or improve maintainable Playwright coverage for one or two clearly defined critical user flows inside an existing web application.`
 
-Deliverables:
+Included:
 
-- Focused browser-test plan
-- Playwright tests for the agreed workflow and viewports
-- CI integration or configuration update when needed
-- Run instructions and a concise coverage summary
+- Work inside the existing application and test setup
+- Add or improve Playwright tests for the agreed flows
+- Use reliable selectors and meaningful assertions
+- Integrate with existing CI where feasible
+- Eliminate obvious flakiness introduced by the new tests
+- Document how to run and interpret the tests
 
-Pricing: `Starting at $650 fixed; final scope confirmed after reviewing the workflow and current test setup.`
+One scoped engagement: `One or two related critical user flows with defined starting conditions, actions, and expected outcomes.`
 
-Turnaround: `4-6 business days after repository access and scope confirmation.`
+Excluded: `A broad application-wide test suite, extensive environment or infrastructure repair, coverage for many unrelated workflows, and remediation of unrelated product defects.`
+
+Re-scoping: `Broader suites, extensive environment work, or additional workflows require a custom quote before the scope expands.`
+
+Client receives: `Maintainable Playwright tests with reliable selectors and meaningful assertions, feasible CI integration, run instructions, and a concise coverage and validation summary.`
+
+Pricing: `Starting at $450 fixed; final scope confirmed after reviewing the flows and current test setup.`
+
+Turnaround: `3-5 business days after repository access and scope confirmation.`
 
 Tags/categories: `Playwright`, `Test Automation`, `QA Testing`, `Web Development`, `CI/CD`, `Accessibility`
 
-CTA: `Name the workflow that must stop regressing.`
+CTA: `Name the one or two critical flows that must stop regressing.`
 
 ## Approval boundary
 
