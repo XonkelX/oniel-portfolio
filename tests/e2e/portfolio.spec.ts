@@ -4,6 +4,7 @@ import { expect, test } from "@playwright/test";
 const routes = [
   "/",
   "/about",
+  "/services",
   "/work/sinmanos",
   "/work/relay",
   "/work/next",
@@ -13,6 +14,7 @@ const routes = [
 const spanishRoutes = [
   "/es",
   "/es/about",
+  "/es/servicios",
   "/es/work/sinmanos",
   "/es/work/relay",
   "/es/work/next",
@@ -59,7 +61,7 @@ test.describe("portfolio routes", () => {
   }) => {
     await page.goto("/es");
     await expect(
-      page.getByRole("heading", { name: /software que se mantiene/i }),
+      page.getByRole("heading", { name: /corrijo, estabilizo y entrego/i }),
     ).toBeVisible();
     for (const slug of ["sinmanos", "relay", "next", "careerflow", "cofre"]) {
       await expect(
@@ -93,14 +95,14 @@ test.describe("portfolio routes", () => {
     await expect(liveProducts).toHaveCount(2);
     await expect(liveProducts.nth(0)).toHaveAttribute(
       "href",
-      "https://sinmanos.site",
+      "https://relay-console.sinmanos.workers.dev/",
     );
     await expect(liveProducts.nth(1)).toHaveAttribute(
       "href",
-      "https://relay-console.sinmanos.workers.dev/",
+      "https://next-queue-omega.vercel.app",
     );
     await expect(
-      page.getByRole("heading", { name: /codebases I didn’t design/i }),
+      page.getByRole("heading", { name: /codebases I did not design/i }),
     ).toBeVisible();
     await expect(
       page.getByRole("link", {

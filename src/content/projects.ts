@@ -124,17 +124,17 @@ export const careerFlow: Project = {
     },
     {
       label: "View source",
-      href: "https://github.com/XonkelX/ai-career-tracker",
+      href: "https://github.com/XonkelX/CareerFlow",
       kind: "source",
     },
     {
       label: "View v1.0 release",
-      href: "https://github.com/XonkelX/ai-career-tracker/releases/tag/v1.0.0",
+      href: "https://github.com/XonkelX/CareerFlow/releases/tag/v1.0.0",
       kind: "release",
     },
     {
       label: "Watch complete demo",
-      href: "https://github.com/XonkelX/ai-career-tracker/releases/download/v1.0.0/careerflow-v1-demo.mp4",
+      href: "https://github.com/XonkelX/CareerFlow/releases/download/v1.0.0/careerflow-v1-demo.mp4",
       kind: "demo",
     },
   ],
@@ -220,9 +220,9 @@ export const cofre: Project = {
 } as const;
 
 export const projects = [
-  sinManos,
   relay,
   nextQueue,
+  sinManos,
   careerFlow,
   cofre,
 ] as const;

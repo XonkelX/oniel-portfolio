@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Oniel Alejo Feliz, Full-Stack Developer in Tampa, Florida";
+export const alt = "Oniel Alejo Feliz, Software Engineer in Tampa, Florida";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
         }}
       >
         <span>ONIEL ALEJO FELIZ</span>
-        <span style={{ color: "#315bd6" }}>PORTFOLIO / 2026</span>
+        <span style={{ color: "#315bd6" }}>SOFTWARE ENGINEERING / 2026</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         <div
@@ -40,7 +40,7 @@ export default function OpenGraphImage() {
             maxWidth: 900,
           }}
         >
-          Full-Stack Developer
+          Software Engineer
         </div>
         <div style={{ width: 170, height: 7, background: "#315bd6" }} />
       </div>
@@ -62,7 +62,7 @@ export default function OpenGraphImage() {
               background: "#315bd6",
             }}
           />{" "}
-          Featuring CareerFlow
+          TypeScript · Node.js · React · PostgreSQL
         </span>
       </div>
     </div>,

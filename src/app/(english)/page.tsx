@@ -8,9 +8,9 @@ import { siteConfig } from "@/content/site";
 import type { Project } from "@/types/project";
 
 const proof = [
-  { value: "05", label: "shipped products" },
-  { value: "03", label: "merged upstream PRs" },
-  { value: "Full stack", label: "UI through data" },
+  { value: "Maintainer reviewed", label: "merged upstream work" },
+  { value: "Existing codebases", label: "diagnosis through regression" },
+  { value: "TypeScript systems", label: "interface through data" },
   { value: "Tampa · Remote", label: "no sponsorship needed" },
 ] as const;
 
@@ -146,25 +146,30 @@ function CompactProject({ project }: { project: Project }) {
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
   const supportingProjects = projects.slice(2);
-  const featuredContributions = openSourceContributions.slice(0, 4);
+  const featuredContributions = openSourceContributions.slice(0, 5);
 
   return (
     <main id="main-content">
       <section className="home-hero container">
         <div className="home-hero__copy">
           <p className="eyebrow hero-enter hero-enter--1">
-            Full-Stack Developer · Tampa, Florida
+            Software Engineer · Tampa, Florida
           </p>
           <h1 className="hero-enter hero-enter--2">
-            I build software that stays <em>clear under pressure.</em>
+            I fix, stabilize, and ship <em>TypeScript software.</em>
           </h1>
           <p className="home-hero__lede hero-enter hero-enter--3">
-            Deployed web products across interface, application, and data.
+            Next.js, React, Node.js, and PostgreSQL—from existing-codebase bugs
+            and failed deployments to authorization, APIs, data behavior, and
+            regression coverage.
           </p>
           <div className="actions hero-enter hero-enter--4">
-            <a className="button button--primary" href="#work">
-              Explore my work <span aria-hidden="true">↓</span>
+            <a className="button button--primary" href="#open-source">
+              View engineering work <span aria-hidden="true">↓</span>
             </a>
+            <Link className="button button--secondary" href="/services">
+              Need an app fixed? <span aria-hidden="true">→</span>
+            </Link>
             <a
               className="button button--secondary"
               href={siteConfig.resumeUrl}
@@ -175,8 +180,8 @@ export default function Home() {
             </a>
           </div>
           <p className="home-hero__availability hero-enter hero-enter--5">
-            <span aria-hidden="true" /> Available for full-stack and software
-            roles · U.S. work authorized
+            <span aria-hidden="true" /> Available for software roles and scoped
+            TypeScript maintenance · U.S. work authorized
           </p>
         </div>
 
@@ -192,15 +197,15 @@ export default function Home() {
           </div>
           <div className="portrait-card__caption">
             <p>Oniel Alejo Feliz</p>
-            <h2>Product-minded engineer</h2>
-            <span>Accessible interfaces. Explicit rules. Tested releases.</span>
+            <h2>Software engineer</h2>
+            <span>Existing codebases. Focused changes. Tested behavior.</span>
           </div>
         </aside>
       </section>
 
       <section
         className="proof-strip container"
-        aria-label="Portfolio evidence"
+        aria-label="Engineering evidence"
       >
         {proof.map((item) => (
           <div key={item.label}>
@@ -211,48 +216,16 @@ export default function Home() {
       </section>
 
       <section
-        className="section container"
-        id="work"
-        aria-labelledby="work-title"
-      >
-        <SectionHeading
-          eyebrow="Selected work / 05"
-          title="Products first. Engineering proof one click deeper."
-          id="work-title"
-        />
-        <div className="product-list">
-          {featuredProjects.map((project, index) => (
-            <FeaturedProject
-              key={project.slug}
-              project={project}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <div className="more-work">
-          <div className="more-work__heading">
-            <p className="eyebrow">More shipped work</p>
-            <p>Three more production-minded systems, presented at a glance.</p>
-          </div>
-          <div className="compact-project-grid">
-            {supportingProjects.map((project) => (
-              <CompactProject key={project.slug} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         className="section open-source-section"
         id="open-source"
         aria-labelledby="open-source-title"
       >
         <div className="container">
           <SectionHeading
-            eyebrow="Open source"
-            title="Useful changes in codebases I didn’t design."
+            eyebrow="Maintainer-reviewed open source"
+            title="Evidence from codebases I did not design."
             id="open-source-title"
+            intro="Each contribution started with an existing repository, a bounded problem, and upstream review. The links show the implementation, revisions, tests, and final status."
           />
           <div className="contribution-grid">
             {featuredContributions.map((contribution, index) => (
@@ -275,13 +248,78 @@ export default function Home() {
           </div>
           <div className="open-source-section__footer">
             <p>
-              Five merged contributions and two more under review across
-              accessibility, testing, API validation, and reliability.
+              Merged work across application persistence, runtime reliability,
+              test modernization, browser regression coverage, accessibility,
+              and navigation behavior. Open contributions remain labeled in
+              review.
             </p>
             <ExternalLink className="text-link" href={siteConfig.githubUrl}>
               See all work on GitHub
             </ExternalLink>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="section container"
+        id="work"
+        aria-labelledby="work-title"
+      >
+        <SectionHeading
+          eyebrow="Selected engineering work"
+          title="Systems that make the reliability work visible."
+          id="work-title"
+          intro="Relay leads with delivery and failure recovery. Next shows authorization and multi-user data boundaries. The remaining projects broaden the product and interface evidence."
+        />
+        <div className="product-list">
+          {featuredProjects.map((project, index) => (
+            <FeaturedProject
+              key={project.slug}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
+
+        <div className="more-work">
+          <div className="more-work__heading">
+            <p className="eyebrow">Additional work</p>
+            <p>
+              Three more systems, with implementation evidence one click in.
+            </p>
+          </div>
+          <div className="compact-project-grid">
+            {supportingProjects.map((project) => (
+              <CompactProject key={project.slug} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section service-preview container"
+        aria-labelledby="service-preview-title"
+      >
+        <div>
+          <p className="eyebrow">TypeScript SaaS maintenance</p>
+          <h2 id="service-preview-title">
+            Your application exists. Something is failing.
+          </h2>
+        </div>
+        <div className="service-preview__body">
+          <p>
+            I diagnose and stabilize auth, permissions, RLS, APIs, data
+            fetching, React state, deployments, CI, and regression failures in
+            existing Next.js, React, Node.js, Supabase, and PostgreSQL
+            applications.
+          </p>
+          <p>
+            This also includes independently reviewing AI-built or AI-assisted
+            applications before real users depend on them.
+          </p>
+          <Link className="button button--primary" href="/services">
+            Start with one scoped issue <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 

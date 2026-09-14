@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Oniel Alejo Feliz — Desarrollador Full-Stack",
+    default: "Oniel Alejo Feliz — Ingeniero de Software",
     template: "%s — Oniel Alejo Feliz",
   },
   description:
-    "Portafolio de Oniel Alejo Feliz, desarrollador full-stack que convierte flujos complejos en productos claros y confiables.",
+    "Ingeniero de software especializado en TypeScript, Node.js, React, Next.js y PostgreSQL, con trabajo revisado en bases de código existentes.",
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   alternates: {
@@ -35,24 +35,15 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
     url: "/es",
     siteName: siteConfig.name,
-    title: "Oniel Alejo Feliz — Desarrollador Full-Stack",
+    title: "Oniel Alejo Feliz — Ingeniero de Software",
     description:
-      "Productos claros, sistemas confiables y aplicaciones full-stack desplegadas.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1737,
-        height: 909,
-        alt: "Oniel Alejo Feliz — Desarrollador Full-Stack",
-      },
-    ],
+      "TypeScript, Node.js, React, Next.js y PostgreSQL. Código existente, confiabilidad, pruebas y correcciones enfocadas.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oniel Alejo Feliz — Desarrollador Full-Stack",
+    title: "Oniel Alejo Feliz — Ingeniero de Software",
     description:
-      "Productos claros, sistemas confiables y aplicaciones full-stack desplegadas.",
-    images: ["/og.png"],
+      "TypeScript, Node.js, React, Next.js y PostgreSQL. Código existente, confiabilidad, pruebas y correcciones enfocadas.",
   },
   category: "technology",
 };
@@ -84,7 +75,7 @@ const personJsonLd = {
   name: siteConfig.name,
   url: siteConfig.siteUrl,
   image: `${siteConfig.siteUrl}/oniel-alejo-feliz.jpg`,
-  jobTitle: "Desarrollador Full-Stack",
+  jobTitle: "Ingeniero de Software",
   email: `mailto:${siteConfig.email}`,
   sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl],
   address: {

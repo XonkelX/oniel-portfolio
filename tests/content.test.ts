@@ -49,6 +49,7 @@ describe("portfolio content configuration", () => {
       "Home",
       "Work",
       "Open source",
+      "Services",
       "Skills",
       "About",
     ]);
@@ -58,6 +59,7 @@ describe("portfolio content configuration", () => {
       "Inicio",
       "Proyectos",
       "Código abierto",
+      "Servicios",
       "Habilidades",
       "Sobre mí",
     ]);
@@ -71,11 +73,11 @@ describe("portfolio content configuration", () => {
     expect(spanishContributions).toHaveLength(openSourceContributions.length);
     expect(
       spanishContributions.filter((item) => item.status === "Integrado"),
-    ).toHaveLength(5);
+    ).toHaveLength(6);
   });
 
   it("links every open-source contribution to its upstream pull request", () => {
-    expect(openSourceContributions).toHaveLength(7);
+    expect(openSourceContributions).toHaveLength(8);
     for (const contribution of openSourceContributions) {
       expect(contribution.href).toMatch(
         new RegExp(`/pull/${contribution.pullRequest}$`),

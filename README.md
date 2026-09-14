@@ -1,14 +1,18 @@
-# Oniel Alejo Feliz — Developer Portfolio
+# Oniel Alejo Feliz — Software Engineer Portfolio
 
-A minimalist, typography-led portfolio for full-stack developer [Oniel Alejo Feliz](https://github.com/XonkelX). It presents three production systems through evidence-backed product and engineering case studies.
+A minimalist, typography-led portfolio for software engineer [Oniel Alejo Feliz](https://github.com/XonkelX). It leads with maintainer-reviewed work in established codebases, then supports that evidence with original TypeScript systems and a scoped maintenance offer.
 
 [Live portfolio](https://oniel-portfolio.vercel.app) · [Relay demo](https://relay-console.sinmanos.workers.dev/) · [Relay v1.0](https://github.com/XonkelX/relay-webhook-delivery/releases/tag/v1.0.0) · [Next](https://next-queue-omega.vercel.app) · [CareerFlow](https://careerflow-snowy.vercel.app)
 
 ## Overview
 
-The portfolio presents Oniel as a product-minded full-stack developer who combines dependable engineering with accessible interface design. It remains intentionally focused: static presentation routes, three featured production projects, no content management system, and no backend.
+The portfolio presents Oniel as a software engineer who can enter an existing codebase, reproduce real behavior, respond to review, and ship focused changes through validation. Employment and contract-maintenance paths remain distinct. The site is intentionally static, with no content management system or backend.
 
-## Featured projects
+## Engineering evidence
+
+The homepage first surfaces merged upstream work in Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Each item links to the actual pull request and describes the reviewed behavior and validation without treating an upstream organization as an employer.
+
+## Selected projects
 
 Relay leads the portfolio with distributed webhook delivery, durable retries, signed requests, operational evidence, and a controlled public Failure Lab. Next demonstrates realtime multi-client coordination and database-enforced authorization. CareerFlow demonstrates account-scoped product workflows, relational modeling, and release-quality application engineering.
 
@@ -102,4 +106,4 @@ Add a typed entry in `src/content/projects.ts`, copy only intentional public med
 
 ## Author
 
-Built by [Oniel Alejo Feliz](mailto:Onielbf10@gmail.com), a full-stack developer based in Tampa, Florida.
+Built by [Oniel Alejo Feliz](mailto:Onielbf10@gmail.com), a software engineer based in Tampa, Florida.

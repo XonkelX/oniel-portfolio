@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Oniel Alejo Feliz, a bilingual full-stack developer in Tampa with experience in software delivery, AI training, technical support, and open source.",
+    "About Oniel Alejo Feliz, a bilingual software engineer in Tampa with maintainer-reviewed open-source work, TypeScript systems, testing, and technical support experience.",
   alternates: {
     canonical: "/about",
     languages: { en: "/about", es: "/es/about" },
@@ -56,8 +56,9 @@ export default function AboutPage() {
         </h1>
         <div className="page-intro__body">
           <p className="lede">
-            I’m Oniel, a full-stack developer who enjoys building web products
-            that balance dependable engineering with clear, accessible design.
+            I’m Oniel, a software engineer focused on TypeScript, Node.js,
+            React, Next.js, and PostgreSQL. I work well in existing codebases
+            where behavior, data boundaries, and regression risk matter.
           </p>
           <p>
             I work across the application stack—from responsive React interfaces
@@ -168,11 +169,13 @@ export default function AboutPage() {
       >
         <p className="eyebrow">Tampa, Florida · Available for opportunities</p>
         <h2 id="availability-title">
-          Interested in building a clear, useful web product?
+          Need an engineer who can enter an existing codebase safely?
         </h2>
         <p>
-          I’m open to full-stack and software-engineering roles in Tampa or
-          remote. I can work in the United States without employer sponsorship.
+          I’m open to software-engineering, full-stack, product-engineering, and
+          TypeScript roles in Tampa or remote. I also take scoped maintenance
+          and reliability work. I can work in the United States without employer
+          sponsorship.
         </p>
         <div className="actions">
           <a

@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Oniel Alejo Feliz — Full-Stack Developer",
+    default: "Oniel Alejo Feliz — Software Engineer",
     template: "%s — Oniel Alejo Feliz",
   },
   description:
-    "Portfolio of Oniel Alejo Feliz, a full-stack developer who turns complex workflows into clear, dependable products.",
+    "Software engineer specializing in TypeScript, Node.js, React, Next.js, and PostgreSQL, with maintainer-reviewed work in existing codebases.",
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   alternates: {
@@ -34,24 +34,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: siteConfig.name,
-    title: "Oniel Alejo Feliz — Full-Stack Developer",
+    title: "Oniel Alejo Feliz — Software Engineer",
     description:
-      "Clear products, dependable systems, and deployed full-stack applications.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1737,
-        height: 909,
-        alt: "Oniel Alejo Feliz — Full-Stack Developer",
-      },
-    ],
+      "TypeScript, Node.js, React, Next.js, and PostgreSQL. Existing codebases, reliability, testing, and focused fixes.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oniel Alejo Feliz — Full-Stack Developer",
+    title: "Oniel Alejo Feliz — Software Engineer",
     description:
-      "Clear products, dependable systems, and deployed full-stack applications.",
-    images: ["/og.png"],
+      "TypeScript, Node.js, React, Next.js, and PostgreSQL. Existing codebases, reliability, testing, and focused fixes.",
   },
   category: "technology",
 };
@@ -101,6 +92,8 @@ const personJsonLd = {
     "PostgreSQL",
     "Web accessibility",
     "Software testing",
+    "TypeScript SaaS maintenance",
+    "Supabase Row Level Security",
   ],
 };
 

@@ -9,9 +9,9 @@ import { siteConfig } from "@/content/site";
 import type { Project } from "@/types/project";
 
 export const metadata: Metadata = {
-  title: "Oniel Alejo Feliz — Desarrollador Full-Stack",
+  title: "Oniel Alejo Feliz — Ingeniero de Software",
   description:
-    "Productos web desplegados, contribuciones de código abierto y experiencia full-stack de Oniel Alejo Feliz.",
+    "Ingeniero de software especializado en TypeScript, Node.js, React, Next.js y PostgreSQL, con experiencia verificable en bases de código existentes.",
   alternates: {
     canonical: "/es",
     languages: { en: "/", es: "/es" },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 };
 
 const proof = [
-  { value: "05", label: "productos publicados" },
-  { value: "03", label: "contribuciones integradas" },
-  { value: "Full stack", label: "de la interfaz a los datos" },
+  { value: "Revisión externa", label: "contribuciones integradas" },
+  { value: "Código existente", label: "diagnóstico y regresión" },
+  { value: "Sistemas TypeScript", label: "de la interfaz a los datos" },
   { value: "Tampa · Remoto", label: "sin patrocinio requerido" },
 ] as const;
 
@@ -152,25 +152,30 @@ function CompactProject({ project }: { project: Project }) {
 export default function SpanishHome() {
   const featuredProjects = spanishProjects.slice(0, 2);
   const supportingProjects = spanishProjects.slice(2);
-  const featuredContributions = spanishContributions.slice(0, 4);
+  const featuredContributions = spanishContributions.slice(0, 5);
 
   return (
     <main id="main-content">
       <section className="home-hero container">
         <div className="home-hero__copy">
           <p className="eyebrow hero-enter hero-enter--1">
-            Desarrollador Full-Stack · Tampa, Florida
+            Ingeniero de Software · Tampa, Florida
           </p>
           <h1 className="hero-enter hero-enter--2">
-            Construyo software que se mantiene <em>claro bajo presión.</em>
+            Corrijo, estabilizo y entrego <em>software TypeScript.</em>
           </h1>
           <p className="home-hero__lede hero-enter hero-enter--3">
-            Productos web desplegados, desde la interfaz hasta los datos.
+            Next.js, React, Node.js y PostgreSQL: desde errores en código
+            existente y despliegues fallidos hasta autorización, APIs, datos y
+            cobertura de regresión.
           </p>
           <div className="actions hero-enter hero-enter--4">
-            <a className="button button--primary" href="#proyectos">
-              Explorar mis proyectos <span aria-hidden="true">↓</span>
+            <a className="button button--primary" href="#codigo-abierto">
+              Ver trabajo de ingeniería <span aria-hidden="true">↓</span>
             </a>
+            <Link className="button button--secondary" href="/es/servicios">
+              ¿Necesitas corregir una app? <span aria-hidden="true">→</span>
+            </Link>
             <a
               className="button button--secondary"
               href={siteConfig.resumeUrl}
@@ -181,8 +186,9 @@ export default function SpanishHome() {
             </a>
           </div>
           <p className="home-hero__availability hero-enter hero-enter--5">
-            <span aria-hidden="true" /> Disponible para roles full-stack y de
-            software · Autorizado para trabajar en EE. UU.
+            <span aria-hidden="true" /> Disponible para roles de software y
+            mantenimiento TypeScript por alcance · Autorizado para trabajar en
+            EE. UU.
           </p>
         </div>
 
@@ -198,9 +204,9 @@ export default function SpanishHome() {
           </div>
           <div className="portrait-card__caption">
             <p>Oniel Alejo Feliz</p>
-            <h2>Ingeniero con enfoque de producto</h2>
+            <h2>Ingeniero de software</h2>
             <span>
-              Interfaces accesibles. Reglas explícitas. Entregas probadas.
+              Código existente. Cambios enfocados. Comportamiento verificado.
             </span>
           </div>
         </aside>
@@ -208,7 +214,7 @@ export default function SpanishHome() {
 
       <section
         className="proof-strip container"
-        aria-label="Evidencia del portafolio"
+        aria-label="Evidencia de ingeniería"
       >
         {proof.map((item) => (
           <div key={item.label}>
@@ -219,50 +225,16 @@ export default function SpanishHome() {
       </section>
 
       <section
-        className="section container"
-        id="proyectos"
-        aria-labelledby="work-title-es"
-      >
-        <SectionHeading
-          eyebrow="Proyectos seleccionados / 05"
-          title="Primero el producto. La evidencia técnica, a un clic."
-          id="work-title-es"
-        />
-        <div className="product-list">
-          {featuredProjects.map((project, index) => (
-            <FeaturedProject
-              key={project.slug}
-              project={project}
-              index={index}
-            />
-          ))}
-        </div>
-        <div className="more-work">
-          <div className="more-work__heading">
-            <p className="eyebrow">Más trabajo publicado</p>
-            <p>
-              Otros tres sistemas con mentalidad de producción, presentados de
-              un vistazo.
-            </p>
-          </div>
-          <div className="compact-project-grid">
-            {supportingProjects.map((project) => (
-              <CompactProject key={project.slug} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         className="section open-source-section"
         id="codigo-abierto"
         aria-labelledby="open-source-title-es"
       >
         <div className="container">
           <SectionHeading
-            eyebrow="Código abierto"
-            title="Cambios útiles en bases de código que yo no diseñé."
+            eyebrow="Código abierto revisado por mantenedores"
+            title="Evidencia en bases de código que yo no diseñé."
             id="open-source-title-es"
+            intro="Cada contribución comenzó con un repositorio existente, un problema acotado y revisión upstream. Los enlaces muestran la implementación, las revisiones, las pruebas y el estado final."
           />
           <div className="contribution-grid">
             {featuredContributions.map((contribution, index) => (
@@ -289,8 +261,10 @@ export default function SpanishHome() {
           </div>
           <div className="open-source-section__footer">
             <p>
-              Cinco contribuciones integradas y dos en revisión en
-              accesibilidad, pruebas, validación de APIs y confiabilidad.
+              Trabajo integrado en persistencia, confiabilidad de runtime,
+              modernización de pruebas, cobertura de navegador, accesibilidad y
+              navegación. Las contribuciones abiertas permanecen marcadas en
+              revisión.
             </p>
             <ExternalLink
               className="text-link"
@@ -300,6 +274,67 @@ export default function SpanishHome() {
               Ver todo en GitHub
             </ExternalLink>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="section container"
+        id="proyectos"
+        aria-labelledby="work-title-es"
+      >
+        <SectionHeading
+          eyebrow="Trabajo de ingeniería seleccionado"
+          title="Sistemas que hacen visible el trabajo de confiabilidad."
+          id="work-title-es"
+          intro="Relay muestra entrega y recuperación ante fallos. Next muestra autorización y límites de datos entre usuarios. Los demás proyectos amplían la evidencia de producto e interfaz."
+        />
+        <div className="product-list">
+          {featuredProjects.map((project, index) => (
+            <FeaturedProject
+              key={project.slug}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
+        <div className="more-work">
+          <div className="more-work__heading">
+            <p className="eyebrow">Trabajo adicional</p>
+            <p>Tres sistemas más, con evidencia de implementación a un clic.</p>
+          </div>
+          <div className="compact-project-grid">
+            {supportingProjects.map((project) => (
+              <CompactProject key={project.slug} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section service-preview container"
+        aria-labelledby="service-preview-title-es"
+      >
+        <div>
+          <p className="eyebrow">Mantenimiento de SaaS TypeScript</p>
+          <h2 id="service-preview-title-es">
+            Tu aplicación ya existe. Algo está fallando.
+          </h2>
+        </div>
+        <div className="service-preview__body">
+          <p>
+            Diagnostico y estabilizo autenticación, permisos, RLS, APIs, carga
+            de datos, estado de React, despliegues, CI y regresiones en
+            aplicaciones existentes con Next.js, React, Node.js, Supabase y
+            PostgreSQL.
+          </p>
+          <p>
+            También reviso de forma independiente aplicaciones creadas o
+            aceleradas con herramientas de IA antes de que dependan de ellas
+            usuarios reales.
+          </p>
+          <Link className="button button--primary" href="/es/servicios">
+            Empezar con un problema acotado <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 

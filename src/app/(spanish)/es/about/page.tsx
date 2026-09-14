@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "Sobre mí",
   description:
-    "Conoce a Oniel Alejo Feliz, desarrollador full-stack bilingüe en Tampa con experiencia en productos web, entrenamiento de IA, soporte técnico y código abierto.",
+    "Conoce a Oniel Alejo Feliz, ingeniero de software bilingüe en Tampa con contribuciones de código abierto revisadas, sistemas TypeScript, pruebas y soporte técnico.",
   alternates: {
     canonical: "/es/about",
     languages: { en: "/about", es: "/es/about" },
@@ -56,9 +56,10 @@ export default function SpanishAboutPage() {
         </h1>
         <div className="page-intro__body">
           <p className="lede">
-            Soy Oniel, desarrollador full-stack. Disfruto construir productos
-            web que equilibran ingeniería confiable con un diseño claro y
-            accesible.
+            Soy Oniel, ingeniero de software especializado en TypeScript,
+            Node.js, React, Next.js y PostgreSQL. Trabajo bien en bases de
+            código existentes donde importan el comportamiento, los límites de
+            datos y el riesgo de regresión.
           </p>
           <p>
             Trabajo en todo el stack: interfaces responsivas con React,
@@ -180,12 +181,14 @@ export default function SpanishAboutPage() {
           Tampa, Florida · Disponible para oportunidades
         </p>
         <h2 id="availability-title-es">
-          ¿Necesitas construir un producto web claro y útil?
+          ¿Necesitas un ingeniero que pueda entrar con seguridad en una base de
+          código existente?
         </h2>
         <p>
-          Estoy disponible para roles de desarrollo full-stack o ingeniería de
-          software en Tampa o remotos. Puedo trabajar en Estados Unidos sin
-          patrocinio del empleador.
+          Estoy disponible para roles de ingeniería de software, full-stack,
+          producto y TypeScript en Tampa o remotos. También acepto trabajos
+          acotados de mantenimiento y confiabilidad. Puedo trabajar en Estados
+          Unidos sin patrocinio del empleador.
         </p>
         <div className="actions">
           <a

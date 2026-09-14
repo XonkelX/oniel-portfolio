@@ -1047,6 +1047,58 @@ a:focus-visible .external-mark {
   color: var(--muted);
   font-size: 0.78rem;
 }
+.service-preview,
+.service-ai {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+.service-preview h2,
+.service-ai h2 {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 560;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.service-preview__body,
+.service-ai__body {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.service-preview__body .button {
+  margin-top: 1rem;
+}
+.service-family-list {
+  border-top: 1px solid var(--line-strong);
+}
+.service-family {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+.service-family > span {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+}
+.service-family h3 {
+  max-width: 760px;
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.8rem, 3.5vw, 3.4rem);
+  font-weight: 560;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+.service-family p {
+  max-width: 780px;
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+}
 .skills-band {
   padding-block: clamp(5rem, 9vw, 8rem);
   background: var(--dark-panel);
@@ -1892,6 +1944,15 @@ a:focus-visible .external-mark {
   .experience-list article {
     grid-template-columns: 1fr;
     gap: 0.65rem;
+  }
+  .service-preview,
+  .service-ai {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .service-family {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 1rem;
   }
   .contribution {
     grid-template-columns: 38px minmax(0, 1fr);
