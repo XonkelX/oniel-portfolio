@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Software Engineer",
   location: "Tampa, Florida",
   email: "Onielbf10@gmail.com",
-  siteUrl: "https://oniel-portfolio.vercel.app",
+  siteUrl: "https://onielalejofeliz.space",
   githubUrl: "https://github.com/XonkelX",
   linkedinUrl: "https://www.linkedin.com/in/oniel-alejo-feliz-45b293312",
   resumeUrl: "/oniel-alejo-feliz-software-engineer-resume.pdf",

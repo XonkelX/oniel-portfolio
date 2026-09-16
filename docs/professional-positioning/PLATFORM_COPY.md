@@ -10,7 +10,7 @@ Software Engineer | TypeScript · Node.js · React/Next.js · PostgreSQL | Open-
 
 I am a software engineer in Tampa, Florida, focused on TypeScript systems across React and Next.js interfaces, Node.js services, PostgreSQL data boundaries, and automated testing.
 
-My strongest public work comes from entering codebases I did not design, reproducing real behavior, responding to maintainer review, and delivering focused changes through upstream validation. I have six merged upstream pull requests: route persistence in Reticle, bounded MCP tool rediscovery in Apache Maka, Playwright coverage in Code.Sydney's BlueHex project, accessibility improvements in Clarvia, and two changes in Apache Fineract's back-office UI.
+My strongest public work comes from entering codebases I did not design, reproducing real behavior, responding to maintainer review, and delivering focused changes through upstream validation. That work includes route persistence in Reticle, bounded MCP tool rediscovery in Apache Maka, Playwright coverage in Code.Sydney's BlueHex project, accessibility improvements in Clarvia, and changes in Apache Fineract's back-office UI.
 
 I also built Relay, a webhook delivery system with durable scheduling, signed requests, deterministic retries, lease recovery, and inspectable failure evidence; and Next, a real-time queue system with PostgreSQL-enforced authorization, idempotent commands, transactional state changes, and multi-user synchronization.
 
@@ -20,7 +20,7 @@ I am open to software-engineering, full-stack, product-engineering, backend-lean
 
 I am also available for scoped TypeScript SaaS maintenance: auth and session bugs, permissions and Supabase RLS, APIs and data behavior, deployment failures, unstable tests, and independent stabilization of AI-built applications.
 
-Portfolio: https://oniel-portfolio.vercel.app/
+Portfolio: https://onielalejofeliz.space/
 
 GitHub: https://github.com/XonkelX
 
@@ -73,7 +73,7 @@ URL: https://github.com/XonkelX/next-queue
 2. Apache Maka PR #2989: https://github.com/apache/maka/pull/2989
 3. Relay: https://github.com/XonkelX/relay-webhook-delivery
 4. Next: https://github.com/XonkelX/next-queue
-5. Portfolio: https://oniel-portfolio.vercel.app/
+5. Portfolio: https://onielalejofeliz.space/
 
 ## Contra headline
 
@@ -83,7 +83,7 @@ TypeScript SaaS Maintenance | Next.js · React · Node.js · Supabase · Postgre
 
 I fix and stabilize existing TypeScript web applications. I work on scoped problems in Next.js, React, Node.js, Supabase, and PostgreSQL codebases: authentication and sessions, permissions and RLS, API and data behavior, deployment failures, unstable tests, and accessibility defects.
 
-My public work includes six merged upstream pull requests across Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Those pull requests show focused changes in unfamiliar repositories, substantive maintainer review, regression coverage, and upstream validation.
+My public work includes merged upstream pull requests across Reticle, Apache Maka, Apache Fineract, Code.Sydney's BlueHex project, and Clarvia. Those pull requests show focused changes in unfamiliar repositories, substantive maintainer review, regression coverage, and upstream validation.
 
 I also built Relay, a webhook delivery system with durable retries and inspectable failure evidence, and Next, a real-time queue with PostgreSQL-enforced authorization and multi-user synchronization.
 

@@ -55,6 +55,7 @@ describe("portfolio content configuration", () => {
     ]);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
     expect(siteConfig.linkedinUrl).toContain("linkedin.com/in/");
+    expect(siteConfig.siteUrl).toBe("https://onielalejofeliz.space");
     expect(spanishNavigation.map((item) => item.label)).toEqual([
       "Inicio",
       "Proyectos",

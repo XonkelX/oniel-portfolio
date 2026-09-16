@@ -148,7 +148,7 @@ def build():
 
     links = paragraph(doc)
     links.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_hyperlink(links, "oniel-portfolio.vercel.app", "https://oniel-portfolio.vercel.app/", size=9.0)
+    add_hyperlink(links, "onielalejofeliz.space", "https://onielalejofeliz.space/", size=9.0)
     set_font(links.add_run(" | "), 9.0, color=MUTED)
     add_hyperlink(links, "github.com/XonkelX", "https://github.com/XonkelX", size=9.0)
     set_font(links.add_run(" | "), 9.0, color=MUTED)
@@ -170,7 +170,7 @@ def build():
     section(doc, "Summary")
     paragraph(
         doc,
-        "Software engineer with six merged upstream pull requests in established codebases, focused on TypeScript systems, PostgreSQL data boundaries, reliability, and automated testing. Work across Reticle, Apache Maka, Apache Fineract, Code.Sydney / BlueHex, and Clarvia includes substantive maintainer review and regression coverage.",
+        "Software engineer with merged upstream work in established codebases, focused on TypeScript systems, PostgreSQL data boundaries, reliability, and automated testing. Work across Reticle, Apache Maka, Apache Fineract, Code.Sydney / BlueHex, and Clarvia includes substantive maintainer review and regression coverage.",
         size=9.4,
     )
 
