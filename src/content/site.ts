@@ -14,6 +14,7 @@ export type Locale = "en" | "es";
 export const navigation = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/#work" },
+  { label: "Shopify", href: "/shopify" },
   { label: "Open source", href: "/#open-source" },
   { label: "Services", href: "/services" },
   { label: "Skills", href: "/#skills" },
@@ -23,6 +24,7 @@ export const navigation = [
 export const spanishNavigation = [
   { label: "Inicio", href: "/es" },
   { label: "Proyectos", href: "/es#proyectos" },
+  { label: "Shopify", href: "/es/shopify" },
   { label: "Código abierto", href: "/es#codigo-abierto" },
   { label: "Servicios", href: "/es/servicios" },
   { label: "Habilidades", href: "/es#habilidades" },

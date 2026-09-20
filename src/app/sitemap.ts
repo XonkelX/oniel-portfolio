@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${siteConfig.siteUrl}/shopify`,
+      lastModified: "2026-09-20",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${siteConfig.siteUrl}/work/relay`,
       lastModified: "2026-08-09",
       changeFrequency: "monthly",
@@ -56,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const spanishRoutes = [
     { path: "/es", priority: 1 },
     { path: "/es/servicios", priority: 0.95 },
+    { path: "/es/shopify", priority: 0.9 },
     { path: "/es/work/relay", priority: 0.95 },
     { path: "/es/work/next", priority: 0.9 },
     { path: "/es/work/sinmanos", priority: 0.9 },
