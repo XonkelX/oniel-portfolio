@@ -79,7 +79,8 @@ export const shopifyEvidence: ShopifyEvidence[] = [
       "Three source-backed repairs cover stale cart count, missing variant identity, and an invalid empty-cart state.",
     technologies: "Liquid · JavaScript · cart sections",
     image: "/projects/shopify/phase-3-after-variant-cart.png",
-    imageAlt: "Repaired Shopify cart showing variant details and personalization properties",
+    imageAlt:
+      "Repaired Shopify cart showing variant details and personalization properties",
     caseStudy: `${evidence}/bug-fix-lab.md`,
     source: `${source}/theme/sections/cart.liquid`,
   },
