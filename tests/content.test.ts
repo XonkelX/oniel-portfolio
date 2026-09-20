@@ -48,6 +48,7 @@ describe("portfolio content configuration", () => {
     expect(navigation.map((item) => item.label)).toEqual([
       "Home",
       "Work",
+      "Shopify",
       "Open source",
       "Services",
       "Skills",
@@ -59,6 +60,7 @@ describe("portfolio content configuration", () => {
     expect(spanishNavigation.map((item) => item.label)).toEqual([
       "Inicio",
       "Proyectos",
+      "Shopify",
       "Código abierto",
       "Servicios",
       "Habilidades",
