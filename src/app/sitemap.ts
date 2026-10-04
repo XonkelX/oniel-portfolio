@@ -46,12 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteConfig.siteUrl}/work/cofre`,
-      lastModified: "2026-08-24",
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${siteConfig.siteUrl}/about`,
       lastModified: "2026-07-17",
       changeFrequency: "monthly",
@@ -67,7 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/es/work/next", priority: 0.9 },
     { path: "/es/work/sinmanos", priority: 0.9 },
     { path: "/es/work/careerflow", priority: 0.9 },
-    { path: "/es/work/cofre", priority: 0.9 },
     { path: "/es/about", priority: 0.7 },
   ] as const;
 

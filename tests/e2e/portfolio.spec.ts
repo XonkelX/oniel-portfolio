@@ -63,7 +63,7 @@ test.describe("portfolio routes", () => {
     await expect(
       page.getByRole("heading", { name: /corrijo, estabilizo y entrego/i }),
     ).toBeVisible();
-    for (const slug of ["sinmanos", "relay", "next", "careerflow", "cofre"]) {
+    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
       await expect(
         page.locator(`a[href="/es/work/${slug}"]`).first(),
       ).toBeVisible();
@@ -75,7 +75,7 @@ test.describe("portfolio routes", () => {
     ).toHaveAttribute("href", "/es/about");
   });
 
-  test("homepage exposes five projects and verified destinations", async ({
+  test("homepage exposes four projects and verified destinations", async ({
     page,
   }) => {
     await page.goto("/");
@@ -85,8 +85,8 @@ test.describe("portfolio routes", () => {
     await expect(
       page.getByRole("heading", { name: "CareerFlow" }),
     ).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Cofre" })).toBeVisible();
-    for (const slug of ["sinmanos", "relay", "next", "careerflow", "cofre"]) {
+    await expect(page.getByRole("heading", { name: "Cofre" })).toHaveCount(0);
+    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
       await expect(
         page.locator(`a[href="/work/${slug}"]`).first(),
       ).toBeVisible();

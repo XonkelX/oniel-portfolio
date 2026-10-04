@@ -436,8 +436,8 @@ export default function CareerFlowPage() {
       </CaseSection>
 
       <nav className="case-next container" aria-label="Case study navigation">
-        <span>Next case study</span>
-        <Link href="/work/cofre">Explore Cofre →</Link>
+        <span>Selected work</span>
+        <Link href="/#work">Back to selected work →</Link>
       </nav>
     </main>
   );
