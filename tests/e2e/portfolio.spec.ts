@@ -5,7 +5,7 @@ const routes = [
   "/",
   "/about",
   "/services",
-  "/work/sinmanos",
+  "/work/ciento",
   "/work/relay",
   "/work/next",
   "/work/careerflow",
@@ -15,7 +15,7 @@ const spanishRoutes = [
   "/es",
   "/es/about",
   "/es/servicios",
-  "/es/work/sinmanos",
+  "/es/work/ciento",
   "/es/work/relay",
   "/es/work/next",
   "/es/work/careerflow",
@@ -63,7 +63,7 @@ test.describe("portfolio routes", () => {
     await expect(
       page.getByRole("heading", { name: /corrijo, estabilizo y entrego/i }),
     ).toBeVisible();
-    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
+    for (const slug of ["ciento", "relay", "next", "careerflow"]) {
       await expect(
         page.locator(`a[href="/es/work/${slug}"]`).first(),
       ).toBeVisible();
@@ -79,25 +79,28 @@ test.describe("portfolio routes", () => {
     page,
   }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { name: "SinManos" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Ciento" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Relay" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Next" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "CareerFlow" }),
     ).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Cofre" })).toHaveCount(0);
-    for (const slug of ["sinmanos", "relay", "next", "careerflow"]) {
+    for (const slug of ["ciento", "relay", "next", "careerflow"]) {
       await expect(
         page.locator(`a[href="/work/${slug}"]`).first(),
       ).toBeVisible();
     }
     const liveProducts = page.getByRole("link", { name: /Live product/ });
-    await expect(liveProducts).toHaveCount(2);
+    await expect(liveProducts).toHaveCount(3);
     await expect(liveProducts.nth(0)).toHaveAttribute(
+      "href",
+      "https://ciento.me/",
+    );
+    await expect(liveProducts.nth(1)).toHaveAttribute(
       "href",
       "https://relay-console.sinmanos.workers.dev/",
     );
-    await expect(liveProducts.nth(1)).toHaveAttribute(
+    await expect(liveProducts.nth(2)).toHaveAttribute(
       "href",
       "https://next-queue-omega.vercel.app",
     );

@@ -22,14 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteConfig.siteUrl}/work/relay`,
-      lastModified: "2026-08-09",
+      url: `${siteConfig.siteUrl}/work/ciento`,
+      lastModified: "2026-10-16",
       changeFrequency: "monthly",
       priority: 0.95,
     },
     {
-      url: `${siteConfig.siteUrl}/work/sinmanos`,
-      lastModified: "2026-08-13",
+      url: `${siteConfig.siteUrl}/work/relay`,
+      lastModified: "2026-08-09",
       changeFrequency: "monthly",
       priority: 0.95,
     },
@@ -57,9 +57,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/es", priority: 1 },
     { path: "/es/servicios", priority: 0.95 },
     { path: "/es/shopify", priority: 0.9 },
+    { path: "/es/work/ciento", priority: 0.95 },
     { path: "/es/work/relay", priority: 0.95 },
     { path: "/es/work/next", priority: 0.9 },
-    { path: "/es/work/sinmanos", priority: 0.9 },
     { path: "/es/work/careerflow", priority: 0.9 },
     { path: "/es/about", priority: 0.7 },
   ] as const;
@@ -68,7 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...englishRoutes,
     ...spanishRoutes.map((route) => ({
       url: `${siteConfig.siteUrl}${route.path}`,
-      lastModified: "2026-09-14",
+      lastModified:
+        route.path === "/es/work/ciento" ? "2026-10-16" : "2026-09-14",
       changeFrequency: "monthly" as const,
       priority: route.priority,
     })),

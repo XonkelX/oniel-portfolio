@@ -17,6 +17,20 @@ const captures = [
     theme: "light" as const,
   },
   {
+    name: "portfolio-ciento-desktop.png",
+    route: "/work/ciento",
+    width: 1440,
+    height: 1000,
+    theme: "light" as const,
+  },
+  {
+    name: "portfolio-ciento-mobile.png",
+    route: "/work/ciento",
+    width: 375,
+    height: 812,
+    theme: "light" as const,
+  },
+  {
     name: "portfolio-relay-desktop.png",
     route: "/work/relay",
     width: 1440,

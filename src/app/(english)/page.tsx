@@ -144,8 +144,8 @@ function CompactProject({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 2);
-  const supportingProjects = projects.slice(2);
+  const featuredProjects = projects.slice(0, 3);
+  const supportingProjects = projects.slice(3);
   const featuredContributions = openSourceContributions.slice(0, 5);
 
   return (
@@ -184,23 +184,6 @@ export default function Home() {
             TypeScript maintenance · U.S. work authorized
           </p>
         </div>
-
-        <aside className="portrait-card hero-enter hero-enter--3">
-          <div className="portrait-card__image">
-            <Image
-              src="/oniel-alejo-feliz.jpg"
-              alt="Oniel Alejo Feliz"
-              fill
-              priority
-              sizes="(max-width: 900px) 92vw, 38vw"
-            />
-          </div>
-          <div className="portrait-card__caption">
-            <p>Oniel Alejo Feliz</p>
-            <h2>Software engineer</h2>
-            <span>Existing codebases. Focused changes. Tested behavior.</span>
-          </div>
-        </aside>
       </section>
 
       <section
@@ -267,9 +250,9 @@ export default function Home() {
       >
         <SectionHeading
           eyebrow="Selected engineering work"
-          title="Systems that make the reliability work visible."
+          title="Products shaped through delivery, collaboration, and reliability."
           id="work-title"
-          intro="Relay leads with delivery and failure recovery. Next shows authorization and multi-user data boundaries. The remaining projects broaden the product and interface evidence."
+          intro="Ciento leads with sustained product collaboration. Relay demonstrates delivery and failure recovery. Next shows authorization and multi-user data boundaries."
         />
         <div className="product-list">
           {featuredProjects.map((project, index) => (
@@ -284,9 +267,7 @@ export default function Home() {
         <div className="more-work">
           <div className="more-work__heading">
             <p className="eyebrow">Additional work</p>
-            <p>
-              Three more systems, with implementation evidence one click in.
-            </p>
+            <p>One more system, with implementation evidence one click in.</p>
           </div>
           <div className="compact-project-grid">
             {supportingProjects.map((project) => (

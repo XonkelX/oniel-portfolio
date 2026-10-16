@@ -8,21 +8,21 @@ const translations: Record<
     "category" | "summary" | "status" | "role" | "evidence" | "highlights"
   >
 > = {
-  sinmanos: {
-    category: "Producto full-stack · Analítica de League of Legends",
+  ciento: {
+    category: "Producto colaborativo · Plataforma de membresías",
     summary:
-      "Una plataforma enfocada en LAN para consultar perfiles, historial de partidas, tier lists, builds, runas, counters y orden de habilidades.",
-    status: "Beta pública",
-    role: "Diseño de producto, frontend, integración con Riot API y despliegue",
+      "Un producto activo de membresías que conecta negocios y miembros mediante beneficios, acceso y experiencias cuidadas en distintos dispositivos.",
+    status: "Colaboración activa",
+    role: "Colaborador de ingeniería de producto",
     evidence: [
-      { label: "Versión", value: "Beta pública" },
-      { label: "Datos", value: "Riot API + Data Dragon" },
-      { label: "Enfoque", value: "Jugadores LAN + analítica de campeones" },
+      { label: "Estado", value: "Colaboración en producto activo" },
+      { label: "Trabajo", value: "Ingeniería de producto" },
+      { label: "Enfoque", value: "Experiencia de negocios + miembros" },
     ],
     highlights: [
-      "Búsqueda por Riot ID en LAN e historial detallado de partidas",
-      "Tier lists, builds, runas, counters y progresión de habilidades",
-      "Sistema visual original desplegado en Cloudflare",
+      "Recorridos responsivos en las experiencias de Negocios y Miembros",
+      "Onboarding, navegación, manejo de imágenes e interacciones centrales de membresías",
+      "Pull requests acotados, correcciones de regresión y validación de entrega en navegador",
     ],
   },
   relay: {

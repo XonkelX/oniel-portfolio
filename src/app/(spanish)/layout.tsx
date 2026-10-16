@@ -74,7 +74,6 @@ const personJsonLd = {
   "@type": "Person",
   name: siteConfig.name,
   url: siteConfig.siteUrl,
-  image: `${siteConfig.siteUrl}/oniel-alejo-feliz.jpg`,
   jobTitle: "Ingeniero de Software",
   email: `mailto:${siteConfig.email}`,
   sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl],

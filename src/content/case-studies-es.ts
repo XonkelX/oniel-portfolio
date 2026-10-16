@@ -1,4 +1,5 @@
-export type SpanishCaseStudySlug = "sinmanos" | "relay" | "next" | "careerflow";
+export type SpanishCaseStudySlug =
+  "ciento" | "sinmanos" | "relay" | "next" | "careerflow";
 
 export type SpanishCaseStudy = {
   slug: SpanishCaseStudySlug;
@@ -34,7 +35,73 @@ export type SpanishCaseStudy = {
   next: { slug: SpanishCaseStudySlug | null; label: string };
 };
 
-export const spanishCaseStudies: readonly SpanishCaseStudy[] = [
+const allSpanishCaseStudies: readonly SpanishCaseStudy[] = [
+  {
+    slug: "ciento",
+    seoTitle: "Caso de estudio de Ciento",
+    seoDescription:
+      "Contribuciones de ingeniería de producto de Oniel Alejo Feliz a las experiencias de Negocios y Miembros de Ciento.",
+    version: "Colaboración activa / 2026",
+    summary:
+      "Contribuciones de ingeniería de producto a una plataforma activa de membresías para negocios y miembros.",
+    meta: [
+      ["Rol", "Colaborador de ingeniería de producto"],
+      ["Contexto", "Desarrollo colaborativo de producto"],
+      ["Enfoque", "Experiencia de Negocios + Miembros"],
+      ["Estado", "Producto activo"],
+    ],
+    cover: {
+      src: "/projects/ciento/ciento-home.png",
+      alt: "Página pública de Ciento que presenta membresías y beneficios",
+      caption: "Ciento · Experiencia pública de membresías en ciento.me",
+      width: 1440,
+      height: 900,
+    },
+    sections: [
+      {
+        eyebrow: "01 / Contexto del producto",
+        title: "Una experiencia de membresías para los dos lados del producto.",
+        lede: "Ciento conecta a los miembros con beneficios de los negocios que eligen, mientras ofrece a los negocios una superficie de producto dedicada para administrar esa relación.",
+        paragraphs: [
+          "Mi trabajo ocurre dentro de un producto existente y en desarrollo activo. El objetivo es avanzar experiencias definidas respetando el comportamiento establecido, la dirección del producto y el trabajo de otros colaboradores.",
+        ],
+      },
+      {
+        eyebrow: "02 / Contribución",
+        title: "Mejoras que encajan en un producto que ya está en movimiento.",
+        decisions: [
+          {
+            title: "Recorridos entre dispositivos",
+            copy: "Refiné experiencias responsivas de Negocios y Miembros para mantener claros la navegación, los controles y los estados importantes en escritorio y móvil.",
+          },
+          {
+            title: "Interacciones enfocadas",
+            copy: "Mejoré onboarding, controles de selección, manejo de imágenes e interacciones centrales de membresías dentro del sistema visual existente.",
+          },
+          {
+            title: "Mantenimiento orientado a entregas",
+            copy: "Entregué correcciones acotadas mediante pull requests, atendí regresiones después de integrar y validé los recorridos afectados en navegador.",
+          },
+        ],
+      },
+      {
+        eyebrow: "03 / Colaboración",
+        title: "Cambios acotados, revisión e integración.",
+        paragraphs: [
+          "Las contribuciones se separan en ramas y pull requests enfocados. Cada cambio se compara con el producto vigente, se ajusta si la integración revela una regresión y se mantiene dentro de los límites de la experiencia asignada.",
+          "El trabajo demuestra colaboración en una base de código compartida: comprender el comportamiento existente, respetar decisiones de producto, comunicar el alcance y conservar continuidad entre entregas.",
+        ],
+      },
+      {
+        eyebrow: "04 / Límite público",
+        title: "Un caso útil sin exponer detalles privados del producto.",
+        paragraphs: [
+          "Este caso utiliza únicamente la landing pública de Ciento y una descripción general de mi contribución. No reproduce dashboards privados, información de cuentas, datos operativos, arquitectura interna ni funciones sin publicar.",
+        ],
+      },
+    ],
+    next: { slug: "relay", label: "Explorar Relay" },
+  },
   {
     slug: "sinmanos",
     seoTitle: "Caso de estudio de SinManos",
@@ -483,6 +550,10 @@ export const spanishCaseStudies: readonly SpanishCaseStudy[] = [
     next: { slug: null, label: "Volver a proyectos seleccionados" },
   },
 ] as const;
+
+export const spanishCaseStudies = allSpanishCaseStudies.filter(
+  (study) => study.slug !== "sinmanos",
+);
 
 export function getSpanishCaseStudy(slug: string) {
   return spanishCaseStudies.find((study) => study.slug === slug);
