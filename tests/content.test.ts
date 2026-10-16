@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
   careerFlow,
+  ciento,
   getProjectLink,
   nextQueue,
   projects,
   relay,
-  sinManos,
 } from "@/content/projects";
 import { openSourceContributions } from "@/content/contributions";
 import { navigation, siteConfig } from "@/content/site";
@@ -16,7 +16,13 @@ import { spanishContributions } from "@/content/contributions-es";
 describe("portfolio content configuration", () => {
   it("contains four featured projects with complete media", () => {
     expect(projects).toHaveLength(4);
-    expect(sinManos.featured).toBe(true);
+    expect(projects.map((project) => project.slug)).toEqual([
+      "ciento",
+      "relay",
+      "next",
+      "careerflow",
+    ]);
+    expect(ciento.featured).toBe(true);
     expect(relay.featured).toBe(true);
     expect(careerFlow.featured).toBe(true);
     expect(nextQueue.featured).toBe(true);
@@ -26,8 +32,9 @@ describe("portfolio content configuration", () => {
     expect(nextQueue.mobileImage).toMatch(/^\/projects\/next-queue\/.+\.png$/);
     expect(relay.coverImage).toMatch(/^\/projects\/relay\/.+\.png$/);
     expect(relay.mobileImage).toMatch(/^\/projects\/relay\/.+\.png$/);
-    expect(sinManos.coverImage).toMatch(/^\/projects\/sinmanos\/.+\.png$/);
-    expect(sinManos.mobileImage).toMatch(/^\/projects\/sinmanos\/.+\.png$/);
+    expect(ciento.coverImage).toMatch(/^\/projects\/ciento\/.+\.png$/);
+    expect(ciento.mobileImage).toMatch(/^\/projects\/ciento\/.+\.png$/);
+    expect(ciento.links.map((link) => link.kind)).toEqual(["live"]);
   });
 
   it("provides every required public CareerFlow destination", () => {

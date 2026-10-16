@@ -150,8 +150,8 @@ function CompactProject({ project }: { project: Project }) {
 }
 
 export default function SpanishHome() {
-  const featuredProjects = spanishProjects.slice(0, 2);
-  const supportingProjects = spanishProjects.slice(2);
+  const featuredProjects = spanishProjects.slice(0, 3);
+  const supportingProjects = spanishProjects.slice(3);
   const featuredContributions = spanishContributions.slice(0, 5);
 
   return (
@@ -192,25 +192,6 @@ export default function SpanishHome() {
             EE. UU.
           </p>
         </div>
-
-        <aside className="portrait-card hero-enter hero-enter--3">
-          <div className="portrait-card__image">
-            <Image
-              src="/oniel-alejo-feliz.jpg"
-              alt="Oniel Alejo Feliz"
-              fill
-              priority
-              sizes="(max-width: 900px) 92vw, 38vw"
-            />
-          </div>
-          <div className="portrait-card__caption">
-            <p>Oniel Alejo Feliz</p>
-            <h2>Ingeniero de software</h2>
-            <span>
-              Código existente. Cambios enfocados. Comportamiento verificado.
-            </span>
-          </div>
-        </aside>
       </section>
 
       <section
@@ -285,9 +266,9 @@ export default function SpanishHome() {
       >
         <SectionHeading
           eyebrow="Trabajo de ingeniería seleccionado"
-          title="Sistemas que hacen visible el trabajo de confiabilidad."
+          title="Productos construidos con entrega, colaboración y confiabilidad."
           id="work-title-es"
-          intro="Relay muestra entrega y recuperación ante fallos. Next muestra autorización y límites de datos entre usuarios. Los demás proyectos amplían la evidencia de producto e interfaz."
+          intro="Ciento abre con colaboración sostenida en un producto activo. Relay muestra entrega y recuperación ante fallos. Next muestra autorización y límites de datos entre usuarios."
         />
         <div className="product-list">
           {featuredProjects.map((project, index) => (
@@ -301,7 +282,7 @@ export default function SpanishHome() {
         <div className="more-work">
           <div className="more-work__heading">
             <p className="eyebrow">Trabajo adicional</p>
-            <p>Tres sistemas más, con evidencia de implementación a un clic.</p>
+            <p>Un sistema más, con evidencia de implementación a un clic.</p>
           </div>
           <div className="compact-project-grid">
             {supportingProjects.map((project) => (

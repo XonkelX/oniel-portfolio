@@ -1,39 +1,38 @@
 import type { Project } from "@/types/project";
 
-export const sinManos: Project = {
-  slug: "sinmanos",
-  name: "SinManos",
-  category: "Full-stack product · League of Legends analytics",
+export const ciento: Project = {
+  slug: "ciento",
+  name: "Ciento",
+  category: "Collaborative product · Membership platform",
   summary:
-    "A LAN-focused League of Legends analytics product for exploring player profiles, match history, champion tier lists, builds, runes, counters, and skill paths.",
+    "An active membership product connecting businesses and members through benefits, access, and polished cross-device experiences.",
   year: 2026,
-  status: "Public beta",
-  role: "Product design, frontend engineering, Riot API integration, and deployment",
+  status: "Active collaboration",
+  role: "Product engineering contributor",
   technologies: [
-    "React",
+    "Next.js",
     "TypeScript",
-    "Vite",
-    "Cloudflare Workers",
-    "Riot API",
-    "Data Dragon",
+    "React",
+    "Responsive UI",
+    "Browser QA",
   ],
-  coverImage: "/projects/sinmanos/home.png",
-  mobileImage: "/projects/sinmanos/champion.png",
+  coverImage: "/projects/ciento/ciento-home.png",
+  mobileImage: "/projects/ciento/ciento-home.png",
   featured: true,
   evidence: [
-    { label: "Release", value: "Public beta" },
-    { label: "Data", value: "Riot API + Data Dragon" },
-    { label: "Focus", value: "LAN players + champion analytics" },
+    { label: "Status", value: "Active product collaboration" },
+    { label: "Work", value: "Product engineering" },
+    { label: "Focus", value: "Business + member experience" },
   ],
   highlights: [
-    "LAN Riot ID lookup and a detailed match-history interface",
-    "Tier lists, champion builds, rune paths, counters, and skill-order guidance",
-    "An original brush-led visual system deployed through Cloudflare",
+    "Responsive product journeys across the Business and Member experiences",
+    "Onboarding, navigation, media handling, and core membership interactions",
+    "Scoped pull requests, regression fixes, and release-focused browser validation",
   ],
   links: [
     {
-      label: "Open SinManos",
-      href: "https://sinmanos.site",
+      label: "Open live product",
+      href: "https://ciento.me/",
       kind: "live",
     },
   ],
@@ -182,7 +181,7 @@ export const nextQueue: Project = {
   ],
 } as const;
 
-export const projects = [relay, nextQueue, sinManos, careerFlow] as const;
+export const projects = [ciento, relay, nextQueue, careerFlow] as const;
 
 export function getProjectLink(kind: Project["links"][number]["kind"]) {
   const link = careerFlow.links.find((item) => item.kind === kind);
