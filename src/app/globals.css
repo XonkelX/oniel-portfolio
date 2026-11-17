@@ -174,28 +174,6 @@ a:focus-visible .external-mark {
   justify-content: space-between;
   gap: 1.5rem;
 }
-.wordmark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-  font-size: 0.77rem;
-  font-weight: 750;
-  letter-spacing: -0.08em;
-  text-decoration: none;
-  transition:
-    background 160ms,
-    color 160ms;
-}
-.wordmark span {
-  color: var(--accent);
-}
-.wordmark:hover {
-  background: var(--ink);
-  color: var(--canvas);
-}
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -1653,6 +1631,9 @@ a:focus-visible .external-mark {
   .desktop-nav {
     display: none;
   }
+  .site-header__actions {
+    margin-left: auto;
+  }
   .header-cta {
     display: none;
   }
@@ -2080,17 +2061,6 @@ main:not(.vino) :is(h1, h2) {
   background: var(--wine);
   color: var(--white);
   backdrop-filter: none;
-}
-.site-header .wordmark {
-  border-color: var(--white);
-  color: var(--white);
-}
-.site-header .wordmark span {
-  color: var(--green-bright);
-}
-.site-header .wordmark:hover {
-  background: var(--white);
-  color: var(--wine);
 }
 .site-header .desktop-nav a::after {
   background: var(--green-bright);

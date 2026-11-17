@@ -49,8 +49,6 @@ describe("portfolio content configuration", () => {
       "Work",
       "AI Ads",
       "Open source",
-      "Services",
-      "About",
     ]);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
     expect(siteConfig.linkedinUrl).toContain("linkedin.com/in/");
@@ -59,8 +57,6 @@ describe("portfolio content configuration", () => {
       "Proyectos",
       "Anuncios IA",
       "Código abierto",
-      "Servicios",
-      "Sobre mí",
     ]);
   });
 

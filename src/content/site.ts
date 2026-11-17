@@ -15,16 +15,12 @@ export const navigation = [
   { label: "Work", href: "/#work" },
   { label: "AI Ads", href: "/#ads" },
   { label: "Open source", href: "/#open-source" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
 ] as const;
 
 export const spanishNavigation = [
   { label: "Proyectos", href: "/es#proyectos" },
   { label: "Anuncios IA", href: "/es#anuncios" },
   { label: "Código abierto", href: "/es#codigo-abierto" },
-  { label: "Servicios", href: "/es/servicios" },
-  { label: "Sobre mí", href: "/es/about" },
 ] as const;
 
 export function navigationFor(locale: Locale) {
