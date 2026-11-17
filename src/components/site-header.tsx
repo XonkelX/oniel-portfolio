@@ -9,21 +9,9 @@ import { navigationFor } from "@/content/site";
 
 export function SiteHeader({ locale = "en" }: { locale?: Locale }) {
   const localizedNavigation = navigationFor(locale);
-  const homeHref = locale === "es" ? "/es" : "/";
   return (
     <header className="site-header">
       <div className="site-header__inner container">
-        <Link
-          className="wordmark"
-          href={homeHref}
-          aria-label={
-            locale === "es"
-              ? "Oniel Alejo Feliz, página de inicio"
-              : "Oniel Alejo Feliz, home"
-          }
-        >
-          OA<span>F</span>
-        </Link>
         <nav
           className="desktop-nav"
           aria-label={
