@@ -1,4 +1,4 @@
-/* Vino homepage: wine hero, black ad screening room, project list, merged-PR count, green contact. */
+/* Vino homepage: 3D project hero, black ad screening room, project list, merged-PR count, green contact. */
 .vino {
   overflow-x: clip;
 }
@@ -46,108 +46,150 @@
   color: var(--black);
 }
 
-/* ---------- Hero ---------- */
-.vino-hero {
-  background: var(--wine);
+/* ---------- Hero: project screens on a 3D ring ---------- */
+.mz-hero {
+  position: relative;
+  height: clamp(560px, calc(100svh - 74px), 860px);
+  overflow: hidden;
+  background: #070707;
   color: var(--white);
-  padding-block: clamp(2rem, 4vw, 3.5rem) 2.75rem;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
 }
-.vino-hero__inner {
-  position: relative;
+.mz-hero.is-dragging {
+  cursor: grabbing;
 }
-.vino-hero__name {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-variation-settings: "opsz" 144;
+.mz-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -20% -30% -20%;
+  height: 75%;
+  background: radial-gradient(
+    ellipse at 50% 70%,
+    rgba(179, 38, 62, 0.55),
+    rgba(107, 20, 36, 0.18) 45%,
+    transparent 70%
+  );
   pointer-events: none;
 }
-.vino-hero__first {
-  display: block;
-  font-size: clamp(5rem, 22vw, 21rem);
-  font-weight: 900;
-  line-height: 0.78;
-  letter-spacing: -0.055em;
-}
-.vino-hero__last {
-  display: block;
-  margin-left: 0.6em;
-  font-size: clamp(2.6rem, 9.5vw, 9rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-}
-.vino-hero__float {
+.mz-stage {
   position: absolute;
-  z-index: 1;
-  top: 2%;
-  right: 0;
-  width: min(42vw, 600px);
-  margin: 0;
-  transform: rotate(5deg);
-  transition: transform 500ms var(--ease-out);
+  inset: 34% 0 auto;
+  height: 0;
+  perspective: 1500px;
 }
-.vino-hero__float:hover {
-  transform: rotate(2deg) translateY(-6px);
+.mz-ring {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-style: preserve-3d;
 }
-.vino-hero__float img {
-  width: 100%;
-  height: auto;
+.mz-panel {
+  position: absolute;
+  top: calc(var(--pw, 420px) * -0.3125);
+  left: calc(var(--pw, 420px) / -2);
+  width: var(--pw, 420px);
   aspect-ratio: 16 / 10;
+  backface-visibility: hidden;
+}
+.mz-panel img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
-  border: 10px solid var(--white);
-  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
 }
-.vino-hero__float figcaption {
-  margin-top: 0.75rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-align: right;
-  text-transform: uppercase;
-}
-.vino-hero__meta {
-  position: relative;
+.mz-bottom {
+  position: absolute;
   z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 3.5rem 0 0;
-  padding-top: 1.4rem;
-  border-top: 1px solid rgba(251, 251, 248, 0.35);
-  font-size: 0.95rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 2.1rem;
+  pointer-events: none;
 }
-.vino-hero__meta dt {
-  margin-bottom: 0.4rem;
+.mz-bottom__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.9rem;
+}
+.mz-name {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(3.4rem, 10vw, 9.6rem);
+  font-variation-settings: "opsz" 144;
+  font-weight: 900;
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+}
+.mz-name span:first-child {
+  display: block;
+}
+.mz-name em {
+  color: var(--wine-glow);
+  font-style: italic;
+  font-weight: 400;
+}
+.mz-facing {
+  display: grid;
+  gap: 0.4rem;
+  width: min(340px, 100%);
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: auto;
+}
+.mz-facing__label {
+  color: var(--green-bright);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.75;
 }
-.vino-hero__meta dd {
+.mz-facing__label::before {
+  content: "● ";
+}
+.mz-facing b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.mz-facing p {
   margin: 0;
+  color: #c9c6be;
+  font-size: 0.98rem;
 }
-.vino-live {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  background: var(--green-bright);
-  animation: vino-ping 2s infinite;
+.mz-facing a {
+  justify-self: start;
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
 }
-@keyframes vino-ping {
-  0% {
-    box-shadow: 0 0 0 0 rgba(61, 190, 126, 0.7);
-  }
-  70%,
-  100% {
-    box-shadow: 0 0 0 10px rgba(61, 190, 126, 0);
-  }
+.mz-facing a:hover,
+.mz-facing a:focus-visible {
+  color: var(--green-bright);
+}
+.mz-facing__hint {
+  color: #8b887f;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+/* The header turns black on the homepage so it blends into the 3D hero */
+body:has(.mz-hero) .site-header {
+  background: #070707;
+}
+body:has(.mz-hero) .site-header .header-cta {
+  color: var(--black);
 }
 
 /* ---------- Ads ---------- */
@@ -560,15 +602,6 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .vino-hero__float {
-    position: relative;
-    top: auto;
-    width: 86%;
-    margin: 0 0 2rem auto;
-  }
-  .vino-hero__meta {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .vino-ads__head {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -622,11 +655,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .vino-live {
-    animation: none;
-  }
   .vino-row__name,
-  .vino-hero__float,
   .vino-preview img {
     transition: none;
   }

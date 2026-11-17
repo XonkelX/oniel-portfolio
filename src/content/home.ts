@@ -54,17 +54,62 @@ const workImages = {
   careerflow: "/projects/careerflow/careerflow-dashboard-desktop.png",
 } as const;
 
+/** Screens on the homepage 3D carousel, in spin order. */
+const heroImages = {
+  ciento: "/projects/ciento/ciento-home.png",
+  relay: "/projects/relay/relay-landing.png",
+  next: "/projects/next-queue/landing-page.png",
+  careerflow: "/projects/careerflow/careerflow-dashboard-desktop.png",
+  relayLab: "/projects/relay/relay-failure-lab.png",
+  nextStaff: "/projects/next-queue/staff-board.png",
+} as const;
+
 const copy = {
   en: {
     homeLabel: "Oniel Alejo Feliz",
-    meta: [
-      { label: "Work", value: "Web products + AI ads" },
-      { label: "Base", value: "Tampa, Florida · remote" },
-      { label: "Languages", value: "English y español" },
-      { label: "Status", value: "Open to roles and projects", live: true },
-    ],
-    floatCaption: "Now building · Ciento",
-    floatAlt: "Ciento membership platform home page",
+    hero: {
+      facing: "Now facing",
+      open: "Open case",
+      drag: "Drag to spin",
+      panels: [
+        {
+          slug: "ciento",
+          name: "Ciento",
+          desc: "Membership platform for businesses and members.",
+          image: heroImages.ciento,
+        },
+        {
+          slug: "relay",
+          name: "Relay",
+          desc: "Webhooks that survive failures.",
+          image: heroImages.relay,
+        },
+        {
+          slug: "next",
+          name: "Next",
+          desc: "Live queues for staff, customers and screens.",
+          image: heroImages.next,
+        },
+        {
+          slug: "careerflow",
+          name: "CareerFlow",
+          desc: "Applications, deadlines and resumes in one place.",
+          image: heroImages.careerflow,
+        },
+        {
+          slug: "relay",
+          name: "Relay",
+          desc: "The Failure Lab: break deliveries on purpose and watch them recover.",
+          image: heroImages.relayLab,
+        },
+        {
+          slug: "next",
+          name: "Next",
+          desc: "The staff board that moves every queue in real time.",
+          image: heroImages.nextStaff,
+        },
+      ],
+    },
     ads: {
       id: "ads",
       eyebrow: "AI ads for businesses",
@@ -170,18 +215,49 @@ const copy = {
   },
   es: {
     homeLabel: "Oniel Alejo Feliz",
-    meta: [
-      { label: "Hago", value: "Productos web + anuncios con IA" },
-      { label: "Base", value: "Tampa, Florida · remoto" },
-      { label: "Idiomas", value: "Español y English" },
-      {
-        label: "Estado",
-        value: "Disponible para roles y proyectos",
-        live: true,
-      },
-    ],
-    floatCaption: "Ahora construyendo · Ciento",
-    floatAlt: "Página de inicio de la plataforma de membresías Ciento",
+    hero: {
+      facing: "Ahora al frente",
+      open: "Abrir caso",
+      drag: "Arrastra para girar",
+      panels: [
+        {
+          slug: "ciento",
+          name: "Ciento",
+          desc: "Plataforma de membresías para negocios y miembros.",
+          image: heroImages.ciento,
+        },
+        {
+          slug: "relay",
+          name: "Relay",
+          desc: "Webhooks que sobreviven a los fallos.",
+          image: heroImages.relay,
+        },
+        {
+          slug: "next",
+          name: "Next",
+          desc: "Colas en vivo para personal, clientes y pantallas.",
+          image: heroImages.next,
+        },
+        {
+          slug: "careerflow",
+          name: "CareerFlow",
+          desc: "Postulaciones, fechas límite y currículums en un solo lugar.",
+          image: heroImages.careerflow,
+        },
+        {
+          slug: "relay",
+          name: "Relay",
+          desc: "El Failure Lab: rompe entregas a propósito y mira cómo se recuperan.",
+          image: heroImages.relayLab,
+        },
+        {
+          slug: "next",
+          name: "Next",
+          desc: "El tablero del personal que mueve cada cola en tiempo real.",
+          image: heroImages.nextStaff,
+        },
+      ],
+    },
     ads: {
       id: "anuncios",
       eyebrow: "Anuncios con IA para negocios",
