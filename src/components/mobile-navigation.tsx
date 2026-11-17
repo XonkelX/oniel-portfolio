@@ -102,12 +102,7 @@ export function MobileNavigation({ locale = "en" }: { locale?: Locale }) {
                   <Link
                     key={item.label}
                     href={item.href}
-                    aria-current={
-                      (item.href === "/" && pathname === "/") ||
-                      item.href === pathname
-                        ? "page"
-                        : undefined
-                    }
+                    aria-current={item.href === pathname ? "page" : undefined}
                     onClick={() => setOpen(false)}
                   >
                     <span>0{index + 1}</span>

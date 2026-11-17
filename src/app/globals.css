@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f2f0eb;
-  --surface: #faf9f5;
-  --surface-strong: #e8e5de;
-  --ink: #171a17;
-  --muted: #5d625c;
-  --line: #c9c7bf;
-  --line-strong: #8c918b;
-  --accent: #315bd6;
+  /* Vino palette: white, black, wine and green */
+  --white: #fbfbf8;
+  --black: #0a0a0a;
+  --wine: #6b1424;
+  --wine-glow: #b3263e;
+  --green: #127a4e;
+  --green-bright: #3dbe7e;
+  --canvas: #fbfbf8;
+  --surface: #ffffff;
+  --surface-strong: #efede6;
+  --ink: #0a0a0a;
+  --muted: #5f5b53;
+  --line: #dcd8cf;
+  --line-strong: #8f8a80;
+  --accent: #6b1424;
   --accent-ink: #ffffff;
-  --dark-panel: #171a17;
-  --dark-panel-ink: #f4f2ec;
-  --shadow: 0 22px 70px rgba(32, 37, 32, 0.15);
+  --dark-panel: #0a0a0a;
+  --dark-panel-ink: #fbfbf8;
+  --shadow: 0 22px 70px rgba(20, 10, 12, 0.14);
   --radius-sm: 6px;
   --radius-md: 12px;
   --container: 1180px;
@@ -23,36 +30,19 @@
 }
 
 :root[data-theme="dark"] {
-  --canvas: #111311;
-  --surface: #181b18;
-  --surface-strong: #242824;
-  --ink: #f0eee8;
-  --muted: #a7aca5;
-  --line: #343934;
-  --line-strong: #737a73;
-  --accent: #7f9cff;
-  --accent-ink: #0f1320;
-  --dark-panel: #e7e5df;
-  --dark-panel-ink: #171a17;
-  --shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
+  --canvas: #0a0a0a;
+  --surface: #141414;
+  --surface-strong: #1f1f1f;
+  --ink: #f3f1ea;
+  --muted: #aaa69d;
+  --line: #2b2b2b;
+  --line-strong: #77736b;
+  --accent: #3dbe7e;
+  --accent-ink: #0a0a0a;
+  --dark-panel: #f3f1ea;
+  --dark-panel-ink: #0a0a0a;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.4);
   color-scheme: dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --canvas: #111311;
-    --surface: #181b18;
-    --surface-strong: #242824;
-    --ink: #f0eee8;
-    --muted: #a7aca5;
-    --line: #343934;
-    --line-strong: #737a73;
-    --accent: #7f9cff;
-    --accent-ink: #0f1320;
-    --dark-panel: #e7e5df;
-    --dark-panel-ink: #171a17;
-    color-scheme: dark;
-  }
 }
 
 * {
@@ -145,8 +135,14 @@ button {
 }
 em {
   color: var(--accent);
-  font-family: Georgia, serif;
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
   font-weight: 400;
+}
+h1,
+h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-variation-settings: "opsz" 144;
 }
 .lede {
   font-size: clamp(1.25rem, 2.1vw, 1.7rem);
@@ -2071,4 +2067,84 @@ a:focus-visible .external-mark {
   .browser-frame {
     border: 1px solid CanvasText;
   }
+}
+
+/* Fraunces needs looser tracking than the previous sans-serif headings */
+main:not(.vino) :is(h1, h2) {
+  letter-spacing: -0.02em !important;
+}
+
+/* ---------- Vino site chrome: wine header and black footer on every page ---------- */
+.site-header {
+  border-bottom: 0;
+  background: var(--wine);
+  color: var(--white);
+  backdrop-filter: none;
+}
+.site-header .wordmark {
+  border-color: var(--white);
+  color: var(--white);
+}
+.site-header .wordmark span {
+  color: var(--green-bright);
+}
+.site-header .wordmark:hover {
+  background: var(--white);
+  color: var(--wine);
+}
+.site-header .desktop-nav a::after {
+  background: var(--green-bright);
+}
+.site-header .header-cta {
+  border-color: var(--white);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--wine);
+}
+.site-header .header-cta:hover,
+.site-header .header-cta:focus-visible {
+  border-color: var(--green-bright);
+  background: var(--green-bright);
+  color: var(--black);
+}
+.site-header .language-switch {
+  border-color: rgba(251, 251, 248, 0.45);
+  color: var(--white);
+}
+.site-header .language-switch:hover,
+.site-header .language-switch:focus-visible {
+  border-color: var(--green-bright);
+  color: var(--green-bright);
+}
+.site-header .theme-toggle,
+.site-header .menu-button {
+  color: var(--white);
+}
+.site-header .theme-toggle__track {
+  border-color: rgba(251, 251, 248, 0.6);
+}
+.site-header .theme-toggle__thumb {
+  background: var(--white);
+}
+[data-theme="dark"] .site-header .theme-toggle__thumb {
+  background: var(--green-bright);
+}
+.site-header :focus-visible {
+  outline-color: var(--green-bright);
+}
+.site-footer {
+  border-top: 0;
+  background: var(--black);
+}
+.site-footer__inner {
+  color: #b9b5ac;
+}
+.site-footer__inner a:hover {
+  color: var(--white);
+}
+.contact .eyebrow {
+  color: var(--green-bright);
+}
+[data-theme="dark"] .contact .eyebrow {
+  color: var(--wine);
 }

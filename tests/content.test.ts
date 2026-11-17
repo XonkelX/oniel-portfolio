@@ -46,24 +46,20 @@ describe("portfolio content configuration", () => {
 
   it("provides a recruiter-focused navigation and resume", () => {
     expect(navigation.map((item) => item.label)).toEqual([
-      "Home",
       "Work",
-      "Shopify",
+      "AI Ads",
       "Open source",
       "Services",
-      "Skills",
       "About",
     ]);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
     expect(siteConfig.linkedinUrl).toContain("linkedin.com/in/");
     expect(siteConfig.siteUrl).toBe("https://onielalejofeliz.space");
     expect(spanishNavigation.map((item) => item.label)).toEqual([
-      "Inicio",
       "Proyectos",
-      "Shopify",
+      "Anuncios IA",
       "Código abierto",
       "Servicios",
-      "Habilidades",
       "Sobre mí",
     ]);
   });

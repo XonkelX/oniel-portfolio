@@ -61,7 +61,7 @@ test.describe("portfolio routes", () => {
   }) => {
     await page.goto("/es");
     await expect(
-      page.getByRole("heading", { name: /corrijo, estabilizo y entrego/i }),
+      page.getByRole("heading", { name: /Anuncios que frenan/i }),
     ).toBeVisible();
     for (const slug of ["ciento", "relay", "next", "careerflow"]) {
       await expect(
@@ -75,41 +75,35 @@ test.describe("portfolio routes", () => {
     ).toHaveAttribute("href", "/es/about");
   });
 
-  test("homepage exposes four projects and verified destinations", async ({
+  test("homepage exposes four projects, ad samples and verified destinations", async ({
     page,
   }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { name: "Ciento" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Relay" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Next" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "CareerFlow" }),
+      page.getByRole("heading", { level: 1, name: "Oniel Alejo Feliz" }),
     ).toBeVisible();
+    for (const name of ["Ciento", "Relay", "Next", "CareerFlow"]) {
+      await expect(
+        page.getByRole("heading", { level: 3, name, exact: true }),
+      ).toBeVisible();
+    }
     for (const slug of ["ciento", "relay", "next", "careerflow"]) {
       await expect(
         page.locator(`a[href="/work/${slug}"]`).first(),
       ).toBeVisible();
     }
-    const liveProducts = page.getByRole("link", { name: /Live product/ });
-    await expect(liveProducts).toHaveCount(3);
-    await expect(liveProducts.nth(0)).toHaveAttribute(
-      "href",
-      "https://ciento.me/",
-    );
-    await expect(liveProducts.nth(1)).toHaveAttribute(
-      "href",
-      "https://relay-console.sinmanos.workers.dev/",
-    );
-    await expect(liveProducts.nth(2)).toHaveAttribute(
-      "href",
-      "https://next-queue-omega.vercel.app",
-    );
     await expect(
-      page.getByRole("heading", { name: /codebases I did not design/i }),
+      page.getByRole("heading", { name: /Ads that stop/i }),
     ).toBeVisible();
+    await expect(page.locator("#ads video")).toHaveCount(3);
+    await expect(
+      page.getByRole("heading", {
+        name: /12 pull requests merged in other people's codebases/i,
+      }),
+    ).toBeAttached();
     await expect(
       page.getByRole("link", {
-        name: "Review PR #29 (opens in a new tab)",
+        name: "BlueHex (opens in a new tab)",
         exact: true,
       }),
     ).toHaveAttribute("href", "https://github.com/codesydney/bluehex/pull/29");

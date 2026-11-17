@@ -12,22 +12,18 @@ export const siteConfig = {
 export type Locale = "en" | "es";
 
 export const navigation = [
-  { label: "Home", href: "/" },
   { label: "Work", href: "/#work" },
-  { label: "Shopify", href: "/shopify" },
+  { label: "AI Ads", href: "/#ads" },
   { label: "Open source", href: "/#open-source" },
   { label: "Services", href: "/services" },
-  { label: "Skills", href: "/#skills" },
   { label: "About", href: "/about" },
 ] as const;
 
 export const spanishNavigation = [
-  { label: "Inicio", href: "/es" },
   { label: "Proyectos", href: "/es#proyectos" },
-  { label: "Shopify", href: "/es/shopify" },
+  { label: "Anuncios IA", href: "/es#anuncios" },
   { label: "Código abierto", href: "/es#codigo-abierto" },
   { label: "Servicios", href: "/es/servicios" },
-  { label: "Habilidades", href: "/es#habilidades" },
   { label: "Sobre mí", href: "/es/about" },
 ] as const;
 

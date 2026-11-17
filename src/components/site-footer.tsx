@@ -5,6 +5,7 @@ import type { Locale } from "@/content/site";
 
 export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
   const aboutHref = locale === "es" ? "/es/about" : "/about";
+  const shopifyHref = locale === "es" ? "/es/shopify" : "/shopify";
   return (
     <footer className="site-footer">
       <div className="site-footer__inner container">
@@ -14,6 +15,7 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
             {locale === "es" ? "Currículum" : "Résumé"}
           </a>
           <Link href={aboutHref}>{locale === "es" ? "Sobre mí" : "About"}</Link>
+          <Link href={shopifyHref}>Shopify</Link>
           <a href={`mailto:${siteConfig.email}`}>
             {locale === "es" ? "Correo" : "Email"}
           </a>

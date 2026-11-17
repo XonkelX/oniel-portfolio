@@ -1,0 +1,633 @@
+/* Vino homepage: wine hero, black ad screening room, project list, merged-PR count, green contact. */
+.vino {
+  overflow-x: clip;
+}
+.vino-wrap {
+  width: min(calc(100% - (var(--gutter) * 2)), 1320px);
+  margin-inline: auto;
+}
+.vino h2,
+.vino h3 {
+  margin: 0;
+}
+.vino-mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.vino-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.8rem 1.3rem;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform 180ms var(--ease-out),
+    background-color 180ms,
+    color 180ms;
+}
+.vino-btn:hover,
+.vino-btn:focus-visible {
+  transform: translateY(-2px);
+}
+.vino-btn--dark {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+.vino-btn--green {
+  background: var(--green-bright);
+  border-color: var(--green-bright);
+  color: var(--black);
+}
+
+/* ---------- Hero ---------- */
+.vino-hero {
+  background: var(--wine);
+  color: var(--white);
+  padding-block: clamp(2rem, 4vw, 3.5rem) 2.75rem;
+}
+.vino-hero__inner {
+  position: relative;
+}
+.vino-hero__name {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-variation-settings: "opsz" 144;
+  pointer-events: none;
+}
+.vino-hero__first {
+  display: block;
+  font-size: clamp(5rem, 22vw, 21rem);
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+}
+.vino-hero__last {
+  display: block;
+  margin-left: 0.6em;
+  font-size: clamp(2.6rem, 9.5vw, 9rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.vino-hero__float {
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  right: 0;
+  width: min(42vw, 600px);
+  margin: 0;
+  transform: rotate(5deg);
+  transition: transform 500ms var(--ease-out);
+}
+.vino-hero__float:hover {
+  transform: rotate(2deg) translateY(-6px);
+}
+.vino-hero__float img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border: 10px solid var(--white);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+}
+.vino-hero__float figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+.vino-hero__meta {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 3.5rem 0 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(251, 251, 248, 0.35);
+  font-size: 0.95rem;
+}
+.vino-hero__meta dt {
+  margin-bottom: 0.4rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.vino-hero__meta dd {
+  margin: 0;
+}
+.vino-live {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--green-bright);
+  animation: vino-ping 2s infinite;
+}
+@keyframes vino-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(61, 190, 126, 0.7);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px rgba(61, 190, 126, 0);
+  }
+}
+
+/* ---------- Ads ---------- */
+.vino-ads {
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--white);
+  padding-block: clamp(4.5rem, 8vw, 6.5rem) clamp(5rem, 8vw, 7rem);
+}
+.vino-ads::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 1100px;
+  height: 700px;
+  translate: -50% 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(142, 29, 51, 0.5),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.vino-ads .vino-wrap {
+  position: relative;
+}
+.vino-ads__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2.5rem;
+  align-items: end;
+}
+.vino-ads__eyebrow {
+  margin: 0 0 1.4rem;
+  color: var(--green-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.vino-ads h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-variation-settings: "opsz" 144;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.vino-ads h2 em {
+  display: block;
+  color: var(--wine-glow);
+  font-family: inherit;
+  font-weight: 400;
+}
+.vino-ads__side {
+  display: grid;
+  gap: 1.1rem;
+  color: #d8d5cd;
+  font-size: 1.08rem;
+}
+.vino-ads__side p {
+  margin: 0;
+}
+.vino-ads__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vino-ads__chips li {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  color: var(--white);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.vino-phones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3.4vw, 54px);
+  max-width: 1020px;
+  margin: 4.5rem auto 0;
+  align-items: end;
+}
+.vino-phone {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+.vino-phone:nth-child(2) {
+  transform: translateY(-44px);
+}
+.vino-phone__body {
+  position: relative;
+  padding: 8px;
+  border: 1px solid #2e2e2e;
+  border-radius: 30px;
+  background: #191919;
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.9);
+  transition: box-shadow 300ms;
+}
+.vino-phone[data-loud="true"] .vino-phone__body {
+  box-shadow:
+    0 0 0 2px var(--green-bright),
+    0 40px 70px -30px rgba(0, 0, 0, 0.9);
+}
+.vino-phone video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 23px;
+  background: #111;
+  cursor: pointer;
+}
+.vino-phone__sound {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  translate: -50% 0;
+  padding: 0.6rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.78);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.vino-phone[data-loud="true"] .vino-phone__sound {
+  background: var(--green-bright);
+  color: var(--black);
+}
+.vino-phone figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding-inline: 0.4rem;
+}
+.vino-phone figcaption b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.vino-phone figcaption span {
+  color: #a19e95;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+.vino-ads__spec {
+  margin: 1.6rem 0 0;
+  color: #8f8c84;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.vino-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.vino-steps li {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  padding-top: 1rem;
+  border-top: 1px solid #3a3a3a;
+}
+.vino-steps small {
+  color: var(--green-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+.vino-steps b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.vino-steps span {
+  color: #aeaba3;
+  font-size: 0.92rem;
+}
+.vino-ads__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.5rem;
+  margin-top: 3.4rem;
+}
+.vino-ads__cta p {
+  margin: 0;
+  color: #aeaba3;
+  font-size: 0.95rem;
+}
+
+/* ---------- Work ---------- */
+.vino-work {
+  padding-block: clamp(4.5rem, 8vw, 6.5rem);
+  background: var(--canvas);
+  color: var(--ink);
+}
+.vino-work__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.vino .vino-work__head h2 {
+  font: inherit;
+}
+.vino-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 2px solid var(--ink);
+}
+.vino-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-top: 2px solid var(--ink);
+  text-decoration: none;
+}
+.vino-row__name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  transition:
+    color 250ms,
+    transform 350ms var(--ease-out);
+}
+.vino-row:hover .vino-row__name,
+.vino-row:focus-visible .vino-row__name {
+  color: var(--accent);
+  font-style: italic;
+  transform: translateX(18px);
+}
+.vino-row__desc {
+  max-width: 26ch;
+  font-size: 0.95rem;
+  text-align: right;
+}
+.vino-row__desc small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.vino-row__thumb {
+  display: none;
+}
+.vino-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 400px;
+  aspect-ratio: 16 / 10;
+  pointer-events: none;
+  rotate: -4deg;
+}
+.vino-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border: 8px solid var(--white);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  scale: 0.88;
+  transition:
+    opacity 200ms,
+    scale 250ms var(--ease-out);
+}
+.vino-preview img[data-active="true"] {
+  opacity: 1;
+  scale: 1;
+}
+.vino-more {
+  display: inline-block;
+  margin-top: 1.6rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.vino-more:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Open source ---------- */
+.vino-os {
+  padding-block: clamp(4.5rem, 8vw, 6rem);
+  background: var(--black);
+  color: var(--white);
+}
+.vino-os__grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.vino-os__num {
+  margin: 0;
+  color: var(--green-bright);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(8rem, 22vw, 18rem);
+  font-variation-settings: "opsz" 144;
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+.vino-os h2 {
+  margin-bottom: 1.6rem;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.vino-os__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.05rem;
+}
+.vino-os__list li:not(:last-child)::after {
+  content: "·";
+  padding: 0 0.75rem;
+  color: var(--wine-glow);
+  font-weight: 700;
+}
+.vino-os__list a {
+  text-decoration: none;
+}
+.vino-os__list a:hover {
+  text-decoration: underline;
+}
+.vino-os__list .external-mark {
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+.vino-os__more {
+  display: inline-block;
+  margin-top: 1.8rem;
+  color: var(--green-bright);
+  font-weight: 600;
+}
+
+/* ---------- Contact ---------- */
+.vino-contact {
+  padding-block: clamp(5rem, 9vw, 7rem);
+  background: var(--green);
+  color: var(--white);
+}
+.vino-contact h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(3.4rem, 12vw, 11rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+.vino-contact h2 b {
+  display: block;
+  font-style: normal;
+  font-weight: 900;
+}
+.vino-contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .vino-hero__float {
+    position: relative;
+    top: auto;
+    width: 86%;
+    margin: 0 0 2rem auto;
+  }
+  .vino-hero__meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .vino-ads__head {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .vino-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .vino-os__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 700px) {
+  .vino-phones {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 68vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 0.6rem;
+  }
+  .vino-phone {
+    scroll-snap-align: center;
+  }
+  .vino-phone:nth-child(2) {
+    transform: none;
+  }
+  .vino-steps {
+    grid-template-columns: 1fr;
+  }
+}
+@media (hover: none), (max-width: 760px) {
+  .vino-row {
+    grid-template-columns: 1fr;
+  }
+  .vino-row__desc {
+    text-align: left;
+  }
+  .vino-row__thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 0.4rem;
+  }
+  .vino-preview {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vino-live {
+    animation: none;
+  }
+  .vino-row__name,
+  .vino-hero__float,
+  .vino-preview img {
+    transition: none;
+  }
+}
