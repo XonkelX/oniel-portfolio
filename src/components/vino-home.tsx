@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { AdsShowcase } from "@/components/ads-showcase";
 import { ExternalLink } from "@/components/external-link";
+import { HeroCarousel } from "@/components/hero-carousel";
 import { WorkList } from "@/components/work-list";
 import {
   homeCopy,
@@ -22,38 +22,7 @@ export function VinoHome({ locale }: { locale: Locale }) {
 
   return (
     <main id="main-content" className="vino">
-      <section className="vino-hero" aria-labelledby="vino-name">
-        <div className="vino-wrap vino-hero__inner">
-          <figure className="vino-hero__float">
-            <Image
-              src="/projects/ciento/ciento-home.png"
-              alt={t.floatAlt}
-              width={1440}
-              height={900}
-              priority
-              sizes="(max-width: 900px) 86vw, 42vw"
-            />
-            <figcaption>{t.floatCaption}</figcaption>
-          </figure>
-          <h1 id="vino-name" className="vino-hero__name">
-            <span className="vino-hero__first">Oniel</span>{" "}
-            <span className="vino-hero__last">Alejo Feliz</span>
-          </h1>
-          <dl className="vino-hero__meta">
-            {t.meta.map((item) => (
-              <div key={item.label}>
-                <dt>{item.label}</dt>
-                <dd>
-                  {"live" in item ? (
-                    <span className="vino-live" aria-hidden="true" />
-                  ) : null}
-                  {item.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+      <HeroCarousel copy={t.hero} hrefPrefix={`${prefix}/work/`} />
 
       <AdsShowcase copy={t.ads} contactHref={mailto(t.ads.ctaSubject)} />
 
