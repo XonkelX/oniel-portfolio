@@ -14,12 +14,14 @@ export type Locale = "en" | "es";
 export const navigation = [
   { label: "Work", href: "/#work" },
   { label: "AI Ads", href: "/#ads" },
+  { label: "3D animation", href: "/#animation" },
   { label: "Open source", href: "/#open-source" },
 ] as const;
 
 export const spanishNavigation = [
   { label: "Proyectos", href: "/es#proyectos" },
   { label: "Anuncios IA", href: "/es#anuncios" },
+  { label: "Animación 3D", href: "/es#animacion" },
   { label: "Código abierto", href: "/es#codigo-abierto" },
 ] as const;
 
