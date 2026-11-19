@@ -48,6 +48,7 @@ describe("portfolio content configuration", () => {
     expect(navigation.map((item) => item.label)).toEqual([
       "Work",
       "AI Ads",
+      "3D animation",
       "Open source",
     ]);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
@@ -56,6 +57,7 @@ describe("portfolio content configuration", () => {
     expect(spanishNavigation.map((item) => item.label)).toEqual([
       "Proyectos",
       "Anuncios IA",
+      "Animación 3D",
       "Código abierto",
     ]);
   });

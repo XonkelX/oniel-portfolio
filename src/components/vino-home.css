@@ -51,7 +51,7 @@
   position: relative;
   height: clamp(560px, calc(100svh - 74px), 860px);
   overflow: hidden;
-  background: #070707;
+  background: var(--black);
   color: var(--white);
   cursor: grab;
   touch-action: pan-y;
@@ -186,7 +186,7 @@
 }
 /* The header turns black on the homepage so it blends into the 3D hero */
 body:has(.mz-hero) .site-header {
-  background: #070707;
+  background: var(--black);
 }
 body:has(.mz-hero) .site-header .header-cta {
   color: var(--black);
@@ -403,6 +403,99 @@ body:has(.mz-hero) .site-header .header-cta {
   margin: 0;
   color: #aeaba3;
   font-size: 0.95rem;
+}
+
+/* ---------- 3D animation: wine room with episode previews ---------- */
+.vino-anim {
+  margin-top: -2px;
+  padding-top: clamp(7rem, 12vw, 10.5rem);
+  border-radius: 0 0 44px 44px;
+  background: linear-gradient(to bottom, var(--black) 0, var(--wine) 300px);
+}
+.vino-anim::before {
+  top: 45%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.45),
+    transparent 65%
+  );
+}
+.vino-anim h2 em {
+  color: #ffb3c0;
+}
+.vino-anim .vino-ads__side {
+  color: #f1dde1;
+}
+.vino-anim .vino-ads__chips li {
+  border-color: rgba(251, 251, 248, 0.4);
+}
+.vino-anim .vino-phone__body {
+  border-color: #8e1d33;
+  background: #2a070e;
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.7);
+}
+.vino-anim .vino-phone figcaption {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+.vino-anim .vino-phone figcaption b {
+  font-size: 1.3rem;
+  line-height: 1.05;
+}
+.vino-anim .vino-phone figcaption span,
+.vino-anim .vino-ads__spec {
+  color: #e3c4ca;
+  text-align: left;
+}
+.vino-anim .vino-ads__spec {
+  text-align: center;
+}
+
+/* ---------- Soft section transitions ---------- */
+/* The hero glow fades into the ads; dark sections overlap by 2px so no light seam shows between them. */
+.mz-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 34%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0) 0%,
+    rgba(10, 10, 10, 0.35) 35%,
+    rgba(10, 10, 10, 0.8) 70%,
+    var(--black) 100%
+  );
+  pointer-events: none;
+}
+.mz-hero + .vino-ads {
+  margin-top: -2px;
+}
+/* Light to dark changes use rounded sheets instead of straight cuts. */
+.vino-os {
+  padding-bottom: calc(clamp(4.5rem, 8vw, 6rem) + 44px);
+  border-radius: 44px 44px 0 0;
+}
+.vino-contact {
+  position: relative;
+  margin-top: -44px;
+  border-radius: 44px 44px 0 0;
+}
+@media (max-width: 700px) {
+  .vino-anim {
+    border-radius: 0 0 28px 28px;
+  }
+  .vino-os {
+    padding-bottom: calc(clamp(4.5rem, 8vw, 6rem) + 28px);
+    border-radius: 28px 28px 0 0;
+  }
+  .vino-contact {
+    margin-top: -28px;
+    border-radius: 28px 28px 0 0;
+  }
 }
 
 /* ---------- Work ---------- */

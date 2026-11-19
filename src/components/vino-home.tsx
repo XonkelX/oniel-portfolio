@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AdsShowcase } from "@/components/ads-showcase";
+import { AnimationShowcase } from "@/components/animation-showcase";
 import { ExternalLink } from "@/components/external-link";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { WorkList } from "@/components/work-list";
@@ -25,6 +26,8 @@ export function VinoHome({ locale }: { locale: Locale }) {
       <HeroCarousel copy={t.hero} hrefPrefix={`${prefix}/work/`} />
 
       <AdsShowcase copy={t.ads} contactHref={mailto(t.ads.ctaSubject)} />
+
+      <AnimationShowcase copy={t.animation} sound={t.ads} />
 
       <section
         className="vino-work"

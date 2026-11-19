@@ -164,6 +164,36 @@ const copy = {
         },
       ],
     },
+    animation: {
+      id: "animation",
+      eyebrow: "3D animation",
+      titleTop: "Stories that",
+      titleBottom: "move in 3D.",
+      intro:
+        "Animated vertical Shorts with block-style characters: the world, the characters, the camera and the edit, made from script to final render.",
+      chips: ["Three.js", "Remotion", "Roblox Studio"],
+      spec: "15-second previews · episodes of the GoldenTuun Shorts channel",
+      episodes: [
+        {
+          id: "parents",
+          title: "Every Parent Is Super While You Watch",
+          tools: "Three.js · Remotion",
+          label: "Every Parent Is Super While You Watch, 15-second preview",
+        },
+        {
+          id: "pets",
+          title: "Every Pet Grows With Your Love",
+          tools: "Three.js · Remotion",
+          label: "Every Pet Grows With Your Love, 15-second preview",
+        },
+        {
+          id: "costume",
+          title: "You Become Whatever Costume You Wear",
+          tools: "Roblox Studio",
+          label: "You Become Whatever Costume You Wear, 15-second preview",
+        },
+      ],
+    },
     work: {
       id: "work",
       title: "Selected work",
@@ -309,6 +339,36 @@ const copy = {
           brand: "Teobra",
           detail: "Chocolate negro · 15 s",
           label: "Anuncio del chocolate negro Teobra",
+        },
+      ],
+    },
+    animation: {
+      id: "animacion",
+      eyebrow: "Animación 3D",
+      titleTop: "Historias que",
+      titleBottom: "se mueven en 3D.",
+      intro:
+        "Shorts verticales animados con personajes de bloques: el mundo, los personajes, la cámara y la edición, del guion al render final.",
+      chips: ["Three.js", "Remotion", "Roblox Studio"],
+      spec: "Avances de 15 segundos · episodios del canal de Shorts GoldenTuun",
+      episodes: [
+        {
+          id: "parents",
+          title: "Every Parent Is Super While You Watch",
+          tools: "Three.js · Remotion",
+          label: "Every Parent Is Super While You Watch, avance de 15 segundos",
+        },
+        {
+          id: "pets",
+          title: "Every Pet Grows With Your Love",
+          tools: "Three.js · Remotion",
+          label: "Every Pet Grows With Your Love, avance de 15 segundos",
+        },
+        {
+          id: "costume",
+          title: "You Become Whatever Costume You Wear",
+          tools: "Roblox Studio",
+          label: "You Become Whatever Costume You Wear, avance de 15 segundos",
         },
       ],
     },
