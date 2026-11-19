@@ -1,0 +1,376 @@
+/* 3D models: dark studio with one large interactive viewer and a picker of three models. */
+.vino-models {
+  position: relative;
+  overflow: hidden;
+  margin-top: -2px;
+  background: var(--black);
+  color: var(--white);
+  padding-block: clamp(3rem, 6vw, 5rem) clamp(5rem, 8vw, 7rem);
+}
+.vino-models::before {
+  content: "";
+  position: absolute;
+  left: 30%;
+  top: 45%;
+  width: 1100px;
+  height: 800px;
+  translate: -50% 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(18, 122, 78, 0.28),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+.vino-models .vino-wrap {
+  position: relative;
+}
+.vino-models__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2.5rem;
+  align-items: end;
+}
+.vino-models__eyebrow {
+  margin: 0 0 1.4rem;
+  color: var(--green-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.vino-models h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-variation-settings: "opsz" 144;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.vino-models h2 em {
+  display: block;
+  color: var(--green-bright);
+  font-family: inherit;
+  font-weight: 400;
+}
+.vino-models__side {
+  display: grid;
+  gap: 1.1rem;
+  color: #d8d5cd;
+  font-size: 1.08rem;
+}
+.vino-models__side p {
+  margin: 0;
+}
+.vino-models__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vino-models__chips li {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vino-models__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: clamp(18px, 2.4vw, 32px);
+  margin-top: 3.5rem;
+}
+
+/* ---------- Stage ---------- */
+.vino-stage {
+  position: relative;
+  min-height: clamp(380px, 56vw, 660px);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #262626;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      ellipse at 50% 85%,
+      rgba(179, 38, 62, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #121212, #0b0b0b);
+}
+.vino-stage__poster,
+.vino-stage__viewer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.vino-stage__poster {
+  object-fit: contain;
+  padding: 4%;
+  transition: opacity 400ms;
+  pointer-events: none;
+}
+.vino-stage[data-loaded="true"] .vino-stage__poster {
+  opacity: 0;
+}
+.vino-stage__viewer {
+  --poster-color: transparent;
+  --progress-bar-color: var(--green-bright);
+  --progress-bar-height: 3px;
+  background: transparent;
+  outline: none;
+}
+.vino-stage__viewer:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--green-bright);
+}
+.vino-stage__status {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  color: #8f8c84;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.vino-stage figcaption {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.3rem;
+  display: grid;
+  gap: 0.2rem;
+  pointer-events: none;
+}
+.vino-stage figcaption b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+.vino-stage figcaption span {
+  color: #8f8c84;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.vino-stage__anims {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.78);
+  translate: -50% 0;
+  backdrop-filter: blur(6px);
+}
+.vino-stage__anims button {
+  min-height: 40px;
+  padding: 0.55rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.vino-stage__anims button:hover:not(:disabled, [aria-pressed="true"]) {
+  background: #222;
+}
+.vino-stage__anims button[aria-pressed="true"] {
+  background: var(--green-bright);
+  color: var(--black);
+}
+.vino-stage__anims button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* ---------- Picker ---------- */
+/* ---------- Interactive keyboard ---------- */
+.vino-stage__keyboard {
+  outline: none;
+}
+.vino-stage__keyboard:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--green-bright);
+}
+.vino-stage__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+.vino-stage__canvas:active {
+  cursor: grabbing;
+}
+.vino-stage__typed {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  max-width: min(92%, 520px);
+  min-height: 44px;
+  margin: 0;
+  padding: 0.6rem 1.1rem;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.8);
+  color: var(--white);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.95rem;
+  white-space: pre;
+  translate: -50% 0;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+.vino-stage__placeholder {
+  color: #8f8c84;
+}
+.vino-stage__typed i {
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  background: var(--green-bright);
+  animation: vino-caret 1s steps(1) infinite;
+}
+@keyframes vino-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.vino-models__list {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vino-model-card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  background: #121212;
+  color: var(--white);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 200ms,
+    background-color 200ms,
+    transform 200ms var(--ease-out);
+}
+.vino-model-card:hover {
+  transform: translateX(-3px);
+  border-color: #3a3a3a;
+}
+.vino-model-card[aria-pressed="true"] {
+  border-color: var(--green-bright);
+  background: #151a17;
+}
+.vino-model-card img {
+  width: 92px;
+  height: 92px;
+  border-radius: 14px;
+  background: #0b0b0b;
+  object-fit: contain;
+}
+.vino-model-card > span {
+  display: grid;
+  gap: 0.2rem;
+}
+.vino-model-card small {
+  color: var(--green-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+.vino-model-card b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.05;
+}
+.vino-model-card span span {
+  color: #a19e95;
+  font-size: 0.86rem;
+}
+.vino-models__spec {
+  margin: 1.6rem 0 0;
+  color: #8f8c84;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .vino-models__head,
+  .vino-models__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .vino-models__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .vino-model-card {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 0.4rem;
+    padding: 8px 8px 12px;
+    text-align: center;
+  }
+  .vino-model-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .vino-model-card span span {
+    display: none;
+  }
+  .vino-model-card b {
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 560px) {
+  .vino-stage {
+    min-height: 360px;
+    border-radius: 22px;
+  }
+  .vino-stage__anims button {
+    padding-inline: 0.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .vino-models__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vino-stage__typed i {
+    animation: none;
+  }
+  .vino-model-card,
+  .vino-stage__poster {
+    transition: none;
+  }
+}

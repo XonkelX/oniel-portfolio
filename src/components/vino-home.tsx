@@ -3,6 +3,7 @@ import { AdsShowcase } from "@/components/ads-showcase";
 import { AnimationShowcase } from "@/components/animation-showcase";
 import { ExternalLink } from "@/components/external-link";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { ModelsShowcase } from "@/components/models-showcase";
 import { WorkList } from "@/components/work-list";
 import {
   homeCopy,
@@ -28,6 +29,8 @@ export function VinoHome({ locale }: { locale: Locale }) {
       <AdsShowcase copy={t.ads} contactHref={mailto(t.ads.ctaSubject)} />
 
       <AnimationShowcase copy={t.animation} sound={t.ads} />
+
+      <ModelsShowcase copy={t.models} />
 
       <section
         className="vino-work"
